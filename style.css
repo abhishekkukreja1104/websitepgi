@@ -1,0 +1,35 @@
+body{
+	background-color: #96B8DA;
+}
+input[type = "text"]{
+	display: inline-block;
+	width: 400px;
+}
+input[type = "number"]{
+	display: inline-block;
+	width: 400px;
+}
+div {
+    background-color: #518B47;
+    padding: 10px;
+}
+form{
+	align-items: center;
+}
+th{
+	text-align: left;
+}
+td{
+	padding-left: 100px;
+}
+h1{
+	color: white;
+}
+form{
+	margin: 0 auto;
+	width: 850px;
+	border: 1;
+	background-color: #ffffff;
+	align-items: center;
+}
+
