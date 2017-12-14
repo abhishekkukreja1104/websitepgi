@@ -115,18 +115,18 @@
 </form>	
 <?php
 
-			$query = "SELECT * FROM post"; //You don't need a ; like you do in SQL
+			$query = "SELECT * FROM MBD"; //You don't need a ; like you do in SQL
 			$result = mysqli_query($conn,$query);
 			echo "<div STYLE='height: 100px; width: 500px; font-size: 12px; overflow: auto;'>";
-			echo "<table>"; // start a table tag in the HTML
+			echo "<table align = 'center'>"; // start a table tag in the HTML
 			
 			while($row = mysqli_fetch_array($result)){   //Creates a loop to loop through results
-				echo "<tr><td>" . $row['name'] . "</td><td>" . $row['branch'] . "</td><td>".$row['year']."</td></tr>";  //$row['index'] the index here is a field name
+				echo "<tr><td>" . $row['name'] . "</td><td>" . $row['age'] . "</td><td>".$row['sex']."</td></tr>";  //$row['index'] the index here is a field name
 			}
 
 			echo "</table>"; //Close the table in HTML
 			echo "</div>"
-		?>
+		
 ?>
 	
 </body>
