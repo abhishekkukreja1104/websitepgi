@@ -56,11 +56,11 @@
 	cellspacing="20" >
 		<tr>
 			<th>Name:</th>
-			<td><input type="text" name="First_Name" ></td>
+			<td><input type="text" name="First_Name" pattern="[A-Za-z\s]{2,}" title="Only letters and spaces allowed"></td>
 		</tr>
 		<tr>
 			<th>Age(Years):</th>	
-			<td><input type="number" name="age"></td>
+			<td><input type="number" name="age" min="0"></td>
 		</tr>
 		<tr>
 			<th>Sex:</th>
@@ -73,7 +73,7 @@
 		</tr>
 		<tr>
 			<th>Admission No:</th>
-			<td><input type="number" name="Admission_No"></td>
+			<td><input type="number" name="Admission_No" required="required" ></td>
 		</tr>
 		<tr>
 			<th>EC No:</th>
@@ -81,15 +81,15 @@
 		</tr>
 		<tr>
 			<th>DOA:</th>
-			<td><input type="date" name="DOA"></td>
+			<td><input type="date" name="DOA" min="2016-01-01" max="2017-12-16"></td>
 		</tr>
 		<tr>
 			<th>DOS:</th>
-			<td><input type="date" name="DOS"></td>
+			<td><input type="date" name="DOS" min="2016-01-01" max="2017-12-16"></td>
 		</tr>
 		<tr>
 			<th>DOD:</th>
-			<td><input type="date" name="DOD"></td>
+			<td><input type="date" name="DOD" min="2016-01-01" max="2017-12-16"></td>
 		</tr>
 		<tr>
 			<th>Address:</th>
