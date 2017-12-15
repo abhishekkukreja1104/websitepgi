@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+	include_once 'includes/dbh.php';
+
+?>
 <html>
 <head>
 	<title>Biochemistry</title>
@@ -43,7 +46,7 @@
 		<li><a href="google.com">Add Patient</a></li>
 		<li><a href="#about">View Patient</a></li>
 	</ul>
-	<form>
+	<form action = "includes/addbioproperties.php" method="POST">
 		<div class="box" id="heading">
 			<h1  align="center">Biochemistry</h1>
 		</div>
@@ -68,13 +71,17 @@
 			<th id="up">&emsp;&emsp;5 year</th>
 		</tr>
 		<tr>
+			<th>Admission Number</th>
+			<td><input type="text" name="addpatient" value=<?php echo $_GET['addpatient']?> readonly></td>
+		</tr>
+		<tr>
 			<th>S. Ca (mg/dl)</th>
-			<td><input type="text" name="S_Ca _D"></td>
-			<td><input type="text" name="S_Ca _3"></td>
-			<td><input type="text" name="S_Ca _6"></td>
-			<td><input type="text" name="S_Ca _1"></td>
-			<td><input type="text" name="S_Ca _2"></td>
-			<td><input type="text" name="S_Ca _5"></td>
+			<td><input type="text" name="S_Ca_D"></td>
+			<td><input type="text" name="S_Ca_3"></td>
+			<td><input type="text" name="S_Ca_6"></td>
+			<td><input type="text" name="S_Ca_1"></td>
+			<td><input type="text" name="S_Ca_2"></td>
+			<td><input type="text" name="S_Ca_5"></td>
 		</tr>
 		<tr>
 			<th>S. Phosphorus (mg/dl)</th>
@@ -186,12 +193,12 @@
 		</tr>
 		<tr>
 			<th>24 hour urine Phosphorus (mg/24hour)</th>
-			<td><input type="text" name="Phosphorus_D"></td>
-			<td><input type="text" name="Phosphorus_3"></td>
-			<td><input type="text" name="Phosphorus_6"></td>
-			<td><input type="text" name="Phosphorus_1"></td>
-			<td><input type="text" name="Phosphorus_2"></td>
-			<td><input type="text" name="Phosphorus_5"></td>
+			<td><input type="text" name="Phosphorous_D"></td>
+			<td><input type="text" name="Phosphorous_3"></td>
+			<td><input type="text" name="Phosphorous_6"></td>
+			<td><input type="text" name="Phosphorous_1"></td>
+			<td><input type="text" name="Phosphorous_2"></td>
+			<td><input type="text" name="Phosphorous_5"></td>
 		</tr>
 		<tr>
 			<th>EGFR</th>
@@ -328,6 +335,10 @@
 			<td><input type="text" name="Any_other_5"></td>
 		</tr>
 		</table>
+
+			<div class="box" width="40px" align="center" id = "heading">
+    		<input type="submit" value="Save and Continue" align="center">
+    	</div>	
 	</form>
 </div>
 </body>
