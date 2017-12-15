@@ -122,7 +122,7 @@
 					'$Hypophosphatemic_rickets',
 					'$Facial_asymmetry',
 					'$Any_other');";
-	echo $sql;
+	
 	mysqli_query($conn,$sql);
 	$result = mysqli_query($conn, $sql);
 if ( false===$result ) {
@@ -132,7 +132,6 @@ else {
   echo 'done.';
 }
 
-	//header("Location: ../displaypatients.php?addpatient=".$Admission_No);	
 
 
 
@@ -255,7 +254,7 @@ else {
 					'$Hypophosphatemic_rickets',
 					'$Facial_asymmetry',
 					'$Any_other');";
-	echo $sql;
+	
 	mysqli_query($conn,$sql);
 	$result = mysqli_query($conn, $sql);
 if ( false===$result ) {
@@ -384,7 +383,7 @@ else {
 					'$Hypophosphatemic_rickets',
 					'$Facial_asymmetry',
 					'$Any_other');";
-	echo $sql;
+	
 	mysqli_query($conn,$sql);
 	$result = mysqli_query($conn, $sql);
 if ( false===$result ) {
@@ -512,7 +511,7 @@ $Asymptomatic_ = $_POST['Asymptomatic_1'];
 					'$Hypophosphatemic_rickets',
 					'$Facial_asymmetry',
 					'$Any_other');";
-	echo $sql;
+	
 	mysqli_query($conn,$sql);
 	$result = mysqli_query($conn, $sql);
 if ( false===$result ) {
@@ -640,7 +639,7 @@ $Asymptomatic_ = $_POST['Asymptomatic_2'];
 					'$Hypophosphatemic_rickets',
 					'$Facial_asymmetry',
 					'$Any_other');";
-	echo $sql;
+	
 	mysqli_query($conn,$sql);
 	$result = mysqli_query($conn, $sql);
 if ( false===$result ) {
@@ -770,7 +769,7 @@ $Asymptomatic_ = $_POST['Asymptomatic_5'];
 					'$Hypophosphatemic_rickets',
 					'$Facial_asymmetry',
 					'$Any_other');";
-	echo $sql;
+	
 	mysqli_query($conn,$sql);
 	$result = mysqli_query($conn, $sql);
 if ( false===$result ) {
@@ -780,5 +779,6 @@ else {
   echo 'done.';
 }
 
+	
 	header("Location: ../biochemistry.php?addpatient=".$admission_no);	
 ?>
