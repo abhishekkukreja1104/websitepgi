@@ -7,9 +7,48 @@
 	<title>Form</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
+<style>
+	ul {
+    	margin: 0 auto;
+    	padding: 0;
+    	text-align: center;
+	}
+	li {
+    	display: inline;
+   	 	list-style: none; 
+	}
+	a:link,a:visited
+	{
+	    display:inline-block;
+	    margin-right: -4px;
+	    width: 360px;
+	    font-weight:bold;
+	    color:white;
+	    background-color:#1F4F96;
+	    text-align:center;
+	    padding:20px;
+	    height: 30px;
+	    text-decoration:none;
+	    text-transform:uppercase;
+	}
+	a:hover,a:active
+	{
+	    background-color:black;
+	}
+	</style>
 <body>
+	<div id = "top" align="center">
+		<img src="http://indianphptregistry.com/images/logo.png">
+	</div>
+	<div>
+	<ul>
+		<li><a href="test.php">Home</a></li>
+		<li><a href="google.com">Add Patient</a></li>
+		<li><a href="displaypatient.php">View Patient</a></li>
+	</ul>
+
 <form action="includes/addpatient.php" method="POST">
-	<div class="box">
+	<div class="box" id = "heading">
 		<h1 align="center">PERSONAL DATA</h1>
 	</div>
 	<br>
@@ -109,25 +148,10 @@
 			<td><input type="text" name="Duration_of_symptoms" </td>
 		</tr>
 		</table>
-		<div class="box" width="40px" align="center">
+			<div class="box" width="40px" align="center" id = "heading">
     		<input type="submit" value="Save and Continue" align="center">
     	</div>	
 </form>	
-<?php
-
-			$query = "SELECT * FROM MBD"; //You don't need a ; like you do in SQL
-			$result = mysqli_query($conn,$query);
-			echo "<div STYLE='height: 100px; width: 500px; font-size: 12px; overflow: auto;'>";
-			echo "<table align = 'center'>"; // start a table tag in the HTML
-			
-			while($row = mysqli_fetch_array($result)){   //Creates a loop to loop through results
-				echo "<tr><td>" . $row['name'] . "</td><td>" . $row['age'] . "</td><td>".$row['sex']."</td></tr>";  //$row['index'] the index here is a field name
-			}
-
-			echo "</table>"; //Close the table in HTML
-			echo "</div>"
-		
-?>
-	
+</div>
 </body>
 </html>

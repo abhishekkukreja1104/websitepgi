@@ -86,5 +86,5 @@
 	echo $sql;
 
 	mysqli_query($conn,$sql);
-	header("Location: ../test.php?addpatient=sucess");				
+	header("Location: ../form.php?addpatient=".$Admission_No);				
 	?>
