@@ -11,12 +11,12 @@
 <style>
 	ul {
     	margin: 0 auto;
-    	padding: 0;
+    	margin-right: 44px;
     	text-align: center;
 	}
 	li {
     	display: inline;
-   	 	list-style: none; 
+   	 	list-style: none;
 	}
 	#nav_a:link,#nav_a:visited
 	{
@@ -42,16 +42,16 @@
 		<img src="http://indianphptregistry.com/images/logo.png">
 	</div>
 	<ul>
-		<li><a id = "nav_a" href="test.php">Home</a></li>
-		<li><a id = "nav_a" href="google.com">Add Patient</a></li>
+		<li><a id = "nav_a" href="test.php">Add Patient</a></li>
 		<li><a id = "nav_a" href="displaypatient.php">View Patient</a></li>
+		<li><a id = "nav_a" href="documents.php">Manage Documents</a></li>
 	</ul>
 
 	<div id = "Patient" align="center">
 		<h1>Patients</h1>
 	</div>
-	
-	
+
+
 	<table id="customers">
     <thead>
         <tr>
@@ -64,12 +64,12 @@
             <th>Parents</th>
 
             <th>Edit Patient</th>
-            
+
         </tr>
     </thead>
     <tbody>
-        <?php 
-        $sql = "select name, addmission_no, age, sex, address, mobile, parents from MBD";
+        <?php
+        $sql = "select name, addmission_no, age, sex, address, mobile, parents from MBD where addmission_no <> -1";
 		$result=mysqli_query($conn,$sql);
 
         while( $row = mysqli_fetch_array($result)) : ?>
@@ -82,7 +82,7 @@
             <td><?php echo $row['address']; ?></td>
             <td><?php echo $row['mobile']; ?></td>
             <td><?php echo $row['parents']; ?></td>
-            <td><a id="edit_link" href=<?php echo "test.php?addmission_no=".$row['addmission_no'];?>>edit</a></td>
+            <td><a id="edit_link" href=<?php echo "test.php?status=edit&addmission_no=".$row['addmission_no'];?>>edit</a></td>
         </tr>
         <?php endwhile ?>
     </tbody>

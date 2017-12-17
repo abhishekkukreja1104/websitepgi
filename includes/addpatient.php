@@ -48,43 +48,79 @@
 		$Index_no = 0;
 
 
-	mysqli_query($conn,$sql1);
-	
-	$sql = "insert into MBD 
-	(name, age, sex, index_no, CR_no, addmission_no, EC_no, DOA, DOS, DOD, address, telephone, mobile, email, self, parents, grandparents, r_physicians, presenting, deformity, n_o_fracture, bone_pain, short_stature, teeth_abnormality, duration, ht, wt, BMI) values 
-	('$Name',
-	$Age,
-	'$Sex',
-	$Index_no,
-	$CR_No,
-	$Admission_No,
-	$EC_No,
-	'$DOA',
-	'$DOS',
-	'$DOD',
-	'$Address',
-	$Telephone,
-	$Mobile,
-	'$E_mail',
-	'$Self',
-	'$Parents',
-	'$Grand_Parents',
-	'$Referring_physicians',
-	'$Presenting_C',
-	'$Deformity',
-	'$No_of_Fracture',
-	'$Bone_Pain',
-	'$Short_Stature',
-	'$Teeth_abnormality',
-	'$Duration_of_symptoms',
-	$Ht,
-	$Wt,
-	$BMI);";
+	if(isset($_POST['status'])){
+		$sql = "UPDATE MBD set
+						name='$Name',
+						 age=$Age,
+						 sex='$Sex',
+						 index_no=$Index_no,
+						 CR_no=$CR_No,
+						 EC_no=$EC_No,
+						 DOA='$DOA',
+						 DOS='$DOS',
+						 DOD='$DOD',
+						 address='$Address',
+						 telephone=$Telephone,
+						 mobile=$Mobile,
+						 email='$E_mail',
+						 self='$Self',
+						 parents='$Parents',
+						 grandparents='$Grand_Parents',
+						 r_physicians='$Referring_physicians',
+						 presenting='$Presenting_C',
+						 deformity='$Deformity',
+						 n_o_fracture='$No_of_Fracture',
+						 bone_pain='$Bone_Pain',
+						 short_stature='$Short_Stature',
+						 teeth_abnormality='$Teeth_abnormality',
+						 duration='$Duration_of_symptoms',
+						 ht=$Ht,
+						 wt=$Wt,
+						 BMI=$BMI
+						 where addmission_no = $Admission_No;";
+
+						 	mysqli_query($conn,$sql);
+						 	header("Location: ../form.php?status=edit&addpatient=".$Admission_No);
+
+	}else{
+		$sql = "insert into MBD
+		(name, age, sex, index_no, CR_no, addmission_no, EC_no, DOA, DOS, DOD, address, telephone, mobile, email, self, parents, grandparents, r_physicians, presenting, deformity, n_o_fracture, bone_pain, short_stature, teeth_abnormality, duration, ht, wt, BMI) values
+		('$Name',
+		$Age,
+		'$Sex',
+		$Index_no,
+		$CR_No,
+		$Admission_No,
+		$EC_No,
+		'$DOA',
+		'$DOS',
+		'$DOD',
+		'$Address',
+		$Telephone,
+		$Mobile,
+		'$E_mail',
+		'$Self',
+		'$Parents',
+		'$Grand_Parents',
+		'$Referring_physicians',
+		'$Presenting_C',
+		'$Deformity',
+		'$No_of_Fracture',
+		'$Bone_Pain',
+		'$Short_Stature',
+		'$Teeth_abnormality',
+		'$Duration_of_symptoms',
+		$Ht,
+		$Wt,
+		$BMI);";
+
+
+			mysqli_query($conn,$sql);
+			header("Location: ../form.php?addpatient=".$Admission_No);
+	}
 	/*
 	$sql = "insert into MBD (name, age, sex, addmission_no) values ('$Name',$Age,'$Sex',$Admission_No);";
 	*/
 	echo $sql;
 
-	mysqli_query($conn,$sql);
-	header("Location: ../form.php?addpatient=".$Admission_No);				
 	?>

@@ -1,6 +1,26 @@
 <?php
 	include_once 'includes/dbh.php';
+	if(isset($_GET['status'])){
+		if($_GET['status']=="edit"){
+			$sqlD = "select * from BIOR where addmission_no =".$_GET['addpatient'];
+			$sql3 = "select * from BIO3M where addmission_no =".$_GET['addpatient'];
+			$sql6 = "select * from BIO6M where addmission_no =".$_GET['addpatient'];
+			$sql1 = "select * from BIO1Y where addmission_no =".$_GET['addpatient'];
+			$sql2 = "select * from BIO2Y where addmission_no =".$_GET['addpatient'];
+			$sql5 = "select * from BIO5Y where addmission_no =".$_GET['addpatient'];
+			$resultD = mysqli_query($conn, $sqlD);
+			$result3 = mysqli_query($conn, $sql3);
+			$result6 = mysqli_query($conn, $sql6);
+			$result1 = mysqli_query($conn, $sql1);
+			$result2 = mysqli_query($conn, $sql2);
+			$result5 = mysqli_query($conn, $sql5);
 
+			$rowD = mysqli_fetch_array($resultD);
+			$row3 = mysqli_fetch_array($result3);
+			$row6 = mysqli_fetch_array($result6);
+			$row1 = mysqli_fetch_array($result1);
+			$row2 = mysqli_fetch_array($result2);
+			$row5 = mysqli_fetch_array($result5);
 ?>
 <html>
 <head>
@@ -15,7 +35,7 @@
 	}
 	li {
     	display: inline;
-   	 	list-style: none; 
+   	 	list-style: none;
 	}
 	a:link,a:visited
 	{
@@ -42,9 +62,9 @@
 		<img src="http://indianphptregistry.com/images/logo.png">
 	</div>
 	<ul>
-		<li><a href="test.htm">Home</a></li>
-		<li><a href="google.com">Add Patient</a></li>
-		<li><a href="#about">View Patient</a></li>
+		<li><a href="test.php">Add Patient</a></li>
+		<li><a href="displaypatient.php">View Patient</a></li>
+		<li><a href="documents.php">Manage Documents</a></li>
 	</ul>
 	<form action = "includes/addbioproperties.php" method="POST">
 		<div class="box" id="heading">
@@ -76,7 +96,7 @@
 		</tr>
 		<tr>
 			<th>S. Ca (mg/dl)</th>
-			<td><input type="text" name="S_Ca_D"></td>
+			<td><input type="text" name="S_Ca_D" value = <?php echo ((isset($_GET['status'])) ? $rowD['S_Ca'] : ""); ?> ></td>
 			<td><input type="text" name="S_Ca_3"></td>
 			<td><input type="text" name="S_Ca_6"></td>
 			<td><input type="text" name="S_Ca_1"></td>
@@ -338,7 +358,7 @@
 
 			<div class="box" width="40px" align="center" id = "heading">
     		<input type="submit" value="Save and Continue" align="center">
-    	</div>	
+    	</div>
 	</form>
 </div>
 </body>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 	include_once 'dbh.php';
 	$admission_no = $_POST['addpatient'];
 
@@ -83,7 +83,7 @@
 				Hypophosphatemic_rickets,
 				Facial_asymmetry,
 				Any_other) values ($admission_no,
-					'$Asymptomatic', 
+					'$Asymptomatic',
 					'$Bone_pain',
 					'$Backache',
 					'$Bony_Swelling',
@@ -122,7 +122,7 @@
 					'$Hypophosphatemic_rickets',
 					'$Facial_asymmetry',
 					'$Any_other');";
-	
+
 	mysqli_query($conn,$sql);
 	$result = mysqli_query($conn, $sql);
 if ( false===$result ) {
@@ -135,7 +135,7 @@ else {
 
 
 
-	$Asymptomatic_ = $_POST['Asymptomatic_3'];
+	$Asymptomatic = $_POST['Asymptomatic_3'];
 	$Bone_pain= $_POST['Bone_pain_3'];
 	$Backache= $_POST['Backache_3'];
 	$Bony_Swelling= $_POST['Bony_Swelling_3'];
@@ -215,7 +215,7 @@ else {
 				Hypophosphatemic_rickets,
 				Facial_asymmetry,
 				Any_other) values ($admission_no,
-					'$Asymptomatic', 
+					'$Asymptomatic',
 					'$Bone_pain',
 					'$Backache',
 					'$Bony_Swelling',
@@ -254,7 +254,7 @@ else {
 					'$Hypophosphatemic_rickets',
 					'$Facial_asymmetry',
 					'$Any_other');";
-	
+
 	mysqli_query($conn,$sql);
 	$result = mysqli_query($conn, $sql);
 if ( false===$result ) {
@@ -264,7 +264,7 @@ else {
   echo 'done.';
 }
 
-	$Asymptomatic_ = $_POST['Asymptomatic_6'];
+	$Asymptomatic = $_POST['Asymptomatic_6'];
 	$Bone_pain= $_POST['Bone_pain_6'];
 	$Backache= $_POST['Backache_6'];
 	$Bony_Swelling= $_POST['Bony_Swelling_6'];
@@ -344,7 +344,7 @@ else {
 				Hypophosphatemic_rickets,
 				Facial_asymmetry,
 				Any_other) values ($admission_no,
-					'$Asymptomatic', 
+					'$Asymptomatic',
 					'$Bone_pain',
 					'$Backache',
 					'$Bony_Swelling',
@@ -383,7 +383,7 @@ else {
 					'$Hypophosphatemic_rickets',
 					'$Facial_asymmetry',
 					'$Any_other');";
-	
+
 	mysqli_query($conn,$sql);
 	$result = mysqli_query($conn, $sql);
 if ( false===$result ) {
@@ -392,7 +392,7 @@ if ( false===$result ) {
 else {
   echo 'done.';
 }
-$Asymptomatic_ = $_POST['Asymptomatic_1'];
+$Asymptomatic = $_POST['Asymptomatic_1'];
 	$Bone_pain= $_POST['Bone_pain_1'];
 	$Backache= $_POST['Backache_1'];
 	$Bony_Swelling= $_POST['Bony_Swelling_1'];
@@ -472,7 +472,7 @@ $Asymptomatic_ = $_POST['Asymptomatic_1'];
 				Hypophosphatemic_rickets,
 				Facial_asymmetry,
 				Any_other) values ($admission_no,
-					'$Asymptomatic', 
+					'$Asymptomatic',
 					'$Bone_pain',
 					'$Backache',
 					'$Bony_Swelling',
@@ -511,7 +511,7 @@ $Asymptomatic_ = $_POST['Asymptomatic_1'];
 					'$Hypophosphatemic_rickets',
 					'$Facial_asymmetry',
 					'$Any_other');";
-	
+
 	mysqli_query($conn,$sql);
 	$result = mysqli_query($conn, $sql);
 if ( false===$result ) {
@@ -520,7 +520,7 @@ if ( false===$result ) {
 else {
   echo 'done.';
 }
-$Asymptomatic_ = $_POST['Asymptomatic_2'];
+$Asymptomatic = $_POST['Asymptomatic_2'];
 	$Bone_pain= $_POST['Bone_pain_2'];
 	$Backache= $_POST['Backache_2'];
 	$Bony_Swelling= $_POST['Bony_Swelling_2'];
@@ -600,7 +600,7 @@ $Asymptomatic_ = $_POST['Asymptomatic_2'];
 				Hypophosphatemic_rickets,
 				Facial_asymmetry,
 				Any_other) values ($admission_no,
-					'$Asymptomatic', 
+					'$Asymptomatic',
 					'$Bone_pain',
 					'$Backache',
 					'$Bony_Swelling',
@@ -639,7 +639,7 @@ $Asymptomatic_ = $_POST['Asymptomatic_2'];
 					'$Hypophosphatemic_rickets',
 					'$Facial_asymmetry',
 					'$Any_other');";
-	
+
 	mysqli_query($conn,$sql);
 	$result = mysqli_query($conn, $sql);
 if ( false===$result ) {
@@ -650,7 +650,7 @@ else {
 }
 
 
-$Asymptomatic_ = $_POST['Asymptomatic_5'];
+$Asymptomatic = $_POST['Asymptomatic_5'];
 	$Bone_pain= $_POST['Bone_pain_5'];
 	$Backache= $_POST['Backache_5'];
 	$Bony_Swelling= $_POST['Bony_Swelling_5'];
@@ -730,7 +730,7 @@ $Asymptomatic_ = $_POST['Asymptomatic_5'];
 				Hypophosphatemic_rickets,
 				Facial_asymmetry,
 				Any_other) values ($admission_no,
-					'$Asymptomatic', 
+					'$Asymptomatic',
 					'$Bone_pain',
 					'$Backache',
 					'$Bony_Swelling',
@@ -769,7 +769,7 @@ $Asymptomatic_ = $_POST['Asymptomatic_5'];
 					'$Hypophosphatemic_rickets',
 					'$Facial_asymmetry',
 					'$Any_other');";
-	
+
 	mysqli_query($conn,$sql);
 	$result = mysqli_query($conn, $sql);
 if ( false===$result ) {
@@ -779,6 +779,6 @@ else {
   echo 'done.';
 }
 
-	
-	header("Location: ../biochemistry.php?addpatient=".$admission_no);	
+
+	header("Location: ../biochemistry.php?addpatient=".$admission_no);
 ?>

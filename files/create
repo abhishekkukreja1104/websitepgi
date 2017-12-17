@@ -1,0 +1,131 @@
+CREATE TABLE post(
+	id int(11) PRIMARY KEY NOT null,
+    name varchar(20) NOT null,
+    year int(2),
+    branch varchar(20)
+);
+
+
+create table entervalue(
+    id int(4) primary KEY,
+    name varchar(20));
+
+
+  create table MBD(
+name varchar(20), 
+age int(2),
+sex varchar(7),
+index_no int(5),
+CR_no int(5),
+addmission_no int(5) PRIMARY KEY,
+EC_no int(5),
+DOA date,
+DOS date,
+DOD date,
+address varchar(50), 
+telephone int(12),
+mobile int(10),
+email varchar(30),
+self varchar(20), 
+parents varchar(20),
+grandparents varchar(20), 
+r_physicians varchar(20),
+presenting varchar(20),
+deformity varchar(20), 
+n_o_fracture varchar(20),
+bone_pain varchar(20),
+short_stature varchar(20),  
+teeth_abnormality varchar(20), 
+duration varchar(20), 
+ht int(2), 
+wt int(2),
+BMI int(2)
+);
+
+addmission_no int(5) PRIMARY KEY,
+Asymptomatic 
+Bone_pain
+Backache
+Bony_Swelling
+Cripple
+Fracture
+Anorexia
+Constipation
+Loss_of_teeth
+Cataract
+Renal_Colic
+Round_face
+Short_stature
+Café_au_lait_macule
+Blue_sclera
+Dentinogenesis_imperfecta
+Acoustic_damage
+UL
+LL
+spine
+Hyper_extensibility
+Tufting_of_phalanges
+Short_4_th_metacarpal
+Tarsal
+Upper_Segment
+Arched_palate
+Waddling_gait
+Exostosis
+Hypoplasia_of_mandible
+Monostotic
+Polyostotic_lesion
+Hyperprolactinaemia
+Weakness_Fatiguability
+Joint_pain
+Visual_impairment
+Precocious_puberty
+Hypophosphatemic_rickets
+Facial_asymmetry
+Any_other
+
+
+create table OSD( addmission_no int(5) PRIMARY KEY, Asymptomatic varchar(50), Bone_pain varchar(50), Backache varchar(50), Bony_Swelling varchar(50), Cripple varchar(50), Fracture varchar(50), Anorexia varchar(50), Constipation varchar(50), Loss_of_teeth varchar(50), Cataract varchar(50), Renal_Colic varchar(50), Round_face varchar(50), Short_stature varchar(50), Café_au_lait_macule varchar(50), Blue_sclera varchar(50), Dentinogenesis_imperfecta varchar(50), Acoustic_damage varchar(50), UL varchar(50), LL varchar(50), spine varchar(50), Hyper_extensibility varchar(50), Tufting_of_phalanges varchar(50), Short_4_th_metacarpal varchar(50), Tarsal varchar(50), Upper_Segment varchar(50), Arched_palate varchar(50), Waddling_gait varchar(50), Exostosis varchar(50), Hypoplasia_of_mandible varchar(50), Monostotic varchar(50), Polyostotic_lesion varchar(50), Hyperprolactinaemia varchar(50), Weakness_Fatiguability varchar(50), Joint_pain varchar(50), Visua
+
+
+
+create table OS3M( addmission_no int(5) PRIMARY KEY, Asymptomatic varchar(50), Bone_pain varchar(50), Backache varchar(50), Bony_Swelling varchar(50), Cripple varchar(50), Fracture varchar(50), Anorexia varchar(50), Constipation varchar(50), Loss_of_teeth varchar(50), Cataract varchar(50), Renal_Colic varchar(50), Round_face varchar(50), Short_stature varchar(50), Cafe varchar(50), Blue_sclera varchar(50), Dentinogenesis_imperfecta varchar(50), Acoustic_damage varchar(50), UL varchar(50), LL varchar(50), spine varchar(50), Hyper_extensibility varchar(50), Tufting_of_phalanges varchar(50), Short_4_th_metacarpal varchar(50), Tarsal varchar(50), Upper_Segment varchar(50), Arched_palate varchar(50), Waddling_gait varchar(50), Exostosis varchar(50), Hypoplasia_of_mandible varchar(50), Monostotic varchar(50), Polyostotic_lesion varchar(50), Hyperprolactinaemia varchar(50), Weakness_Fatiguability varchar(50), Joint_pain varchar(50), 
+Visual_impairment varchar(50),
+Precocious_puberty varchar(50),
+Hypophosphatemic_rickets varchar(50),
+Facial_asymmetry varchar(50),
+Any_other varchar(50),
+FOREIGN KEY (addmission_no) REFERENCES MBD(addmission_no));
+
+
+S_Ca 
+S_Phosphorus
+S_albumin 
+S_alkaline
+OHD
+iPTH
+FGF
+Na
+K
+Cl
+SPO
+Ca
+creatinine
+Phosphorous
+EGFR
+GFR
+laps
+P1NP
+Osteocalcin
+Urine
+Serum
+SerumHCo
+anion
+ANCA
+DSDNA
+IgAtTGAb
+Breath_test
+CKBB
+Any_other
+
+
+create table BIOR( S_Ca varchar(50), S_Phosphorus varchar(50), S_albumin varchar(50), S_alkaline varchar(50), OHD varchar(50), iPTH varchar(50), FGF varchar(50), Na varchar(50), K varchar(50), Cl varchar(50), SPO varchar(50), Ca varchar(50), creatinine varchar(50), Phosphorous varchar(50), EGFR varchar(50), GFR varchar(50), laps varchar(50), P1NP varchar(50), Osteocalcin varchar(50), Urine varchar(50), Serum varchar(50), SerumHCo varchar(50), anion varchar(50), ANCA varchar(50), DSDNA varchar(50), IgAtTGAb varchar(50), Breath_test varchar(50), CKBB varchar(50), Any_other varchar(50) )
