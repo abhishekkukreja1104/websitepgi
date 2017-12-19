@@ -2,7 +2,24 @@
 	include_once 'dbh.php';
 
 	$admission_no = $_POST['addpatient'];
-	$S_Ca = $_POST['S_Ca_D']; 
+	if(isset($_POST['status'])){
+		$sql = "delete from BIOR where admission_no=".$admission_no;
+		mysqli_query($conn, $sql);
+
+		$sql = "delete from BIO3M where admission_no=".$admission_no;
+		mysqli_query($conn, $sql);
+		$sql = "delete from BIO6M where admission_no=".$admission_no;
+		mysqli_query($conn, $sql);
+		$sql = "delete from BIO1Y where admission_no=".$admission_no;
+		mysqli_query($conn, $sql);
+		$sql = "delete from BIO2Y where admission_no=".$admission_no;
+		mysqli_query($conn, $sql);
+		$sql = "delete from BIO5Y where admission_no=".$admission_no;
+		mysqli_query($conn, $sql);
+
+	}
+
+	$S_Ca = $_POST['S_Ca_D'];
 	$S_Phosphorus = $_POST['S_Phosphorus_D'];
 	$S_albumin = $_POST['S_albumin_D'];
 	$S_alkaline = $_POST['S_alkaline_D'];
@@ -33,7 +50,7 @@
 	$Any_other = $_POST['Any_other_D'];
 
 
-	$sql = "insert into BIOR (admission_no,				
+	$sql = "insert into BIOR (admission_no,
 			S_Ca,
 			S_Phosphorus,
 			S_albumin,
@@ -96,7 +113,7 @@
 
 
 	$admission_no = $_POST['addpatient'];
-	$S_Ca = $_POST['S_Ca_3']; 
+	$S_Ca = $_POST['S_Ca_3'];
 	$S_Phosphorus = $_POST['S_Phosphorus_3'];
 	$S_albumin = $_POST['S_albumin_3'];
 	$S_alkaline = $_POST['S_alkaline_3'];
@@ -127,7 +144,7 @@
 	$Any_other = $_POST['Any_other_3'];
 
 
-	$sql = "insert into BIO3M (admission_no,				
+	$sql = "insert into BIO3M (admission_no,
 			S_Ca,
 			S_Phosphorus,
 			S_albumin,
@@ -191,7 +208,7 @@
 
 
 	$admission_no = $_POST['addpatient'];
-	$S_Ca = $_POST['S_Ca_6']; 
+	$S_Ca = $_POST['S_Ca_6'];
 	$S_Phosphorus = $_POST['S_Phosphorus_6'];
 	$S_albumin = $_POST['S_albumin_6'];
 	$S_alkaline = $_POST['S_alkaline_6'];
@@ -222,7 +239,7 @@
 	$Any_other = $_POST['Any_other_6'];
 
 
-	$sql = "insert into BIO6M (admission_no,				
+	$sql = "insert into BIO6M (admission_no,
 			S_Ca,
 			S_Phosphorus,
 			S_albumin,
@@ -286,7 +303,7 @@
 
 
 	$admission_no = $_POST['addpatient'];
-	$S_Ca = $_POST['S_Ca_1']; 
+	$S_Ca = $_POST['S_Ca_1'];
 	$S_Phosphorus = $_POST['S_Phosphorus_1'];
 	$S_albumin = $_POST['S_albumin_1'];
 	$S_alkaline = $_POST['S_alkaline_1'];
@@ -317,7 +334,7 @@
 	$Any_other = $_POST['Any_other_1'];
 
 
-	$sql = "insert into BIO1Y (admission_no,				
+	$sql = "insert into BIO1Y (admission_no,
 			S_Ca,
 			S_Phosphorus,
 			S_albumin,
@@ -381,7 +398,7 @@
 
 
 	$admission_no = $_POST['addpatient'];
-	$S_Ca = $_POST['S_Ca_2']; 
+	$S_Ca = $_POST['S_Ca_2'];
 	$S_Phosphorus = $_POST['S_Phosphorus_2'];
 	$S_albumin = $_POST['S_albumin_2'];
 	$S_alkaline = $_POST['S_alkaline_2'];
@@ -412,7 +429,7 @@
 	$Any_other = $_POST['Any_other_2'];
 
 
-	$sql = "insert into BIO2Y (admission_no,				
+	$sql = "insert into BIO2Y (admission_no,
 			S_Ca,
 			S_Phosphorus,
 			S_albumin,
@@ -476,7 +493,7 @@
 
 
 	$admission_no = $_POST['addpatient'];
-	$S_Ca = $_POST['S_Ca_5']; 
+	$S_Ca = $_POST['S_Ca_5'];
 	$S_Phosphorus = $_POST['S_Phosphorus_5'];
 	$S_albumin = $_POST['S_albumin_5'];
 	$S_alkaline = $_POST['S_alkaline_5'];
@@ -507,7 +524,7 @@
 	$Any_other = $_POST['Any_other_5'];
 
 
-	$sql = "insert into BIO5Y (admission_no,				
+	$sql = "insert into BIO5Y (admission_no,
 			S_Ca,
 			S_Phosphorus,
 			S_albumin,
@@ -568,5 +585,5 @@
 
 	mysqli_query($conn,$sql);
 
-	header("Location: ../test.php");	
+	header("Location: ../radiology.php?addpatient=".$admission_no);
 ?>

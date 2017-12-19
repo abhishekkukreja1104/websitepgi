@@ -1,6 +1,25 @@
 <?php
 	include_once 'dbh.php';
+
+
 	$admission_no = $_POST['addpatient'];
+		if(isset($_POST['status'])){
+			$sql = "delete from OSD where addmission_no=".$admission_no;
+			mysqli_query($conn, $sql);
+
+			$sql = "delete from OS3M where addmission_no=".$admission_no;
+			mysqli_query($conn, $sql);
+			$sql = "delete from OS6M where addmission_no=".$admission_no;
+			mysqli_query($conn, $sql);
+			$sql = "delete from OS1Y where addmission_no=".$admission_no;
+			mysqli_query($conn, $sql);
+			$sql = "delete from OS2Y where addmission_no=".$admission_no;
+			mysqli_query($conn, $sql);
+			$sql = "delete from OS3Y where addmission_no=".$admission_no;
+			mysqli_query($conn, $sql);
+
+		}
+
 
 	$Asymptomatic = $_POST['Asymptomatic_D'];
 	$Bone_pain= $_POST['Bone_pain_D'];
@@ -125,7 +144,7 @@
 
 	mysqli_query($conn,$sql);
 	$result = mysqli_query($conn, $sql);
-if ( false===$result ) {
+if ( false==$result ) {
   printf("error: %s\n", mysqli_error($conn));
 }
 else {
@@ -780,5 +799,12 @@ else {
 }
 
 
-	header("Location: ../biochemistry.php?addpatient=".$admission_no);
-?>
+	if(isset($_POST['status'])){
+		header("Location: ../biochemistry.php?status=edit&addpatient=".$admission_no);
+
+	}else{
+		header("Location: ../biochemistry.php?addpatient=".$admission_no);
+
+	}
+
+	?>

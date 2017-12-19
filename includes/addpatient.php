@@ -14,11 +14,9 @@
 	$DOD = $_POST['DOD'];
 	$Telephone = $_POST['Telephone'];
 	$Mobile = $_POST['Mobile'];
-	$E_mail = "abc@gmail.com";
 	$Self = $_POST['Self'];
 	$Parents = $_POST['Parents'];
 	$Grand_Parents = $_POST['Grand_Parents'];
-	$Index_no = $_POST['Admission_No'];
 	$Address = $_POST['message'];
 	$Referring_physicians = $_POST['Referring_physicians'];
 	$Presenting_C = $_POST['Presenting_C'];
@@ -28,6 +26,8 @@
 	$Short_Stature = $_POST['Short_Stature'];
 	$Teeth_abnormality = $_POST['Teeth_abnormality'];
 	$Duration_of_symptoms = $_POST['Duration_of_symptoms'];
+
+	$E_mail = "abc@gmail.com";
 	$Ht = 120;
 	$Wt = 5;
 	$BMI = 7;
@@ -46,9 +46,15 @@
 		$Mobile = 0;
 	if($Index_no == NULL)
 		$Index_no = 0;
-
+	if($Self == NULL)
+		$Self = 0;
+	if($Parents == NULL)
+		$Parents = 0;
+	if($Grand_Parents == NULL)
+		$Grand_Parents = 0;
 
 	if(isset($_POST['status'])){
+		$index_no = $_GET['index_no']
 		$sql = "UPDATE MBD set
 						name='$Name',
 						 age=$Age,
@@ -63,9 +69,9 @@
 						 telephone=$Telephone,
 						 mobile=$Mobile,
 						 email='$E_mail',
-						 self='$Self',
-						 parents='$Parents',
-						 grandparents='$Grand_Parents',
+						 self=$Self,
+						 parents=$Parents,
+						 grandparents=$Grand_Parents,
 						 r_physicians='$Referring_physicians',
 						 presenting='$Presenting_C',
 						 deformity='$Deformity',
@@ -77,18 +83,17 @@
 						 ht=$Ht,
 						 wt=$Wt,
 						 BMI=$BMI
-						 where addmission_no = $Admission_No;";
+						 where index_no = $index_no;";
 
 						 	mysqli_query($conn,$sql);
 						 	header("Location: ../form.php?status=edit&addpatient=".$Admission_No);
 
 	}else{
 		$sql = "insert into MBD
-		(name, age, sex, index_no, CR_no, addmission_no, EC_no, DOA, DOS, DOD, address, telephone, mobile, email, self, parents, grandparents, r_physicians, presenting, deformity, n_o_fracture, bone_pain, short_stature, teeth_abnormality, duration, ht, wt, BMI) values
+		(name, age, sex, CR_no, admission_no, EC_no, DOA, DOS, DOD, address, telephone, mobile, email, self, parents, grandparents, r_physicians, presenting, deformity, n_o_fracture, bone_pain, short_stature, teeth_abnormality, duration, ht, wt, BMI) values
 		('$Name',
 		$Age,
 		'$Sex',
-		$Index_no,
 		$CR_No,
 		$Admission_No,
 		$EC_No,
@@ -99,9 +104,9 @@
 		$Telephone,
 		$Mobile,
 		'$E_mail',
-		'$Self',
-		'$Parents',
-		'$Grand_Parents',
+		$Self,
+		$Parents,
+		$Grand_Parents,
 		'$Referring_physicians',
 		'$Presenting_C',
 		'$Deformity',
@@ -119,7 +124,7 @@
 			header("Location: ../form.php?addpatient=".$Admission_No);
 	}
 	/*
-	$sql = "insert into MBD (name, age, sex, addmission_no) values ('$Name',$Age,'$Sex',$Admission_No);";
+	$sql = "insert into MBD (name, age, sex, admission_no) values ('$Name',$Age,'$Sex',$Admission_No);";
 	*/
 	echo $sql;
 

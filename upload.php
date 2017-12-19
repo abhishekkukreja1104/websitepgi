@@ -1,26 +1,38 @@
 <?php
+include_once 'includes/dbh.php';
 $action = $_SERVER['PHP_SELF'];
 if(isset($_POST['submit'])){
 $name = $_FILES['file']['name'];
 $tmp_name = $_FILES['file']['tmp_name'];
-$location = 'uploads';    
-$title = $_POST['title']; 
+$location = 'uploads';
+$title = $_POST['title'];
 $status = '' ;
 
 if(isset($name)&&!empty($name)){
   $type = mime_content_type($tmp_name);
-  if($type == 'application/pdf' || $type == 'application/msword' || $type == 'application/vnd.ms-excel' || $type == 'text/plain' ){
-    if(move_uploaded_file($tmp_name, "files/$title")){
-        $status = 'Successfully the (<strong>'.$name.'</strong>) file uploaded!';
-    }else{
-        $status = 'There was an error uploading the file.';
+  $sql="select filetitle from STF where filetitle='$title'";
+  $result = mysqli_query($conn, $sql);
+  if($result->num_rows){
+    $status="Title name already exists";
+  }
+  else{
+    if($type == 'application/pdf' || $type == 'application/msword' || $type == 'application/vnd.ms-excel' || $type == 'text/plain' ){
+      if(move_uploaded_file($tmp_name, "files/$title")){
+            $sql = "insert into STF values('$name','files/$title','$title');";
+            mysqli_query($conn, $sql);
+            $status = 'Successfully the (<strong>'.$name.'</strong>) file uploaded!';
+      }else{
+          $status = 'There was an error uploading the file.';
+      }
     }
-  }else{
-    $status = 'File format not supported';
-  }  
+    else{
+      $status = 'File format not supported';
+    }
+  }
 }else{
       $status = 'Please choose a file';
   }
+
 }
 ?>
 
@@ -37,7 +49,7 @@ if(isset($name)&&!empty($name)){
   }
   li {
       display: inline;
-      list-style: none; 
+      list-style: none;
   }
   a:link,a:visited
   {
@@ -66,7 +78,7 @@ if(isset($name)&&!empty($name)){
   <ul>
     <li><a href="test.php">Add Patient</a></li>
     <li><a href="displaypatient.php">View Patient</a></li>
-    <li><a href="manage documents.php">Manage Documents</a></li>
+    <li><a href="documents.php">Manage Documents</a></li>
   </ul>
   <form action="<?php echo $action; ?>" method="POST" enctype="multipart/form-data">
     <div class="box" id="heading">
@@ -88,13 +100,13 @@ if(isset($name)&&!empty($name)){
       <th></th>
       <th></th>
       <td><strong>Title: </strong></td>
-      <td><input type="text" name="title" required></td>
+      <td><input type="text" name="title" pattern = "[A-Za-z0-9]{1, }" title="avoid spaces in title" required></td>
     </tr>
     <tr>
       <th></th>
       <th></th>
       <th></th>
-      <td><strong>File name:</strong></td>
+      <td><strong>File:</strong></td>
       <td><input type="file" name="file" /></td>
     </tr>
     <tr>
@@ -107,13 +119,13 @@ if(isset($name)&&!empty($name)){
           echo $status;
         }
         echo '</th>';
-      ?>  
+      ?>
     </tr>
     </table>
     <div class="box" id="heading">
       <input type="submit" name="submit" value="Upload and continue"/>
-    </div> 
+    </div>
     </tr>
-  </form>  
+  </form>
 </body>﻿
 </html>
