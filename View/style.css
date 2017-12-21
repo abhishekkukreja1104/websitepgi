@@ -1,0 +1,95 @@
+body{
+	background-color: #96B8DA;
+}
+input[type = "text"]{
+	display: inline-block;
+	width: 400px;
+}
+input[type = "number"]{
+	display: inline-block;
+	width: 400px;
+}
+#nav {
+    background-color: #518B47;
+    padding: 0px;
+}
+#heading{
+    background-color: #518B47;
+    padding: 10px;
+}
+#edit_link{
+	width: 10px;
+	height: 10px;
+}
+#top{
+    background-color: #ffffff;
+    width: 1180px;
+    padding: 10px;
+    margin:0 auto;
+}
+#patient{
+
+    background-color: #518B47;
+    width: 1180px;
+    padding: 10px;
+    margin:0 auto;
+}
+#p{
+	width: 1200px;
+	background-color: white;
+}
+th{
+	text-align: left;
+}
+td{
+	padding-left: 200px;
+}
+h1{
+	color: white;
+}
+form{
+	margin: 0 auto;
+	width: 1200px;
+	border: 1;
+	background-color: #ffffff;
+	align-items: center;
+}
+#head {
+    background-color: #518B47;
+    padding: 10px;
+}
+
+caption{
+
+	font-family: Arial;
+	font-size: 20px;
+	caption-side: top;
+}
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 10%;
+    align-self: center;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #3a6070;
+    color: white;
+}
+

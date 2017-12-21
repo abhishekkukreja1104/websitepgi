@@ -1,0 +1,35 @@
+body{
+	background-color: #96B8DA;
+}
+#top{
+    background-color: #ffffff;
+    width: 1180px;
+    padding: 10px;
+    margin:0 auto;
+}
+input[type = "text"]{
+	display: inline-block;
+	width: 110px;
+}
+#heading{
+    background-color: #518B47;
+    padding: 10px;
+    color: #ffffff;
+}
+#heading_2{
+    background-color: #ffffff;
+    padding: 20px;
+    padding-left: 30px;
+}
+form{
+	width: 1200px;
+	margin: 0 auto;
+	align-items: center;
+}
+th{
+	text-align: left;
+	width: 320px;
+}
+#Examination{
+	margin-left: 10px;
+}
