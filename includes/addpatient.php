@@ -4,7 +4,7 @@
 
 
 	$Name = $_POST['First_Name'];
-	$Age = $_POST['age'];
+	$DOB = $_POST['DOB'];
 	$Sex = $_POST['gender'];
 	$CR_No = $_POST['CR_No'];
 	$Admission_No = $_POST['Admission_No'];
@@ -26,14 +26,12 @@
 	$Short_Stature = $_POST['Short_Stature'];
 	$Teeth_abnormality = $_POST['Teeth_abnormality'];
 	$Duration_of_symptoms = $_POST['Duration_of_symptoms'];
+	$family_history = $_POST['family_history'];
 
-	$E_mail = "abc@gmail.com";
-	$Ht = 120;
-	$Wt = 5;
-	$BMI = 7;
-	$sql1 = "insert into entervalue values($Index_no, '');";
-	if($Age == NULL)
-		$Age = 0;
+	$Email = $_POST['Email'];
+	$Ht = $_POST['Ht'];
+	$Wt = $_POST['Wt'];
+	$BMI = $_POST['BMI'];
 	if($CR_No == NULL)
 		$CR_No = 0;
 	if($Admission_No == NULL)
@@ -44,22 +42,27 @@
 		$Telephone = 0;
 	if($Mobile == NULL)
 		$Mobile = 0;
-	if($Index_no == NULL)
-		$Index_no = 0;
 	if($Self == NULL)
 		$Self = 0;
 	if($Parents == NULL)
 		$Parents = 0;
 	if($Grand_Parents == NULL)
 		$Grand_Parents = 0;
+	if($Ht == NULL)
+		$Ht = 0;
+	if($Wt == NULL)
+		$Wt = 0;
+	if($BMI == NULL)
+		$BMI = 0;
 
-	if(isset($_POST['status'])){
-		$index_no = $_GET['index_no']
+
+	if(isset($_POST['index_no'])){
+		$index_no = $_POST['index_no'];
 		$sql = "UPDATE MBD set
 						name='$Name',
-						 age=$Age,
+						 DOB='$DOB',
 						 sex='$Sex',
-						 index_no=$Index_no,
+						 admission_no=$Admission_No,
 						 CR_no=$CR_No,
 						 EC_no=$EC_No,
 						 DOA='$DOA',
@@ -68,7 +71,7 @@
 						 address='$Address',
 						 telephone=$Telephone,
 						 mobile=$Mobile,
-						 email='$E_mail',
+						 email='$Email',
 						 self=$Self,
 						 parents=$Parents,
 						 grandparents=$Grand_Parents,
@@ -82,17 +85,18 @@
 						 duration='$Duration_of_symptoms',
 						 ht=$Ht,
 						 wt=$Wt,
-						 BMI=$BMI
+						 BMI=$BMI,
+						 family_history='$family_history'
 						 where index_no = $index_no;";
 
 						 	mysqli_query($conn,$sql);
-						 	header("Location: ../form.php?status=edit&addpatient=".$Admission_No);
+							header("Location: ../Layoutothersymptoms.php?status=edit&addpatient=".$index_no);
 
 	}else{
 		$sql = "insert into MBD
-		(name, age, sex, CR_no, admission_no, EC_no, DOA, DOS, DOD, address, telephone, mobile, email, self, parents, grandparents, r_physicians, presenting, deformity, n_o_fracture, bone_pain, short_stature, teeth_abnormality, duration, ht, wt, BMI) values
+		(name, DOB, sex, CR_no, admission_no, EC_no, DOA, DOS, DOD, address, telephone, mobile, email, self, parents, grandparents, r_physicians, presenting, deformity, n_o_fracture, bone_pain, short_stature, teeth_abnormality, duration, ht, wt, BMI,family_history) values
 		('$Name',
-		$Age,
+		'$DOB',
 		'$Sex',
 		$CR_No,
 		$Admission_No,
@@ -103,7 +107,7 @@
 		'$Address',
 		$Telephone,
 		$Mobile,
-		'$E_mail',
+		'$Email',
 		$Self,
 		$Parents,
 		$Grand_Parents,
@@ -117,11 +121,17 @@
 		'$Duration_of_symptoms',
 		$Ht,
 		$Wt,
-		$BMI);";
+		$BMI,
+		'$family_history');";
 
 
 			mysqli_query($conn,$sql);
-			header("Location: ../form.php?addpatient=".$Admission_No);
+			echo $sql;
+			$sql = "select max(index_no) from MBD";
+			$result = mysqli_query($conn, $sql);
+			$row = mysqli_fetch_array($result);
+
+			header("Location: ../Layoutothersymptoms.php?addpatient=".$row['max(index_no)']);
 	}
 	/*
 	$sql = "insert into MBD (name, age, sex, admission_no) values ('$Name',$Age,'$Sex',$Admission_No);";

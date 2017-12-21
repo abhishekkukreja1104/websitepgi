@@ -1,20 +1,20 @@
 <?php
 	include_once 'dbh.php';
 
-	$admission_no = $_POST['addpatient'];
+	$index_no = $_POST['addpatient'];
 	if(isset($_POST['status'])){
-		$sql = "delete from BIOR where admission_no=".$admission_no;
+		$sql = "delete from BIOR where index_no=".$index_no;
 		mysqli_query($conn, $sql);
 
-		$sql = "delete from BIO3M where admission_no=".$admission_no;
+		$sql = "delete from BIO3M where index_no=".$index_no;
 		mysqli_query($conn, $sql);
-		$sql = "delete from BIO6M where admission_no=".$admission_no;
+		$sql = "delete from BIO6M where index_no=".$index_no;
 		mysqli_query($conn, $sql);
-		$sql = "delete from BIO1Y where admission_no=".$admission_no;
+		$sql = "delete from BIO1Y where index_no=".$index_no;
 		mysqli_query($conn, $sql);
-		$sql = "delete from BIO2Y where admission_no=".$admission_no;
+		$sql = "delete from BIO2Y where index_no=".$index_no;
 		mysqli_query($conn, $sql);
-		$sql = "delete from BIO5Y where admission_no=".$admission_no;
+		$sql = "delete from BIO5Y where index_no=".$index_no;
 		mysqli_query($conn, $sql);
 
 	}
@@ -32,7 +32,7 @@
 	$SPO = $_POST['SPO_D'];
 	$Ca = $_POST['Ca_D'];
 	$creatinine = $_POST['creatinine_D'];
-	//$Phosphorous = $_POST['Phosphorous_D'];
+	$Phosphorous = $_POST['Phosphorous_D'];
 	$EGFR = $_POST['EGFR_D'];
 	$GFR = $_POST['GFR_D'];
 	$laps = $_POST['laps_D'];
@@ -49,8 +49,65 @@
 	$CKBB = $_POST['CKBB_D'];
 	$Any_other = $_POST['Any_other_D'];
 
+	if($S_Ca==NULL)
+			$S_Ca = 0;
+	if($S_Phosphorus==NULL)
+			$S_Phosphorus=0;
+  if($S_albumin==NULL)
+			$S_albumin=0;
+	if($S_alkaline==NULL)
+			$S_alkaline=0;
+	if($OHD==NULL)
+			$OHD=0;
+	if($iPTH==NULL)
+			$iPTH=0;
+	if($FGF==NULL)
+			$FGF=0;
+	if($Na==NULL)
+			$Na=0;
+	if($K==NULL)
+			$K=0;
+	if($Cl==NULL)
+			$Cl=0;
+	if($SPO==NULL)
+			$SPO=0;
+	if($Ca==NULL)
+			$Ca=0;
+	if($creatinine==NULL)
+			$creatinine=0;
+	if($Phosphorous==NULL)
 
-	$sql = "insert into BIOR (admission_no,
+			$Phosphorous=0;
+	if($EGFR==NULL)
+			$EGFR=0;
+	if($GFR==NULL)
+			$GFR=0;
+	if($laps==NULL)
+			$laps=0;
+	if($P1NP==NULL)
+			$P1NP=0;
+	if($Osteocalcin==NULL)
+			$Osteocalcin=0;
+	if($Urine==NULL)
+			$Urine=0;
+	if($Serum==NULL)
+			$Serum=0;
+	if($SerumHCo==NULL)
+			$SerumHCo=0;
+	if($anion==NULL)
+			$anion=0;
+	if($ANCA==NULL)
+			$ANCA=0;
+	if($DSDNA==NULL)
+			$DSDNA=0;
+	if($IgAtTGAb==NULL)
+			$IgAtTGAb=0;
+	if($CKBB==NULL)
+			$CKBB=0;
+
+
+	$sql = "insert into BIOR (index_no,
+			Phosphorous,
 			S_Ca,
 			S_Phosphorus,
 			S_albumin,
@@ -78,41 +135,43 @@
 			IgAtTGAb,
 			Breath_test,
 			CKBB,
-			Any_other) values($admission_no,
-			'$S_Ca',
-			'$S_Phosphorus',
-			'$S_albumin',
-			'$S_alkaline',
-			'$OHD',
-			'$iPTH',
-			'$FGF',
-			'$Na',
-			'$K',
-			'$Cl',
-			'$SPO',
-			'$Ca',
-			'$creatinine',
-			'$EGFR',
-			'$GFR',
-			'$laps',
-			'$P1NP',
-			'$Osteocalcin',
-			'$Urine',
-			'$Serum',
-			'$SerumHCo',
-			'$anion',
-			'$ANCA',
-			'$DSDNA',
-			'$IgAtTGAb',
-			'$Breath_test',
-			'$CKBB',
+			Any_other) values($index_no,
+			$Phosphorous,
+			$S_Ca,
+			$S_Phosphorus,
+			$S_albumin,
+			$S_alkaline,
+			$OHD,
+			$iPTH,
+			$FGF,
+			$Na,
+			$K,
+			$Cl,
+			$SPO,
+			$Ca,
+			$creatinine,
+			$EGFR,
+			$GFR,
+			$laps,
+			$P1NP,
+			$Osteocalcin,
+			$Urine,
+			$Serum,
+			$SerumHCo,
+			$anion,
+			$ANCA,
+			$DSDNA,
+			$IgAtTGAb,
+		  '$Breath_test',
+			$CKBB,
 			'$Any_other'
 			);";
 
 	mysqli_query($conn,$sql);
+	echo $sql;
 
 
-	$admission_no = $_POST['addpatient'];
+	$index_no = $_POST['addpatient'];
 	$S_Ca = $_POST['S_Ca_3'];
 	$S_Phosphorus = $_POST['S_Phosphorus_3'];
 	$S_albumin = $_POST['S_albumin_3'];
@@ -126,7 +185,7 @@
 	$SPO = $_POST['SPO_3'];
 	$Ca = $_POST['Ca_3'];
 	$creatinine = $_POST['creatinine_3'];
-	//$Phosphorous = $_POST['Phosphorous_D'];
+	$Phosphorous = $_POST['Phosphorous_3'];
 	$EGFR = $_POST['EGFR_3'];
 	$GFR = $_POST['GFR_3'];
 	$laps = $_POST['laps_3'];
@@ -143,8 +202,65 @@
 	$CKBB = $_POST['CKBB_3'];
 	$Any_other = $_POST['Any_other_3'];
 
+	if($S_Ca==NULL)
+			$S_Ca = 0;
+	if($S_Phosphorus==NULL)
+			$S_Phosphorus=0;
+	if($S_albumin==NULL)
+			$S_albumin=0;
+	if($S_alkaline==NULL)
+			$S_alkaline=0;
+	if($OHD==NULL)
+			$OHD=0;
+	if($iPTH==NULL)
+			$iPTH=0;
+	if($FGF==NULL)
+			$FGF=0;
+	if($Na==NULL)
+			$Na=0;
+	if($K==NULL)
+			$K=0;
+	if($Cl==NULL)
+			$Cl=0;
+	if($SPO==NULL)
+			$SPO=0;
+	if($Ca==NULL)
+			$Ca=0;
+	if($creatinine==NULL)
+			$creatinine=0;
+	if($Phosphorous==NULL)
 
-	$sql = "insert into BIO3M (admission_no,
+			$Phosphorous=0;
+	if($EGFR==NULL)
+			$EGFR=0;
+	if($GFR==NULL)
+			$GFR=0;
+	if($laps==NULL)
+			$laps=0;
+	if($P1NP==NULL)
+			$P1NP=0;
+	if($Osteocalcin==NULL)
+			$Osteocalcin=0;
+	if($Urine==NULL)
+			$Urine=0;
+	if($Serum==NULL)
+			$Serum=0;
+	if($SerumHCo==NULL)
+			$SerumHCo=0;
+	if($anion==NULL)
+			$anion=0;
+	if($ANCA==NULL)
+			$ANCA=0;
+	if($DSDNA==NULL)
+			$DSDNA=0;
+	if($IgAtTGAb==NULL)
+			$IgAtTGAb=0;
+	if($CKBB==NULL)
+			$CKBB=0;
+
+
+	$sql = "insert into BIO3 (index_no,
+			Phosphorous,
 			S_Ca,
 			S_Phosphorus,
 			S_albumin,
@@ -172,42 +288,42 @@
 			IgAtTGAb,
 			Breath_test,
 			CKBB,
-			Any_other) values($admission_no,
-			'$S_Ca',
-			'$S_Phosphorus',
-			'$S_albumin',
-			'$S_alkaline',
-			'$OHD',
-			'$iPTH',
-			'$FGF',
-			'$Na',
-			'$K',
-			'$Cl',
-			'$SPO',
-			'$Ca',
-			'$creatinine',
-			'$EGFR',
-			'$GFR',
-			'$laps',
-			'$P1NP',
-			'$Osteocalcin',
-			'$Urine',
-			'$Serum',
-			'$SerumHCo',
-			'$anion',
-			'$ANCA',
-			'$DSDNA',
-			'$IgAtTGAb',
+			Any_other) values($index_no,
+			$Phosphorous,
+			$S_Ca,
+			$S_Phosphorus,
+			$S_albumin,
+			$S_alkaline,
+			$OHD,
+			$iPTH,
+			$FGF,
+			$Na,
+			$K,
+			$Cl,
+			$SPO,
+			$Ca,
+			$creatinine,
+			$EGFR,
+			$GFR,
+			$laps,
+			$P1NP,
+			$Osteocalcin,
+			$Urine,
+			$Serum,
+			$SerumHCo,
+			$anion,
+			$ANCA,
+			$DSDNA,
+			$IgAtTGAb,
 			'$Breath_test',
-			'$CKBB',
+			$CKBB,
 			'$Any_other'
 			);";
 
 	mysqli_query($conn,$sql);
+	echo $sql;
 
-
-
-	$admission_no = $_POST['addpatient'];
+	$index_no = $_POST['addpatient'];
 	$S_Ca = $_POST['S_Ca_6'];
 	$S_Phosphorus = $_POST['S_Phosphorus_6'];
 	$S_albumin = $_POST['S_albumin_6'];
@@ -221,7 +337,7 @@
 	$SPO = $_POST['SPO_6'];
 	$Ca = $_POST['Ca_6'];
 	$creatinine = $_POST['creatinine_6'];
-	//$Phosphorous = $_POST['Phosphorous_D'];
+	$Phosphorous = $_POST['Phosphorous_6'];
 	$EGFR = $_POST['EGFR_6'];
 	$GFR = $_POST['GFR_6'];
 	$laps = $_POST['laps_6'];
@@ -239,7 +355,65 @@
 	$Any_other = $_POST['Any_other_6'];
 
 
-	$sql = "insert into BIO6M (admission_no,
+	if($S_Ca==NULL)
+			$S_Ca = 0;
+	if($S_Phosphorus==NULL)
+			$S_Phosphorus=0;
+  if($S_albumin==NULL)
+			$S_albumin=0;
+	if($S_alkaline==NULL)
+			$S_alkaline=0;
+	if($OHD==NULL)
+			$OHD=0;
+	if($iPTH==NULL)
+			$iPTH=0;
+	if($FGF==NULL)
+			$FGF=0;
+	if($Na==NULL)
+			$Na=0;
+	if($K==NULL)
+			$K=0;
+	if($Cl==NULL)
+			$Cl=0;
+	if($SPO==NULL)
+			$SPO=0;
+	if($Ca==NULL)
+			$Ca=0;
+	if($creatinine==NULL)
+			$creatinine=0;
+	if($Phosphorous==NULL)
+
+			$Phosphorous=0;
+	if($EGFR==NULL)
+			$EGFR=0;
+	if($GFR==NULL)
+			$GFR=0;
+	if($laps==NULL)
+			$laps=0;
+	if($P1NP==NULL)
+			$P1NP=0;
+	if($Osteocalcin==NULL)
+			$Osteocalcin=0;
+	if($Urine==NULL)
+			$Urine=0;
+	if($Serum==NULL)
+			$Serum=0;
+	if($SerumHCo==NULL)
+			$SerumHCo=0;
+	if($anion==NULL)
+			$anion=0;
+	if($ANCA==NULL)
+			$ANCA=0;
+	if($DSDNA==NULL)
+			$DSDNA=0;
+	if($IgAtTGAb==NULL)
+			$IgAtTGAb=0;
+	if($CKBB==NULL)
+			$CKBB=0;
+
+
+	$sql = "insert into BIO6 (index_no,
+			Phosphorous,
 			S_Ca,
 			S_Phosphorus,
 			S_albumin,
@@ -267,42 +441,42 @@
 			IgAtTGAb,
 			Breath_test,
 			CKBB,
-			Any_other) values($admission_no,
-			'$S_Ca',
-			'$S_Phosphorus',
-			'$S_albumin',
-			'$S_alkaline',
-			'$OHD',
-			'$iPTH',
-			'$FGF',
-			'$Na',
-			'$K',
-			'$Cl',
-			'$SPO',
-			'$Ca',
-			'$creatinine',
-			'$EGFR',
-			'$GFR',
-			'$laps',
-			'$P1NP',
-			'$Osteocalcin',
-			'$Urine',
-			'$Serum',
-			'$SerumHCo',
-			'$anion',
-			'$ANCA',
-			'$DSDNA',
-			'$IgAtTGAb',
-			'$Breath_test',
-			'$CKBB',
+			Any_other) values($index_no,
+			$Phosphorous,
+			$S_Ca,
+			$S_Phosphorus,
+			$S_albumin,
+			$S_alkaline,
+			$OHD,
+			$iPTH,
+			$FGF,
+			$Na,
+			$K,
+			$Cl,
+			$SPO,
+			$Ca,
+			$creatinine,
+			$EGFR,
+			$GFR,
+			$laps,
+			$P1NP,
+			$Osteocalcin,
+			$Urine,
+			$Serum,
+			$SerumHCo,
+			$anion,
+			$ANCA,
+			$DSDNA,
+			$IgAtTGAb,
+		  '$Breath_test',
+			$CKBB,
 			'$Any_other'
 			);";
 
 	mysqli_query($conn,$sql);
+	echo $sql;
 
-
-
-	$admission_no = $_POST['addpatient'];
+	$index_no = $_POST['addpatient'];
 	$S_Ca = $_POST['S_Ca_1'];
 	$S_Phosphorus = $_POST['S_Phosphorus_1'];
 	$S_albumin = $_POST['S_albumin_1'];
@@ -333,8 +507,65 @@
 	$CKBB = $_POST['CKBB_1'];
 	$Any_other = $_POST['Any_other_1'];
 
+	if($S_Ca==NULL)
+			$S_Ca = 0;
+	if($S_Phosphorus==NULL)
+			$S_Phosphorus=0;
+	if($S_albumin==NULL)
+			$S_albumin=0;
+	if($S_alkaline==NULL)
+			$S_alkaline=0;
+	if($OHD==NULL)
+			$OHD=0;
+	if($iPTH==NULL)
+			$iPTH=0;
+	if($FGF==NULL)
+			$FGF=0;
+	if($Na==NULL)
+			$Na=0;
+	if($K==NULL)
+			$K=0;
+	if($Cl==NULL)
+			$Cl=0;
+	if($SPO==NULL)
+			$SPO=0;
+	if($Ca==NULL)
+			$Ca=0;
+	if($creatinine==NULL)
+			$creatinine=0;
+	if($Phosphorous==NULL)
 
-	$sql = "insert into BIO1Y (admission_no,
+			$Phosphorous=0;
+	if($EGFR==NULL)
+			$EGFR=0;
+	if($GFR==NULL)
+			$GFR=0;
+	if($laps==NULL)
+			$laps=0;
+	if($P1NP==NULL)
+			$P1NP=0;
+	if($Osteocalcin==NULL)
+			$Osteocalcin=0;
+	if($Urine==NULL)
+			$Urine=0;
+	if($Serum==NULL)
+			$Serum=0;
+	if($SerumHCo==NULL)
+			$SerumHCo=0;
+	if($anion==NULL)
+			$anion=0;
+	if($ANCA==NULL)
+			$ANCA=0;
+	if($DSDNA==NULL)
+			$DSDNA=0;
+	if($IgAtTGAb==NULL)
+			$IgAtTGAb=0;
+	if($CKBB==NULL)
+			$CKBB=0;
+
+
+	$sql = "insert into BIO1 (index_no,
+			Phosphorous,
 			S_Ca,
 			S_Phosphorus,
 			S_albumin,
@@ -362,42 +593,43 @@
 			IgAtTGAb,
 			Breath_test,
 			CKBB,
-			Any_other) values($admission_no,
-			'$S_Ca',
-			'$S_Phosphorus',
-			'$S_albumin',
-			'$S_alkaline',
-			'$OHD',
-			'$iPTH',
-			'$FGF',
-			'$Na',
-			'$K',
-			'$Cl',
-			'$SPO',
-			'$Ca',
-			'$creatinine',
-			'$EGFR',
-			'$GFR',
-			'$laps',
-			'$P1NP',
-			'$Osteocalcin',
-			'$Urine',
-			'$Serum',
-			'$SerumHCo',
-			'$anion',
-			'$ANCA',
-			'$DSDNA',
-			'$IgAtTGAb',
+			Any_other) values($index_no,
+			$Phosphorous,
+			$S_Ca,
+			$S_Phosphorus,
+			$S_albumin,
+			$S_alkaline,
+			$OHD,
+			$iPTH,
+			$FGF,
+			$Na,
+			$K,
+			$Cl,
+			$SPO,
+			$Ca,
+			$creatinine,
+			$EGFR,
+			$GFR,
+			$laps,
+			$P1NP,
+			$Osteocalcin,
+			$Urine,
+			$Serum,
+			$SerumHCo,
+			$anion,
+			$ANCA,
+			$DSDNA,
+			$IgAtTGAb,
 			'$Breath_test',
-			'$CKBB',
+			$CKBB,
 			'$Any_other'
 			);";
 
 	mysqli_query($conn,$sql);
+	echo $sql;
 
 
-
-	$admission_no = $_POST['addpatient'];
+	$index_no = $_POST['addpatient'];
 	$S_Ca = $_POST['S_Ca_2'];
 	$S_Phosphorus = $_POST['S_Phosphorus_2'];
 	$S_albumin = $_POST['S_albumin_2'];
@@ -411,7 +643,7 @@
 	$SPO = $_POST['SPO_2'];
 	$Ca = $_POST['Ca_2'];
 	$creatinine = $_POST['creatinine_2'];
-	//$Phosphorous = $_POST['Phosphorous_D'];
+	$Phosphorous = $_POST['Phosphorous_2'];
 	$EGFR = $_POST['EGFR_2'];
 	$GFR = $_POST['GFR_2'];
 	$laps = $_POST['laps_2'];
@@ -428,8 +660,65 @@
 	$CKBB = $_POST['CKBB_2'];
 	$Any_other = $_POST['Any_other_2'];
 
+	if($S_Ca==NULL)
+			$S_Ca = 0;
+	if($S_Phosphorus==NULL)
+			$S_Phosphorus=0;
+	if($S_albumin==NULL)
+			$S_albumin=0;
+	if($S_alkaline==NULL)
+			$S_alkaline=0;
+	if($OHD==NULL)
+			$OHD=0;
+	if($iPTH==NULL)
+			$iPTH=0;
+	if($FGF==NULL)
+			$FGF=0;
+	if($Na==NULL)
+			$Na=0;
+	if($K==NULL)
+			$K=0;
+	if($Cl==NULL)
+			$Cl=0;
+	if($SPO==NULL)
+			$SPO=0;
+	if($Ca==NULL)
+			$Ca=0;
+	if($creatinine==NULL)
+			$creatinine=0;
+	if($Phosphorous==NULL)
 
-	$sql = "insert into BIO2Y (admission_no,
+			$Phosphorous=0;
+	if($EGFR==NULL)
+			$EGFR=0;
+	if($GFR==NULL)
+			$GFR=0;
+	if($laps==NULL)
+			$laps=0;
+	if($P1NP==NULL)
+			$P1NP=0;
+	if($Osteocalcin==NULL)
+			$Osteocalcin=0;
+	if($Urine==NULL)
+			$Urine=0;
+	if($Serum==NULL)
+			$Serum=0;
+	if($SerumHCo==NULL)
+			$SerumHCo=0;
+	if($anion==NULL)
+			$anion=0;
+	if($ANCA==NULL)
+			$ANCA=0;
+	if($DSDNA==NULL)
+			$DSDNA=0;
+	if($IgAtTGAb==NULL)
+			$IgAtTGAb=0;
+	if($CKBB==NULL)
+			$CKBB=0;
+
+
+	$sql = "insert into BIO2 (index_no,
+			Phosphorous,
 			S_Ca,
 			S_Phosphorus,
 			S_albumin,
@@ -457,42 +746,42 @@
 			IgAtTGAb,
 			Breath_test,
 			CKBB,
-			Any_other) values($admission_no,
-			'$S_Ca',
-			'$S_Phosphorus',
-			'$S_albumin',
-			'$S_alkaline',
-			'$OHD',
-			'$iPTH',
-			'$FGF',
-			'$Na',
-			'$K',
-			'$Cl',
-			'$SPO',
-			'$Ca',
-			'$creatinine',
-			'$EGFR',
-			'$GFR',
-			'$laps',
-			'$P1NP',
-			'$Osteocalcin',
-			'$Urine',
-			'$Serum',
-			'$SerumHCo',
-			'$anion',
-			'$ANCA',
-			'$DSDNA',
-			'$IgAtTGAb',
+			Any_other) values($index_no,
+			$Phosphorous,
+			$S_Ca,
+			$S_Phosphorus,
+			$S_albumin,
+			$S_alkaline,
+			$OHD,
+			$iPTH,
+			$FGF,
+			$Na,
+			$K,
+			$Cl,
+			$SPO,
+			$Ca,
+			$creatinine,
+			$EGFR,
+			$GFR,
+			$laps,
+			$P1NP,
+			$Osteocalcin,
+			$Urine,
+			$Serum,
+			$SerumHCo,
+			$anion,
+			$ANCA,
+			$DSDNA,
+			$IgAtTGAb,
 			'$Breath_test',
-			'$CKBB',
+			$CKBB,
 			'$Any_other'
 			);";
 
 	mysqli_query($conn,$sql);
+	echo $sql;
 
-
-
-	$admission_no = $_POST['addpatient'];
+	$index_no = $_POST['addpatient'];
 	$S_Ca = $_POST['S_Ca_5'];
 	$S_Phosphorus = $_POST['S_Phosphorus_5'];
 	$S_albumin = $_POST['S_albumin_5'];
@@ -506,7 +795,7 @@
 	$SPO = $_POST['SPO_5'];
 	$Ca = $_POST['Ca_5'];
 	$creatinine = $_POST['creatinine_5'];
-	//$Phosphorous = $_POST['Phosphorous_D'];
+	$Phosphorous = $_POST['Phosphorous_5'];
 	$EGFR = $_POST['EGFR_5'];
 	$GFR = $_POST['GFR_5'];
 	$laps = $_POST['laps_5'];
@@ -524,7 +813,65 @@
 	$Any_other = $_POST['Any_other_5'];
 
 
-	$sql = "insert into BIO5Y (admission_no,
+	if($S_Ca==NULL)
+			$S_Ca = 0;
+	if($S_Phosphorus==NULL)
+			$S_Phosphorus=0;
+  if($S_albumin==NULL)
+			$S_albumin=0;
+	if($S_alkaline==NULL)
+			$S_alkaline=0;
+	if($OHD==NULL)
+			$OHD=0;
+	if($iPTH==NULL)
+			$iPTH=0;
+	if($FGF==NULL)
+			$FGF=0;
+	if($Na==NULL)
+			$Na=0;
+	if($K==NULL)
+			$K=0;
+	if($Cl==NULL)
+			$Cl=0;
+	if($SPO==NULL)
+			$SPO=0;
+	if($Ca==NULL)
+			$Ca=0;
+	if($creatinine==NULL)
+			$creatinine=0;
+	if($Phosphorous==NULL)
+
+			$Phosphorous=0;
+	if($EGFR==NULL)
+			$EGFR=0;
+	if($GFR==NULL)
+			$GFR=0;
+	if($laps==NULL)
+			$laps=0;
+	if($P1NP==NULL)
+			$P1NP=0;
+	if($Osteocalcin==NULL)
+			$Osteocalcin=0;
+	if($Urine==NULL)
+			$Urine=0;
+	if($Serum==NULL)
+			$Serum=0;
+	if($SerumHCo==NULL)
+			$SerumHCo=0;
+	if($anion==NULL)
+			$anion=0;
+	if($ANCA==NULL)
+			$ANCA=0;
+	if($DSDNA==NULL)
+			$DSDNA=0;
+	if($IgAtTGAb==NULL)
+			$IgAtTGAb=0;
+	if($CKBB==NULL)
+			$CKBB=0;
+
+
+	$sql = "insert into BIO5 (index_no,
+			Phosphorous,
 			S_Ca,
 			S_Phosphorus,
 			S_albumin,
@@ -552,38 +899,46 @@
 			IgAtTGAb,
 			Breath_test,
 			CKBB,
-			Any_other) values($admission_no,
-			'$S_Ca',
-			'$S_Phosphorus',
-			'$S_albumin',
-			'$S_alkaline',
-			'$OHD',
-			'$iPTH',
-			'$FGF',
-			'$Na',
-			'$K',
-			'$Cl',
-			'$SPO',
-			'$Ca',
-			'$creatinine',
-			'$EGFR',
-			'$GFR',
-			'$laps',
-			'$P1NP',
-			'$Osteocalcin',
-			'$Urine',
-			'$Serum',
-			'$SerumHCo',
-			'$anion',
-			'$ANCA',
-			'$DSDNA',
-			'$IgAtTGAb',
-			'$Breath_test',
-			'$CKBB',
+			Any_other) values($index_no,
+			$Phosphorous,
+			$S_Ca,
+			$S_Phosphorus,
+			$S_albumin,
+			$S_alkaline,
+			$OHD,
+			$iPTH,
+			$FGF,
+			$Na,
+			$K,
+			$Cl,
+			$SPO,
+			$Ca,
+			$creatinine,
+			$EGFR,
+			$GFR,
+			$laps,
+			$P1NP,
+			$Osteocalcin,
+			$Urine,
+			$Serum,
+			$SerumHCo,
+			$anion,
+			$ANCA,
+			$DSDNA,
+			$IgAtTGAb,
+		  '$Breath_test',
+			$CKBB,
 			'$Any_other'
 			);";
 
 	mysqli_query($conn,$sql);
+	echo $sql;
 
-	header("Location: ../radiology.php?addpatient=".$admission_no);
+		if(isset($_POST['status'])){
+			header("Location: ../radiology.php?status=edit&addpatient=".$index_no);
+
+		}else{
+			header("Location: ../radiology.php?addpatient=".$index_no);
+
+		}
 ?>

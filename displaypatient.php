@@ -69,20 +69,20 @@
     </thead>
     <tbody>
         <?php
-        $sql = "select name, addmission_no, age, sex, address, mobile, parents from MBD where addmission_no <> -1";
+        $sql = "select name, index_no, DOB, sex, address, mobile, parents from MBD;";
 		$result=mysqli_query($conn,$sql);
 
         while( $row = mysqli_fetch_array($result)) : ?>
         <tr>
             <!--Each table column is echoed in to a td cell-->
-            <td><?php echo $row['addmission_no']; ?></td>
+            <td><?php echo $row['index_no']; ?></td>
             <td><?php echo $row['name']; ?></td>
-            <td><?php echo $row['age']; ?></td>
+            <td><?php echo $row['DOB']; ?></td>
             <td><?php echo $row['sex']; ?></td>
             <td><?php echo $row['address']; ?></td>
             <td><?php echo $row['mobile']; ?></td>
             <td><?php echo $row['parents']; ?></td>
-            <td><a id="edit_link" href=<?php echo "test.php?status=edit&addmission_no=".$row['addmission_no'];?>>edit</a></td>
+            <td><a id="edit_link" href=<?php echo "Layoutaddpatient.php?status=edit&index_no=".$row['index_no'];?>>edit</a></td>
         </tr>
         <?php endwhile ?>
     </tbody>
