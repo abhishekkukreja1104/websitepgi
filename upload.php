@@ -76,9 +76,10 @@ if(isset($name)&&!empty($name)){
     <img src="http://indianphptregistry.com/images/logo.png">
   </div>
   <ul>
-    <li><a href="test.php">Add Patient</a></li>
-    <li><a href="displaypatient.php">View Patient</a></li>
-    <li><a href="documents.php">Manage Documents</a></li>
+     <li><a href="Layoutaddpatient.php">Add Patient</a></li>
+     <li><a href="displaypatient.php">View Patient</a></li>
+     <li><a href="displaypatient.php">Search Patient</a></li>
+     <li><a href="documents">Manage Documents</a></li>
   </ul>
   <form action="<?php echo $action; ?>" method="POST" enctype="multipart/form-data">
     <div class="box" id="heading">
