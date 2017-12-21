@@ -223,10 +223,10 @@ if(isset($name)&&!empty($name)){
                                 <td></td>
                                 <td><strong>Histopathology</strong> no</td>
                                 <td>
-                                    <input type="number" name="histo_B" value=<?php echo ((isset($_GET['status'])) ? $rowB[ 'histo_B'] : ""); ?>>
+                                    <input type="number" name="histo_B" readonly value=<?php echo ((isset($_GET['status'])) ? $rowB[ 'histo_B'] : ""); ?>>
                                 </td>
                                 <td>
-                                    <input type="number" name="histo_1" value=<?php echo ((isset($_GET['status'])) ? $row1[ 'histo_B'] : ""); ?>>
+                                    <input type="number" name="histo_1" readonly value=<?php echo ((isset($_GET['status'])) ? $row1[ 'histo_B'] : ""); ?>>
                                 </td>
                                 <td></td>
                             </tr>
@@ -234,10 +234,10 @@ if(isset($name)&&!empty($name)){
                                 <td></td>
                                 <td>Site of bone biopsy</td>
                                 <td>
-                                    <input type="text" name="site_B" value= <?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'site_B'] : ""); ?>>
+                                    <input type="text" name="site_B" readonly value= <?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'site_B'] : ""); ?>>
                                 </td>
                                 <td>
-                                    <input type="text" name="site_1" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'site_B'] : ""); ?>>
+                                    <input type="text" name="site_1" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'site_B'] : ""); ?>>
                                 </td>
                                 <td></td>
                             </tr>
@@ -245,10 +245,10 @@ if(isset($name)&&!empty($name)){
                                 <td></td>
                                 <td>Impression</td>
                                 <td>
-                                    <input type="text" name="ih_B" value=<?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'ih_B'] : ""); ?>>
+                                    <input type="text" name="ih_B" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'ih_B'] : ""); ?>>
                                 </td>
                                 <td>
-                                    <input type="text" name="ih_1" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'ih_B'] : ""); ?>>
+                                    <input type="text" name="ih_1" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'ih_B'] : ""); ?>>
                                 </td>
                                 <td></td>
                             </tr>
@@ -256,10 +256,10 @@ if(isset($name)&&!empty($name)){
                                 <td></td>
                                 <th>BHMP</th>
                                 <td>
-                                    <input type="text" name="bhmp_B" value=<?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'bhmp_B'] : ""); ?>>
+                                    <input type="text" name="bhmp_B" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'bhmp_B'] : ""); ?>>
                                 </td>
                                 <td>
-                                    <input type="text" name="bhmp_1" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'bhmp_B'] : ""); ?>>
+                                    <input type="text" name="bhmp_1" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'bhmp_B'] : ""); ?>>
                                 </td>
                                 <td></td>
                             </tr>
@@ -267,10 +267,10 @@ if(isset($name)&&!empty($name)){
                                 <td></td>
                                 <td>Impression</td>
                                 <td>
-                                    <input type="text" name="ib_B" value=<?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'ib_B'] : ""); ?>>
+                                    <input type="text" name="ib_B" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'ib_B'] : ""); ?>>
                                 </td>
                                 <td>
-                                    <input type="text" name="ib_1" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'ib_B'] : ""); ?>>
+                                    <input type="text" name="ib_1" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'ib_B'] : ""); ?>>
                                 </td>
                                 <td></td>
                             </tr>

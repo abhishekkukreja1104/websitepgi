@@ -164,22 +164,14 @@
                             <th></th>
                             <td>Known/Novel:</td>
                             <th></th>
-                            <td><select name="known_novel">
-                            	<option value="unknown">-Select-</option>
-                            	<option value="known">Known</option>
-                            	<option value="novel">Novel</option>
-                            </select></td>
+                            <td><input type="text" name="known_novel"></td>
                             <th></th>
                         </tr>
                         <tr>
                             <th></th>
                             <td>Autosomal Dominant/Autosomal Recessive:</td>
                             <th></th>
-                            <td><select name="adorar">
-                            	<option value="unknown">-Select-</option>
-                            	<option value="dominant">Autosomal Dominant</option>
-                            	<option value="recessive">Autosomal Recessive</option>
-                            </select></td>
+                            <td><input type = "text" name="adorar"></td>
                             <th></th>
                         </tr>
                     </table>
