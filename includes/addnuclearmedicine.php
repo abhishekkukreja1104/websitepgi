@@ -49,5 +49,10 @@ $sql = "insert into NUC1 (index_no,scan_no,scan_type,impression) values($index_n
 mysqli_query($conn, $sql);
 echo $sql;
 
-header("Location: ../mutationanalysis.php?addpatient=".$index_no);
+      if(isset($_POST['status'])){
+        header("Location: ../mutationanalysis.php?status=edit&addpatient=".$index_no);
+
+      }else{
+        header("Location: ../mutationanalysis.php?addpatient=".$index_no);
+          }
 ?>

@@ -1,6 +1,20 @@
 <?php
 include_once 'includes/dbh.php';
 
+
+if(isset($_GET['status'])){
+    if($_GET['status']=="edit"){
+        $sqlB = "select * from PULM where index_no =".$_GET['addpatient'];
+        $resultB = mysqli_query($conn, $sqlB);
+        $row=false;
+   if($resultB!=false){
+         $row = mysqli_fetch_array($resultB);
+
+   }
+ }
+}
+
+
 $index_no = $_GET['addpatient'];
 if(isset($_POST['submit'])){
 $name = $_FILES['file']['name'];
@@ -202,10 +216,18 @@ if(isset($name)&&!empty($name)){
                        <tr>
                           <td></td>
                           <td>Impression:</td>
-                          <td><textarea name=impression_B rows="5" cols="20"></textarea></td>
-                          <td><textarea name=impression_1 rows="5" cols="20"></textarea></td>
+                          <td><input name=impression_B rows="5" cols="20" value=<?php echo ((isset($_GET[ 'status'])) ? $row[ 'impressionB'] : ""); ?>></input></td>
+                          <td><input name=impression_1 rows="5" cols="20" value=<?php echo ((isset($_GET[ 'status'])) ? $row[ 'impression1'] : ""); ?>></input></td>
                           <td></td>
                        </tr>
+                          <?php
+                             if(isset($_GET['status'])){
+                                echo "<tr>";
+                                echo "<th>status:</th>";
+                                echo "<td><input type='text' name='status' value ='edit' readonly> </td>";
+                                echo "</tr>";
+                         }
+                         ?>
                     </table>
                     <input type="submit" value="Save and Continue" align="center">
                 </form>

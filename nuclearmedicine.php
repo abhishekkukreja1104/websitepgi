@@ -12,11 +12,11 @@ if(isset($_GET['status'])){
         $row1=false;
    if($resultB!=false){
          $rowB = mysqli_fetch_array($resultB);
-         echo $rowB['scan_type'];
+
    }
    if($result1!=false)
      $row1 = mysqli_fetch_array($result1);
-     echo $row1['scan_type'];
+  
   }
  }
 
@@ -224,14 +224,14 @@ if(isset($name)&&!empty($name)){
                        <tr>
                           <td></td>
                           <td>Scan Type:</td>
-                          <td><select name="scan_type_B" value = <?php echo ((isset($_GET['status'])) ? $rowB['scan_type'] : ""); ?>>
+                          <td><select name="scan_type_B">
                               <option value="unknown">-Select-</option>
                               <option value="bone_scan">Bone Scan</option>
                               <option value="pet_scan">Pet Scan</option>
                               <option value="dota_noc">DOTA NOC</option>
                               <option value="dotatate">DOTATATE</option>
                           </select></td>
-                          <td><select name="scan_type_1" value = <?php echo ((isset($_GET['status'])) ? $row1['scan_type'] : ""); ?>>
+                          <td><select name="scan_type_1">
                               <option value="unknown">-Select-</option>
                               <option value="bone_scan">Bone Scan</option>
                               <option value="pet_scan">Pet Scan</option>
@@ -243,8 +243,8 @@ if(isset($name)&&!empty($name)){
                        <tr>
                           <td></td>
                           <td>Impression:</td>
-                          <td><textarea name=impression_B rows="5" cols="20" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></textarea></td>
-                          <td><textarea name=impression_1 rows="5" cols="20" value = <?php echo ((isset($_GET['status'])) ? $row1['impression'] : ""); ?>></textarea></td>
+                          <td><input name=impression_B rows="5" cols="20" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></textarea></td>
+                          <td><input name=impression_1 rows="5" cols="20" value = <?php echo ((isset($_GET['status'])) ? $row1['impression'] : ""); ?>></textarea></td>
                           <td></td>
                        </tr>
                     </table>
