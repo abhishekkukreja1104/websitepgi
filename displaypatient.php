@@ -84,7 +84,9 @@
             <td><?php echo $row['mobile']; ?></td>
             <td><?php echo $row['parents']; ?></td>
             <td><a id="edit_link" href=<?php echo "Layoutaddpatient.php?status=edit&index_no=".$row['index_no'];?>>edit</a></td>
-        </tr>
+						<td><a id="edit_link" href=<?php echo "View/viewLayoutaddpatient.php?index_no=".$row['index_no'];?>>edit</a></td>
+
+				</tr>
         <?php endwhile ?>
     </tbody>
 </table>

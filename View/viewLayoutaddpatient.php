@@ -2,12 +2,12 @@
 	include_once 'includes/dbh.php';
   $row= false;
 	if(isset($_GET['index_no']) ){
-		if($_GET['status']=="edit"){
+
 				$sql = "select * from MBD where index_no=".$_GET['index_no'].";";
       	$result = mysqli_query($conn, $sql);
       	$row = mysqli_fetch_array($result);
       	$index_no = $row['index_no'];
-		}
+
 	}
 ?>
 <html>
@@ -137,7 +137,7 @@
                   </tr>
                   <tr>
                      <th>Sex:<font color="red">*</font></th>
-                     <td><input type="text" name="gender" required  readonly value = <?php echo $row['name']; ?> ></td>
+                     <td><input type="text" name="gender" required  readonly value = <?php echo $row['sex']; ?> ></td>
                   </tr>
                   <tr>
                      <th>CR No.:<font color="red">*</font></form></th>
