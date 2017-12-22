@@ -129,31 +129,25 @@
         </div>
         <div id="content_area">
             <div id="form" align="center">
-                <form action=<?php echo "mutationanalysis.php?addpatient=".$_GET['addpatient']?> method="post" id="frm">
+                <form action=<?php echo "2Decho.php?addpatient=".$_GET['addpatient']?> method="post" id="frm">
                     <div id="heading" align="center">
                         <h1>Mutation Analysis</h1>
                     </div>
                     <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
+                      <tr>
+                         <th>Index Number</th>
+                         <td><input type="text" name="addpatient" value=<?php echo $_GET['addpatient']?> readonly></td>
+                      </tr>
+
                         <tr>
                             <th>Mutation Analysis:</th>
                             <td>
-                                <input type="radio" name="Mutation" value="true">Yes</td>
-                            <td>
-                                <input type="radio" name="Mutation" value="false">No</td>
-                            <td>
-                                <input type="submit" name="submit" value="Go">
+                                <input type="submit" name="submit" value="Not Avaliable">
                             </td>
                         </tr>
                     </table>
                 </form>
-                <?php
-                $DisplayForm = False;
-                if(isset($_POST['Mutation'])){
-                	if($_POST['Mutation'] == 'true')
-                	$DisplayForm = True;
-                }
-                if($DisplayForm){
-                	?>
+
                 <form action="includes/addmutationanalysis.php" method="post">
                     <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
                       <tr>
@@ -182,13 +176,20 @@
                             </select></td>
                             <th></th>
                         </tr>
+
+                              <?php
+                                 if(isset($_GET['status'])){
+                                      	echo "<tr>";
+                                    		echo "<th>status:</th>";
+                                     		echo "<td><input type='text' name='status' value ='edit' readonly> </td>";
+                                      	echo "</tr>";
+                                 }
+                             ?>
                     </table>
 
                     <input type="submit" value="Save and Continue" align="center">
                 </form>
-                <?php
-                }
-            ?>
+
             </div>
         </div>
     </div>

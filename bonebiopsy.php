@@ -1,6 +1,5 @@
 <?php
 include_once 'includes/dbh.php';
-
 if(isset($_GET['status'])){
     if($_GET['status']=="edit"){
         $sqlB = "select * from BONB where index_no =".$_GET['addpatient'];
@@ -186,7 +185,13 @@ if(isset($name)&&!empty($name)){
             </div>
             <div id="content_area">
                 <div id="form" align="center">
-                    <form action="Bone_Biopsy.php" method="post">
+                  <?php if(isset($_GET['status']))
+                            $link="status=edit&addpatient=".$_GET['addpatient'];
+                        else {
+                            $link="addpatient=".$_GET['addpatient'];
+                        }
+                  ?>
+                    <form action=<?php echo "nuclearmedicine.php?".$link?> method="post">
                         <div id="heading" align="center">
                             <h1>Bone Biopsy</h1>
                         </div>
@@ -194,11 +199,7 @@ if(isset($name)&&!empty($name)){
                             <tr>
                                 <th>Bone Biospy:</th>
                                 <td>
-                                    <input type="radio" name="Radiology" value="true">Yes</td>
-                                <td>
-                                    <input type="radio" name="Radiology" value="false">No</td>
-                                <td>
-                                    <input type="submit" name="submit" value="Go">
+                                    <input type="submit" name="submit" value="Not Avaliable">
                                 </td>
                             </tr>
                         </table>

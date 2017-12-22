@@ -192,15 +192,20 @@ if(isset($name)&&!empty($name)){
         </div>
         <div id="content_area">
             <div id="form" align="center">
-                <form action="radiology.php" method="post">
+                <?php if(isset($_GET['status']))
+                          $link="status=edit&addpatient=".$_GET['addpatient'];
+                      else {
+                          $link="addpatient=".$_GET['addpatient'];
+                      }
+                ?>
+                <form action=<?php echo "bonebiopsy.php?".$link?> method="post">
                 	<div id="heading" align="center">
                         <h1>Radiology</h1>
                     </div>
                 	<table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
                 		<tr>
                 			<th>Radiology:</th>
-                    		<td><input type="radio" name="Radiology" value="false">No</td>
-                   	    	<td><input type="submit" name="submit" value="Go"></td>
+                   	    	<td><input type="submit" name="submit" value="Not Avaliable"></td>
                    		</tr>
                    	</table>
                 </form>
