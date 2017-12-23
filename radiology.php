@@ -186,26 +186,32 @@ if(isset($name)&&!empty($name)){
                    <li><a href="Layoutaddpatient.php">Add Patient</a></li>
                    <li><a href="displaypatient.php">View Patient</a></li>
                    <li><a href="displaypatient.php">Search Patient</a></li>
-                   <li><a href="documents">Manage Documents</a></li>
+                   <li><a href="documents.php">Manage Documents</a></li>
                 </ul>
             </div>
         </div>
         <div id="content_area">
             <div id="form" align="center">
-                <?php if(isset($_GET['status']))
-                          $link="status=edit&addpatient=".$_GET['addpatient'];
-                      else {
-                          $link="addpatient=".$_GET['addpatient'];
-                      }
-                ?>
-                <form action=<?php echo "bonebiopsy.php?".$link?> method="post">
+              <?php if(isset($_POST['submit1'])){
+                    if(isset($_GET['status'])){
+                        $link="status=edit&addpatient=".$_GET['addpatient'];
+                        header("Location: bonebiopsy.php?".$link);
+                    }
+                    else {
+                        $link="addpatient=".$_GET['addpatient'];
+                        header("Location: bonebiopsy.php?".$link);
+
+                    }
+                  }
+              ?>
+                <form method="post">
                 	<div id="heading" align="center">
                         <h1>Radiology</h1>
                     </div>
                 	<table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
                 		<tr>
                 			<th>Radiology:</th>
-                   	    	<td><input type="submit" name="submit" value="Not Avaliable"></td>
+                   	    	<td><input type="submit" name="submit1" value="Not Avaliable"></td>
                    		</tr>
                    	</table>
                 </form>
@@ -329,9 +335,7 @@ if(isset($name)&&!empty($name)){
                                }
                                ?>
                         </table>
-                        <div class="box" id="heading">
                             <input type="submit" style="font-size: 15px" value="Submit and continue">
-                        </div>
                     </form>
 										<form action=<?php echo "radiology.php?addpatient=".$_GET['addpatient']?> method="POST" enctype="multipart/form-data">
 											<div class="box" id="heading">

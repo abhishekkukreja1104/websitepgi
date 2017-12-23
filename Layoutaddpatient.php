@@ -109,7 +109,7 @@
                   <li><a href="Layoutaddpatient.php">Add Patient</a></li>
                   <li><a href="displaypatient.php">View Patient</a></li>
                   <li><a href="displaypatient.php">Search Patient</a></li>
-                  <li><a href="documents">Manage Documents</a></li>
+                  <li><a href="documents.php">Manage Documents</a></li>
                </ul>
             </div>
          </div>

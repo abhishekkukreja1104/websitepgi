@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Mutation Analysis</title>
+    <title>Treatment</title>
     <link rel="stylesheet" type="text/css" href="form_style.css">
 </head>
 <style>
@@ -119,68 +119,64 @@
                 <img src="http://indianphptregistry.com/images/logo.png">
             </div>
             <div id="navbar">
-              <ul>
-                <li><a href="../Layoutaddpatient.php">Add Patient</a></li>
-                <li><a href="../displaypatient.php">View Patient</a></li>
-                <li><a href="../displaypatient.php">Search Patient</a></li>
-                <li><a href="../documents.php">Manage Documents</a></li>
-              </ul>
+                <ul>
+                  <li><a href="Layoutaddpatient.php">Add Patient</a></li>
+                  <li><a href="displaypatient.php">View Patient</a></li>
+                  <li><a href="displaypatient.php">Search Patient</a></li>
+                  <li><a href="documents.php">Manage Documents</a></li>
+                </ul>
             </div>
         </div>
         <div id="content_area">
             <div id="form" align="center">
-                <form action=<?php echo "mutationanalysis.php?addpatient=".$_GET['addpatient']?> method="post" id="frm">
+                <form action="Layoutaddpatient.php">
                     <div id="heading" align="center">
-                        <h1>Mutation Analysis</h1>
+                        <h1>Treatment</h1>
                     </div>
                     <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
                         <tr>
-                            <th>Mutation Analysis:</th>
-                            <td>
-                                <input type="radio" name="Mutation" value="true">Yes</td>
-                            <td>
-                                <input type="radio" name="Mutation" value="false">No</td>
-                            <td>
-                                <input type="submit" name="submit" value="Go">
-                            </td>
-                        </tr>
-                    </table>
-                </form>
-                <?php
-                $DisplayForm = False;
-                if(isset($_POST['Mutation'])){
-                	if($_POST['Mutation'] == 'true')
-                	$DisplayForm = True;
-                }
-                if($DisplayForm){
-                	?>
-                <form action="includes/addmutationanalysis.php" method="post">
-                    <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
-                      <tr>
-                         <th>Index Number</th>
-                         <td><input type="text" name="addpatient" value=<?php echo $_GET['addpatient']?> readonly></td>
-                      </tr>
-                        <tr>
-                            <th></th>
-                            <td>Known/Novel:</td>
-                            <th></th>
-                            <td><input type="text" name="known_novel"></td>
-                            <th></th>
+                            <th>Calcium</th>
+                            <td><input type="checkbox" name="Calcium" value="yes"></td>
                         </tr>
                         <tr>
-                            <th></th>
-                            <td>Autosomal Dominant/Autosomal Recessive:</td>
-                            <th></th>
-                            <td><input type = "text" name="adorar"></td>
-                            <th></th>
+                            <th>Vitamin D</th>
+                            <td><input type="checkbox" name="vitD" value="yes"></td>
+                            <th>Phosphate</th>
+                            <td><input type="checkbox" name="Phosphate" value="yes"></td>
                         </tr>
-                    </table>
+                        <tr>
+                            <th>Bisphosphonates</th>
+                            <td><input type="checkbox" name="Bisphosphonates" value="yes"></td>
+                        </tr>
+                        <tr>
+                            <th>Calcitonin</th>
+                            <td><input type="checkbox" name="Calcitonin" value="yes"></td>
+                        </tr>
+                        <tr>
+                            <th>RhPTH</th>
+                            <td><input type="checkbox" name="RhPTH" value="yes"></td>
+                        </tr>
+                        <tr>
+                            <th>Denosumeb</th>
+                            <td><input type="checkbox" name="Denosumeb" value="yes"></td>
+                        </tr>
+                        <tr>
+                            <th>Estrogen</th>
+                            <td><input type="checkbox" name="Estrogen" value="yes"></td>
+                        </tr>
+                        <tr>
+                            <th>Glucocorticoids</th>
+                            <td><input type="checkbox" name="Glucocorticoids" value="yes"></td>
+                        </tr>
+                        <tr>
+                            <th>Any other</th>
+                            <td><input type="checkbox" name="any_other" value="yes"></td>
+                        </tr>
 
+                    </table>
                     <input type="submit" value="Save and Continue" align="center">
+
                 </form>
-                <?php
-                }
-            ?>
             </div>
         </div>
     </div>

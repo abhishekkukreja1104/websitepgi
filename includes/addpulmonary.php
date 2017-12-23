@@ -14,6 +14,6 @@ mysqli_query($conn, $sql);
 echo $sql;
 
 
-header("Location: ../2Decho.php?addpatient=".$index_no);
+header("Location: ../clinical_diagnosis.php?addpatient=".$index_no);
 
 ?>

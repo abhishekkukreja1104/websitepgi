@@ -1,13 +1,13 @@
 <?php
    include_once 'includes/dbh.php';
    if(isset($_GET['status'])){
-       if($_GET['status']=="edit"){
+
            $sqlD = "select * from BIOR where index_no =".$_GET['addpatient'];
-           $sql3 = "select * from BIO3M where index_no =".$_GET['addpatient'];
-           $sql6 = "select * from BIO6M where index_no =".$_GET['addpatient'];
-           $sql1 = "select * from BIO1Y where index_no =".$_GET['addpatient'];
-           $sql2 = "select * from BIO2Y where index_no =".$_GET['addpatient'];
-           $sql5 = "select * from BIO5Y where index_no =".$_GET['addpatient'];
+           $sql3 = "select * from BIO3 where index_no =".$_GET['addpatient'];
+           $sql6 = "select * from BIO6 where index_no =".$_GET['addpatient'];
+           $sql1 = "select * from BIO1 where index_no =".$_GET['addpatient'];
+           $sql2 = "select * from BIO2 where index_no =".$_GET['addpatient'];
+           $sql5 = "select * from BIO5 where index_no =".$_GET['addpatient'];
            $resultD = mysqli_query($conn, $sqlD);
            $result3 = mysqli_query($conn, $sql3);
            $result6 = mysqli_query($conn, $sql6);
@@ -37,7 +37,7 @@
    			$row5 = mysqli_fetch_array($result5);
 
 
-       }
+
    }
    ?>
 <html>
@@ -143,10 +143,10 @@
             </div>
             <div id="navbar">
                <ul>
-                  <li><a href="#Add Patient">Add Patient</a></li>
-                  <li><a href="#View patient">View Patient</a></li>
-                  <li><a href="#Search patient">Search Patient</a></li>
-                  <li><a href="#Manage Documents">Manage Documents</a></li>
+                 <li><a href="../Layoutaddpatient.php">Add Patient</a></li>
+                 <li><a href="../displaypatient.php">View Patient</a></li>
+                 <li><a href="../displaypatient.php">Search Patient</a></li>
+                 <li><a href="../documents.php">Manage Documents</a></li>
                </ul>
             </div>
          </div>

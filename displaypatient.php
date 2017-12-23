@@ -9,51 +9,114 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <style>
-	ul {
-    	margin: 0 auto;
-    	margin-right: 44px;
-    	text-align: center;
-	}
-	li {
-    	display: inline;
-   	 	list-style: none;
-	}
-	#nav_a:link,#nav_a:visited
-	{
-	    display:inline-block;
-	    margin-right: -4px;
-	    width: 360px;
-	    font-weight:bold;
-	    color:white;
-	    background-color:#1F4F96;
-	    text-align:center;
-	    padding:20px;
-	    height: 30px;
-	    text-decoration:none;
-	    text-transform:uppercase;
-	}
-	#nav_a:hover,#nav_a:active
-	{
-	    background-color:black;
-	}
-	</style>
+	body{
+         background: #96B8DA;
+         margin: 0;
+         }
+         #container{
+         width: 1200px;
+         margin: 0 auto;
+         background: #ffffff;
+         }
+         #header{
+         width: 100%;
+         border-bottom: 1px solid #c7c7c7;
+         background: #ffffff;
+         }
+         #logo{
+         width: 100%;
+         height: 130px;
+         }
+         #heading{
+         width: 100%;
+         background: #518B47;
+         padding: 0px;
+         padding-bottom: 10px;
+         padding-top: 10px;
+         color: white;
+         }
+         #submit{
+         width: 100%;
+         background: #518B47;
+         padding: 0px;
+         padding-bottom: 10px;
+         padding-top: 10px;
+         }
+         #form{
+         width: 100%;
+         background: #ffffff;
+         padding: 0px;
+         padding-bottom: 10px;
+         padding-top: 10px;
+         color: black;
+         }
+         #navbar{
+         height: 40px;
+         clear: both;
+         width: 100%;
+         }
+         #navbar ul{
+         list-style-type: none;
+         margin: 0;
+         padding: 0;
+         overflow: hidden;
+         }
+         #navbar ul li{
+         float: left;
+         border-right: 1px solid #bbb;
+         }
+         #navbar ul li a{
+         display: block;
+         color: #ffffff;
+         text-align: center;
+         background-color:#1F4F96;
+         width: 299px;
+         padding-top: 20px;
+         padding-bottom: 20px;
+         font-weight:bold;
+         text-decoration: none;
+         }
+         #navbar ul li a:hover{
+         background-color: #111;
+         }
+         th{
+         text-align: left;
+         }
+         td{
+         padding-top: 10px;
+         margin: 0 auto;
+         align-items: center;
+         }
+         input[type = "text"]{
+         display: inline-block;
+         width: 100px;
+         }
+         #up{
+         	text-align: center;
+         }
+</style>
 <body>
-	<div id = "top" align="center">
-		<img src="http://indianphptregistry.com/images/logo.png">
-	</div>
+	<div id="container">
+			<div id="header">
+					<div id="logo" align="center">
+							<img src="http://indianphptregistry.com/images/logo.png">
+					</div>
+	<div id="navbar">
 	<ul>
 		 <li><a href="Layoutaddpatient.php">Add Patient</a></li>
 		 <li><a href="displaypatient.php">View Patient</a></li>
 		 <li><a href="displaypatient.php">Search Patient</a></li>
-		 <li><a href="documents">Manage Documents</a></li>
+		 <li><a href="documents.php">Manage Documents</a></li>
 	</ul>
-
+</div>
+</div>
+</div>
 	<div id = "Patient" align="center">
 		<h1>Patients</h1>
 	</div>
 
 
-	<table id="customers">
+	<table id="customers" width="1200px">
     <thead>
         <tr>
             <th>Admission No</th>
@@ -65,6 +128,16 @@
             <th>Parents</th>
 
             <th>Edit Patient</th>
+						<th>View Patient Details</th>
+						<th>View Other Symptoms</th>
+						<th>View Biochemistry</th>
+						<th>View Radiology</th>
+						<th>View BoneBiopsy</th>
+						<th>View Nuclear Medicine</th>
+						<th>View Mutation Analysis</th>
+						<th>View 2D_echo</th>
+						<th>View Pulmonary</th>
+
 
         </tr>
     </thead>
@@ -76,6 +149,29 @@
         while( $row = mysqli_fetch_array($result)) : ?>
         <tr>
             <!--Each table column is echoed in to a td cell-->
+						<?php
+							$sql = "select index_no from RADB where index_no=".$row['index_no'];
+							$RAD = mysqli_query($conn, $sql);
+
+							$sql = "select index_no from BONB where index_no=".$row['index_no'];
+							$BON = mysqli_query($conn, $sql);
+
+
+							$sql = "select index_no from NUCB where index_no=".$row['index_no'];
+							$NUC = mysqli_query($conn, $sql);
+
+
+							$sql = "select index_no from MUTA where index_no=".$row['index_no'];
+							$MUT = mysqli_query($conn, $sql);
+
+
+							$sql = "select index_no from echo where index_no=".$row['index_no'];
+							$ECH = mysqli_query($conn, $sql);
+
+
+							$sql = "select index_no from PULM where index_no=".$row['index_no'];
+							$PUL = mysqli_query($conn, $sql);
+						?>
             <td><?php echo $row['index_no']; ?></td>
             <td><?php echo $row['name']; ?></td>
             <td><?php echo $row['DOB']; ?></td>
@@ -84,8 +180,35 @@
             <td><?php echo $row['mobile']; ?></td>
             <td><?php echo $row['parents']; ?></td>
             <td><a id="edit_link" href=<?php echo "Layoutaddpatient.php?status=edit&index_no=".$row['index_no'];?>>edit</a></td>
-						<td><a id="edit_link" href=<?php echo "View/viewLayoutaddpatient.php?index_no=".$row['index_no'];?>>edit</a></td>
+						<td><a id="edit_link" href=<?php echo "View/viewLayoutaddpatient.php?index_no=".$row['index_no'];?>>View</a></td>
 
+						<td><a id="edit_link" href=<?php echo "View/viewLayoutothersymptoms.php?status=yes&addpatient=".$row['index_no'];?>>View</a></td>
+						<td><a id="edit_link" href=<?php echo "View/viewbiochemistry.php?status=yes&addpatient=".$row['index_no'];?>>View</a></td>
+						<?php if($RAD->num_rows) {?>
+						<td><a id="edit_link" href=<?php echo "View/viewradiology.php?status=yes&addpatient=".$row['index_no'];?>>View</a></td>
+						<?php }else { echo "<td>no value</td>";} ?>
+
+						<?php if($BON->num_rows) {?>
+						<td><a id="edit_link" href=<?php echo "View/viewbonebiopsy.php?status=yes&addpatient=".$row['index_no'];?>>View</a></td>
+						<?php }else { echo "<td>no value</td>";} ?>
+
+						<?php if($NUC->num_rows) {?>
+						<td><a id="edit_link" href=<?php echo "View/viewnuclearmedicine.php?status=yes&addpatient=".$row['index_no'];?>>View</a></td>
+						<?php }else { echo "<td>no value</td>";} ?>
+
+
+						<?php if($MUT->num_rows) {?>
+						<td><a id="edit_link" href=<?php echo "View/viewmutationanalysis.php?status=yes&addpatient=".$row['index_no'];?>>View</a></td>
+						<?php }else { echo "<td>no value</td>";} ?>
+
+
+						<?php if($ECH->num_rows) {?>
+						<td><a id="edit_link" href=<?php echo "View/view2Decho.php?status=yes&addpatient=".$row['index_no'];?>>View</a></td>
+						<?php }else { echo "<td>no value</td>";} ?>
+
+						<?php if($PUL->num_rows) {?>
+						<td><a id="edit_link" href=<?php echo "View/view2Decho.php?status=yes&addpatient=".$row['index_no'];?>>View</a></td>
+						<?php }else { echo "<td>no value</td>";} ?>
 				</tr>
         <?php endwhile ?>
     </tbody>

@@ -177,13 +177,25 @@ if(isset($name)&&!empty($name)){
                    <li><a href="Layoutaddpatient.php">Add Patient</a></li>
                    <li><a href="displaypatient.php">View Patient</a></li>
                    <li><a href="displaypatient.php">Search Patient</a></li>
-                   <li><a href="documents">Manage Documents</a></li>
+                   <li><a href="documents.php">Manage Documents</a></li>
                 </ul>
             </div>
         </div>
         <div id="content_area">
             <div id="form" align="center">
-                <form action="2D_echo.php" method="post" id="frm">
+              <?php if(isset($_POST['submit1'])){
+                    if(isset($_GET['status'])){
+                        $link="status=edit&addpatient=".$_GET['addpatient'];
+                        header("Location: pulmonary.php?".$link);
+                    }
+                    else {
+                        $link="addpatient=".$_GET['addpatient'];
+                        header("Location: pulmonary.php?".$link);
+
+                    }
+                  }
+              ?>
+                <form method="post" id="frm">
                     <div id="heading" align="center">
                         <h1>2D-Echo Test:</h1>
                     </div>
@@ -191,11 +203,7 @@ if(isset($name)&&!empty($name)){
                         <tr>
                             <th>2D-Echo Test:</th>
                             <td>
-                                <input type="radio" name="Pulmonary" value="true">Yes</td>
-                            <td>
-                                <input type="radio" name="Pulmonary" value="false">No</td>
-                            <td>
-                                <input type="submit" name="submit" value="Go">
+                                <input type="submit" name="submit1" value="No Avaliability">
                             </td>
                         </tr>
                     </table>
@@ -205,8 +213,8 @@ if(isset($name)&&!empty($name)){
                        <tr>
                           <th></th>
                           <th style="font-size:23px"><font face="verdana"></font></th>
-                          <th style="font-size:23px"><font face="verdana">Base line</font></th>
-                          <th style="font-size:23px"><font face="verdana">1 year</font></th>
+                          <th id = "up" style="font-size:23px"><font face="verdana">Base line</font></th>
+                          <th id = "up" style="font-size:23px"><font face="verdana">1 year</font></th>
                           <th></th>
                        </tr>
                        <tr>
@@ -233,30 +241,29 @@ if(isset($name)&&!empty($name)){
                 </form>
                 <div id="heading" align="center">
                         <h3>Attached pdf file:</h3>
-                    </div>
+                  </div>
                     <form action=<?php echo "2Decho.php?addpatient=".$_GET['addpatient']?> method="POST" enctype="multipart/form-data">
                         <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
                             <tr>
-                                <th></th>
                                 <th></th>
                                 <th></th>
                                 <td><strong>Title: </strong></td>
                                 <td>
                                     <input type="text" name="title" required>
                                 </td>
+                                <th></th>
                             </tr>
                             <tr>
-                                <th></th>
                                 <th></th>
                                 <th></th>
                                 <td><strong>File name:</strong></td>
                                 <td>
                                     <input type="file" name="file" />
                                 </td>
+                                <th></th>
                             </tr>
                             </tr>
                             <tr>
-                              <th></th>
                               <th></th>
                               <th></th>
                               <?php
@@ -266,13 +273,11 @@ if(isset($name)&&!empty($name)){
                                 }
                                 echo '</th>';
                               ?>
+                              <th></th>
                             </tr>
                         </table>
                         <input type="submit" name="submit" value="Upload"/>
                     </form>
-            </div>
-            <div id="heading" align="center">
-				<button><strong>Next</strong></button>
             </div>
         </div>
     </div>

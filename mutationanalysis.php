@@ -123,26 +123,36 @@
                    <li><a href="Layoutaddpatient.php">Add Patient</a></li>
                    <li><a href="displaypatient.php">View Patient</a></li>
                    <li><a href="displaypatient.php">Search Patient</a></li>
-                   <li><a href="documents">Manage Documents</a></li>
+                   <li><a href="documents.php">Manage Documents</a></li>
                 </ul>
             </div>
         </div>
         <div id="content_area">
             <div id="form" align="center">
-                <form action=<?php echo "2Decho.php?addpatient=".$_GET['addpatient']?> method="post" id="frm">
+
+              <div id="form" align="center">
+                <?php if(isset($_POST['submit1'])){
+                      if(isset($_GET['status'])){
+                          $link="status=edit&addpatient=".$_GET['addpatient'];
+                          header("Location: 2Decho.php?".$link);
+                      }
+                      else {
+                          $link="addpatient=".$_GET['addpatient'];
+                          header("Location: 2Decho.php?".$link);
+
+                      }
+                    }
+                ?>
+                <form method="post" id="frm">
                     <div id="heading" align="center">
                         <h1>Mutation Analysis</h1>
                     </div>
                     <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
-                      <tr>
-                         <th>Index Number</th>
-                         <td><input type="text" name="addpatient" value=<?php echo $_GET['addpatient']?> readonly></td>
-                      </tr>
 
                         <tr>
                             <th>Mutation Analysis:</th>
                             <td>
-                                <input type="submit" name="submit" value="Not Avaliable">
+                                <input type="submit" name="submit1" value="Not Avaliable">
                             </td>
                         </tr>
                     </table>

@@ -179,19 +179,25 @@ if(isset($name)&&!empty($name)){
                        <li><a href="Layoutaddpatient.php">Add Patient</a></li>
                        <li><a href="displaypatient.php">View Patient</a></li>
                        <li><a href="displaypatient.php">Search Patient</a></li>
-                       <li><a href="documents">Manage Documents</a></li>
+                       <li><a href="documents.php">Manage Documents</a></li>
                     </ul>
                 </div>
             </div>
             <div id="content_area">
                 <div id="form" align="center">
-                  <?php if(isset($_GET['status']))
+                  <?php if(isset($_POST['submit1'])){
+                        if(isset($_GET['status'])){
                             $link="status=edit&addpatient=".$_GET['addpatient'];
+                            header("Location: nuclearmedicine.php?".$link);
+                        }
                         else {
                             $link="addpatient=".$_GET['addpatient'];
+                            header("Location: nuclearmedicine.php?".$link);
+
                         }
+                      }
                   ?>
-                    <form action=<?php echo "nuclearmedicine.php?".$link?> method="post">
+                    <form method="POST">
                         <div id="heading" align="center">
                             <h1>Bone Biopsy</h1>
                         </div>
@@ -199,7 +205,7 @@ if(isset($name)&&!empty($name)){
                             <tr>
                                 <th>Bone Biospy:</th>
                                 <td>
-                                    <input type="submit" name="submit" value="Not Avaliable">
+                                    <input type="submit" name="submit1" value="Not Avaliable">
                                 </td>
                             </tr>
                         </table>
@@ -317,9 +323,6 @@ if(isset($name)&&!empty($name)){
                         </table>
                         <input type="submit" name="submit" value="Upload" />
                     </form>
-                </div>
-                <div id="heading" align="center">
-                    <button>Next</button>
                 </div>
             </div>
         </div>
