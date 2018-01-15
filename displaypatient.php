@@ -144,8 +144,8 @@
     </thead>
     <tbody>
         <?php
-        $sql = "select name, index_no, age, sex, address, mobile, parents from MBD;";
-		$result=mysqli_query($conn,$sql);
+        $sql = "select name, index_no, DOB, sex, address, mobile, parents from MBD;";
+				$result=mysqli_query($conn,$sql);
 
         while( $row = mysqli_fetch_array($result)) : ?>
         <tr>
@@ -175,7 +175,7 @@
 						?>
             <td><?php echo $row['index_no']; ?></td>
             <td><?php echo $row['name']; ?></td>
-            <td><?php echo $row['age']; ?></td>
+            <td><?php echo $row['DOB']; ?></td>
             <td><?php echo $row['sex']; ?></td>
             <td><?php echo $row['address']; ?></td>
             <td><?php echo $row['mobile']; ?></td>
