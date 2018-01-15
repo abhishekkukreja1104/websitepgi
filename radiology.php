@@ -183,24 +183,35 @@ if(isset($name)&&!empty($name)){
             </div>
             <div id="navbar">
                 <ul>
-                    <li><a href="#Add Patient">Add Patient</a></li>
-                    <li><a href="#View patient">View Patient</a></li>
-                    <li><a href="#Search patient">Search Patient</a></li>
-                    <li><a href="#Manage Documents">Manage Documents</a></li>
+                   <li><a href="Layoutaddpatient.php">Add Patient</a></li>
+                   <li><a href="displaypatient.php">View Patient</a></li>
+                   <li><a href="displaypatient.php">Search Patient</a></li>
+                   <li><a href="documents.php">Manage Documents</a></li>
                 </ul>
             </div>
         </div>
         <div id="content_area">
             <div id="form" align="center">
-                <form action="radiology.php" method="post">
+              <?php if(isset($_POST['submit1'])){
+                    if(isset($_GET['status'])){
+                        $link="status=edit&addpatient=".$_GET['addpatient'];
+                        header("Location: bonebiopsy.php?".$link);
+                    }
+                    else {
+                        $link="addpatient=".$_GET['addpatient'];
+                        header("Location: bonebiopsy.php?".$link);
+
+                    }
+                  }
+              ?>
+                <form method="post">
                 	<div id="heading" align="center">
                         <h1>Radiology</h1>
                     </div>
                 	<table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
                 		<tr>
                 			<th>Radiology:</th>
-                    		<td><input type="radio" name="Radiology" value="false">No</td>
-                   	    	<td><input type="submit" name="submit" value="Go"></td>
+                   	    	<td><input type="submit" name="submit1" value="Not Avaliable"></td>
                    		</tr>
                    	</table>
                 </form>
@@ -324,9 +335,7 @@ if(isset($name)&&!empty($name)){
                                }
                                ?>
                         </table>
-                        <div class="box" id="heading">
                             <input type="submit" style="font-size: 15px" value="Submit and continue">
-                        </div>
                     </form>
 										<form action=<?php echo "radiology.php?addpatient=".$_GET['addpatient']?> method="POST" enctype="multipart/form-data">
 											<div class="box" id="heading">

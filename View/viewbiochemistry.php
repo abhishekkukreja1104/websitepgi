@@ -1,13 +1,13 @@
 <?php
    include_once 'includes/dbh.php';
    if(isset($_GET['status'])){
-       if($_GET['status']=="edit"){
+
            $sqlD = "select * from BIOR where index_no =".$_GET['addpatient'];
-           $sql3 = "select * from BIO3M where index_no =".$_GET['addpatient'];
-           $sql6 = "select * from BIO6M where index_no =".$_GET['addpatient'];
-           $sql1 = "select * from BIO1Y where index_no =".$_GET['addpatient'];
-           $sql2 = "select * from BIO2Y where index_no =".$_GET['addpatient'];
-           $sql5 = "select * from BIO5Y where index_no =".$_GET['addpatient'];
+           $sql3 = "select * from BIO3 where index_no =".$_GET['addpatient'];
+           $sql6 = "select * from BIO6 where index_no =".$_GET['addpatient'];
+           $sql1 = "select * from BIO1 where index_no =".$_GET['addpatient'];
+           $sql2 = "select * from BIO2 where index_no =".$_GET['addpatient'];
+           $sql5 = "select * from BIO5 where index_no =".$_GET['addpatient'];
            $resultD = mysqli_query($conn, $sqlD);
            $result3 = mysqli_query($conn, $sql3);
            $result6 = mysqli_query($conn, $sql6);
@@ -37,7 +37,7 @@
    			$row5 = mysqli_fetch_array($result5);
 
 
-       }
+
    }
    ?>
 <html>
@@ -143,10 +143,10 @@
             </div>
             <div id="navbar">
                <ul>
-                  <li><a href="#Add Patient">Add Patient</a></li>
-                  <li><a href="#View patient">View Patient</a></li>
-                  <li><a href="#Search patient">Search Patient</a></li>
-                  <li><a href="#Manage Documents">Manage Documents</a></li>
+                 <li><a href="../Layoutaddpatient.php">Add Patient</a></li>
+                 <li><a href="../displaypatient.php">View Patient</a></li>
+                 <li><a href="../displaypatient.php">Search Patient</a></li>
+                 <li><a href="../documents.php">Manage Documents</a></li>
                </ul>
             </div>
          </div>
@@ -447,17 +447,8 @@
                         <td><input type="number" name="Any_other_2" step = "any" readonly value = <?php echo ((isset($_GET['status'])) ? $row2['Any_other'] : ""); ?>></td>
                         <td><input type="number" name="Any_other_5" step = "any" readonly value = <?php echo ((isset($_GET['status'])) ? $row5['Any_other'] : ""); ?>></td>
                      </tr>
-                     <?php
-                        if(isset($_GET['status'])){
-                        	echo "<tr>";
-                        		echo "<th>status:</th>";
-                        		echo "<td><input type='text' name='status' value ='edit' readonly> </td>";
-                        	echo "</tr>";
-                        }
-                        ?>
-                  </table>
+                                       </table>
                   <div id="submit" align="center">
-                     <input type="submit" value="Save and Continue" align="center">
                   </div>
                </form>
             </div>

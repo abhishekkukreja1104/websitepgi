@@ -12,11 +12,11 @@ if(isset($_GET['status'])){
         $row1=false;
    if($resultB!=false){
          $rowB = mysqli_fetch_array($resultB);
-         echo $rowB['scan_type'];
+
    }
    if($result1!=false)
      $row1 = mysqli_fetch_array($result1);
-     echo $row1['scan_type'];
+
   }
  }
 
@@ -181,29 +181,39 @@ if(isset($name)&&!empty($name)){
             </div>
             <div id="navbar">
                 <ul>
-                    <li><a href="#Add Patient">Add Patient</a></li>
-                    <li><a href="#View patient">View Patient</a></li>
-                    <li><a href="#Search patient">Search Patient</a></li>
-                    <li><a href="#Manage Documents">Manage Documents</a></li>
+                   <li><a href="Layoutaddpatient.php">Add Patient</a></li>
+                   <li><a href="displaypatient.php">View Patient</a></li>
+                   <li><a href="displaypatient.php">Search Patient</a></li>
+                   <li><a href="documents.php">Manage Documents</a></li>
                 </ul>
             </div>
         </div>
         <div id="content_area">
             <div id="form" align="center">
-                <form action="Nuclear_Medicine.php" method="post" id="frm">
+
+                <?php if(isset($_POST['submit1'])){
+                      if(isset($_GET['status'])){
+                          $link="status=edit&addpatient=".$_GET['addpatient'];
+                          header("Location: mutationanalysis.php?".$link);
+                      }
+                      else {
+                          $link="addpatient=".$_GET['addpatient'];
+                          header("Location: mutationanalysis.php?".$link);
+
+                      }
+                    }
+                ?>
+                <form method="post" id="frm">
                     <div id="heading" align="center">
-                        <h1>Nuclear Medicine:</h1>
+                        <h1>Nuclear Medicine</h1>
                     </div>
                     <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
 
                         <tr>
                             <th>Nuclear Medicine:</th>
+
                             <td>
-                                <input type="radio" name="Radiology" value="true">Yes</td>
-                            <td>
-                                <input type="radio" name="Radiology" value="false">No</td>
-                            <td>
-                                <input type="submit" name="submit" value="Go">
+                                <input type="submit" name="submit1" value="No Avaliability">
                             </td>
                         </tr>
                     </table>
@@ -224,14 +234,14 @@ if(isset($name)&&!empty($name)){
                        <tr>
                           <td></td>
                           <td>Scan Type:</td>
-                          <td><select name="scan_type_B" value = <?php echo ((isset($_GET['status'])) ? $rowB['scan_type'] : ""); ?>>
+                          <td><select name="scan_type_B">
                               <option value="unknown">-Select-</option>
                               <option value="bone_scan">Bone Scan</option>
                               <option value="pet_scan">Pet Scan</option>
                               <option value="dota_noc">DOTA NOC</option>
                               <option value="dotatate">DOTATATE</option>
                           </select></td>
-                          <td><select name="scan_type_1" value = <?php echo ((isset($_GET['status'])) ? $row1['scan_type'] : ""); ?>>
+                          <td><select name="scan_type_1">
                               <option value="unknown">-Select-</option>
                               <option value="bone_scan">Bone Scan</option>
                               <option value="pet_scan">Pet Scan</option>
@@ -243,35 +253,35 @@ if(isset($name)&&!empty($name)){
                        <tr>
                           <td></td>
                           <td>Impression:</td>
-                          <td><textarea name=impression_B rows="5" cols="20" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></textarea></td>
-                          <td><textarea name=impression_1 rows="5" cols="20" value = <?php echo ((isset($_GET['status'])) ? $row1['impression'] : ""); ?>></textarea></td>
+                          <td><input name=impression_B rows="5" cols="20" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></textarea></td>
+                          <td><input name=impression_1 rows="5" cols="20" value = <?php echo ((isset($_GET['status'])) ? $row1['impression'] : ""); ?>></textarea></td>
                           <td></td>
                        </tr>
                     </table>
                     <input type="submit" value="Save and Continue" align="center">
                 </form>
                 <div id="heading" align="center">
-                        <h3>Attached pdf file:</h3>
+                        <h3>Attached pdf file</h3>
                     </div>
                     <form action=<?php echo "nuclearmedicine.php?addpatient=".$_GET['addpatient']?> method="POST" enctype="multipart/form-data">
                         <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
                             <tr>
                                 <th></th>
                                 <th></th>
-                                <th></th>
                                 <td><strong>Title: </strong></td>
                                 <td>
                                     <input type="text" name="title" pattern = "[A-Za-z0-9]{1, }" title="avoid spaces in title" required>
                                 </td>
+                                <th></th>
                             </tr>
                             <tr>
-                                <th></th>
                                 <th></th>
                                 <th></th>
                                 <td><strong>File name:</strong></td>
                                 <td>
                                     <input type="file" name="file" />
                                 </td>
+                                <th></th>
                             </tr>
                             </tr>
                             <tr>
@@ -289,9 +299,6 @@ if(isset($name)&&!empty($name)){
                         </table>
                         <input type="submit" name="submit" value="Upload"/>
                     </form>
-            </div>
-            <div id="heading" align="center">
-				<button><strong>Next</strong></button>
             </div>
         </div>
     </div>

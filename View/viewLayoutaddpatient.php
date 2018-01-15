@@ -2,12 +2,12 @@
 	include_once 'includes/dbh.php';
   $row= false;
 	if(isset($_GET['index_no']) ){
-		if($_GET['status']=="edit"){
+
 				$sql = "select * from MBD where index_no=".$_GET['index_no'].";";
       	$result = mysqli_query($conn, $sql);
       	$row = mysqli_fetch_array($result);
       	$index_no = $row['index_no'];
-		}
+
 	}
 ?>
 <html>
@@ -105,12 +105,12 @@
                <img src="http://indianphptregistry.com/images/logo.png">
             </div>
             <div id="navbar">
-               <ul>
-                  <li><a href="#Add Patient">Add Patient</a></li>
-                  <li><a href="displaypatient.php">View Patient</a></li>
-                  <li><a href="#Search patient">Search Patient</a></li>
-                  <li><a href="#Manage Documents">Manage Documents</a></li>
-               </ul>
+							<ul>
+								<li><a href="../Layoutaddpatient.php">Add Patient</a></li>
+								<li><a href="../displaypatient.php">View Patient</a></li>
+								<li><a href="../displaypatient.php">Search Patient</a></li>
+								<li><a href="../documents.php">Manage Documents</a></li>
+							</ul>
             </div>
          </div>
          <div id="content_area">
@@ -133,11 +133,11 @@
                   </tr>
                   <tr>
                      <th>DOB:<font color="red">*</font></th>
-                     <td><input type="date" name="DOB" required readonly value = <?php echo $row['DOB']; ?> ></td>
+                     <td><input type="text" name="DOB" required readonly value = <?php echo $row['age']; ?> ></td>
                   </tr>
                   <tr>
                      <th>Sex:<font color="red">*</font></th>
-                     <td><input type="text" name="gender" required  readonly value = <?php echo $row['name']; ?> ></td>
+                     <td><input type="text" name="gender" required  readonly value = <?php echo $row['sex']; ?> ></td>
                   </tr>
                   <tr>
                      <th>CR No.:<font color="red">*</font></form></th>
@@ -239,9 +239,6 @@
                      <td><input type="text" name="family_history" rows="5" cols="48" readonly value = <?php echo $row['family_history']; ?> ></td>
                   </tr>
                </table>
-               <div id="submit" align="center">
-                  <input type="submit" value="Save and Continue" align="center">
-               </div>
               </form>
             </div>
          </div>

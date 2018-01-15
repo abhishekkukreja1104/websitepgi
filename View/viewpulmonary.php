@@ -160,34 +160,17 @@ if(isset($name)&&!empty($name)){
                 <img src="http://indianphptregistry.com/images/logo.png">
             </div>
             <div id="navbar">
-                <ul>
-                    <li><a href="#Add Patient">Add Patient</a></li>
-                    <li><a href="#View patient">View Patient</a></li>
-                    <li><a href="#Search patient">Search Patient</a></li>
-                    <li><a href="#Manage Documents">Manage Documents</a></li>
-                </ul>
+              <ul>
+                <li><a href="../Layoutaddpatient.php">Add Patient</a></li>
+                <li><a href="../displaypatient.php">View Patient</a></li>
+                <li><a href="../displaypatient.php">Search Patient</a></li>
+                <li><a href="../documents.php">Manage Documents</a></li>
+              </ul>
             </div>
         </div>
         <div id="content_area">
             <div id="form" align="center">
-                <form action="Pulmonary.php" method="post" id="frm">
-                    <div id="heading" align="center">
-                        <h1>Pulmonary Function Test:</h1>
-                    </div>
-                    <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
-                        <tr>
-                            <th>Pulmonary Funtion Test:</th>
-                            <td>
-                                <input type="radio" name="Pulmonary" value="true">Yes</td>
-                            <td>
-                                <input type="radio" name="Pulmonary" value="false">No</td>
-                            <td>
-                                <input type="submit" name="submit" value="Go">
-                            </td>
-                        </tr>
-                    </table>
-                </form>
-                <form action = "includes/addpulmonary.php" method="POST">
+                                <form action = "includes/addpulmonary.php" method="POST">
                     <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20" >
                        <tr>
                           <th></th>
@@ -209,50 +192,7 @@ if(isset($name)&&!empty($name)){
                        </tr>
                     </table>
                     <input type="submit" value="Save and Continue" align="center">
-                </form>
-                <div id="heading" align="center">
-                        <h3>Attached pdf file:</h3>
-                    </div>
-                    <form action=<?php echo "pulmonary.php?addpatient=".$_GET['addpatient']?> method="POST" enctype="multipart/form-data">
-                        <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <td><strong>Title: </strong></td>
-                                <td>
-                                    <input type="text" name="title" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <td><strong>File name:</strong></td>
-                                <td>
-                                    <input type="file" name="file" />
-                                </td>
-                            </tr>
-                            </tr>
-                            <tr>
-                              <th></th>
-                              <th></th>
-                              <th></th>
-                              <?php
-                                echo '<th>';
-                                if(isset($status)){
-                                  echo $status;
-                                }
-                                echo '</th>';
-                              ?>
-                            </tr>
-                        </table>
-                        <input type="submit" name="submit" value="Upload"/>
-                    </form>
-            </div>
-            <div id="heading" align="center">
-				<button><strong>Next</strong></button>
-            </div>
+                
         </div>
     </div>
 </body>

@@ -2,12 +2,11 @@
 	include_once 'includes/dbh.php';
 
 	if(isset($_GET['status'])){
-		if($_GET['status']=="edit"){
-			$sql3 = "select * from OS3M where index_no =".$_GET['addpatient'];
-			$sql6 = "select * from OS6M where index_no =".$_GET['addpatient'];
-			$sql1 = "select * from OS1Y where index_no =".$_GET['addpatient'];
-			$sql2 = "select * from OS2Y where index_no =".$_GET['addpatient'];
-			$sql5 = "select * from OS5Y where index_no =".$_GET['addpatient'];
+			$sql3 = "select * from OS3 where index_no =".$_GET['addpatient'];
+			$sql6 = "select * from OS6 where index_no =".$_GET['addpatient'];
+			$sql1 = "select * from OS1 where index_no =".$_GET['addpatient'];
+			$sql2 = "select * from OS2 where index_no =".$_GET['addpatient'];
+			$sql5 = "select * from OS5 where index_no =".$_GET['addpatient'];
       $result3 = mysqli_query($conn, $sql3);
       $result6 = mysqli_query($conn, $sql6);
       $result1 = mysqli_query($conn, $sql1);
@@ -18,6 +17,7 @@
       $row1=false;
       $row2=false;
       $row5=false;
+
 
       if($result3!=false){
         $row3 = mysqli_fetch_array($result3);
@@ -32,7 +32,7 @@
       if($result5!=false)
         $row5 = mysqli_fetch_array($result5);
 
-		}
+
 
 	}
 
@@ -140,12 +140,12 @@
                <img src="http://indianphptregistry.com/images/logo.png">
             </div>
             <div id="navbar">
-               <ul>
-                  <li><a href="#Add Patient">Add Patient</a></li>
-                  <li><a href="#View patient">View Patient</a></li>
-                  <li><a href="#Search patient">Search Patient</a></li>
-                  <li><a href="#Manage Documents">Manage Documents</a></li>
-               </ul>
+							<ul>
+								<li><a href="../Layoutaddpatient.php">Add Patient</a></li>
+								<li><a href="../displaypatient.php">View Patient</a></li>
+								<li><a href="../displaypatient.php">Search Patient</a></li>
+								<li><a href="../documents.php">Manage Documents</a></li>
+							</ul>
             </div>
          </div>
          <div id="content_area">
@@ -684,23 +684,23 @@
     <th>Syndactyly</th>
     <td align="center">Y/N</td>
     <td>
-        <input type="text" name="Syndactyly_3" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ "Syndactyly"] : ""); ?>>
+        <input type="text" name="Syndactyly_3" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ "syndactyly"] : ""); ?>>
 
     </td>
     <td>
-        <input type="text" name="Syndactyly_6" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ "Syndactyly"] : ""); ?>>
+        <input type="text" name="Syndactyly_6" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ "syndactyly"] : ""); ?>>
 
     </td>
     <td>
-        <input type="text" name="Syndactyly_1" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ "Syndactyly"] : ""); ?>>
+        <input type="text" name="Syndactyly_1" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ "syndactyly"] : ""); ?>>
 
     </td>
     <td>
-        <input type="text" name="Syndactyly_2" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ "Syndactyly"] : ""); ?>>
+        <input type="text" name="Syndactyly_2" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ "syndactyly"] : ""); ?>>
 
     </td>
     <td>
-        <input type="text" name="Syndactyly_5" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ "Syndactyly"] : ""); ?>>
+        <input type="text" name="Syndactyly_5" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ "syndactyly"] : ""); ?>>
 
     </td>
 </tr>
@@ -1132,18 +1132,8 @@
 
     </td>
 </tr>
-		<?php
-		if(isset($_GET['status'])){
-			echo "<tr>";
-				echo "<th>status:</th>";
-				echo "<td><input type='text' name='status' value ='edit' readonly> </td>";
-			echo "</tr>";
-		}
-		?>
 		</table>
-		<div id="submit" align="center">
-            <input type="submit" value="Save and Continue" align="center">
-        </div>
+	
 	</form>
 </div>
 </div>

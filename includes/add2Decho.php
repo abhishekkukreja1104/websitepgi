@@ -12,4 +12,10 @@ $impression1 = $_POST['impression_1'];
 $sql = "insert into echo values($index_no, '$impressionB','$impression1');";
 mysqli_query($conn, $sql);
 
+			if(isset($_POST['status'])){
+				header("Location: ../pulmonary.php?status=edit&addpatient=".$index_no);
+
+			}else{
+				header("Location: ../pulmonary.php?addpatient=".$index_no);
+			}
 ?>

@@ -1,40 +1,53 @@
 <?php
 include_once 'includes/dbh.php';
 
+
+if(isset($_GET['status'])){
+    if($_GET['status']=="edit"){
+        $sqlB = "select * from PULM where index_no =".$_GET['addpatient'];
+        $resultB = mysqli_query($conn, $sqlB);
+        $row=false;
+   if($resultB!=false){
+         $row = mysqli_fetch_array($resultB);
+
+   }
+ }
+}
+
 $index_no = $_GET['addpatient'];
 if(isset($_POST['submit'])){
-$name = $_FILES['file']['name'];
-$tmp_name = $_FILES['file']['tmp_name'];
-$location = 'uploads';
-$title = $_POST['title'];
-$status = '' ;
+  $name = $_FILES['file']['name'];
+  $tmp_name = $_FILES['file']['tmp_name'];
+  $location = 'uploads';
+  $title = $_POST['title'];
+  $status = '' ;
 
-if(isset($name)&&!empty($name)){
-  $type = mime_content_type($tmp_name);
-  $sql="select filetitle from PULMdoc where filetitle='$title'";
-  $result = mysqli_query($conn, $sql);
-  if($result->num_rows){
-    $status="Title name already exists";
-  }
-  else{
-    if($type == 'application/pdf' || $type == 'application/msword' || $type == 'application/vnd.ms-excel' || $type == 'text/plain' ){
-      if(move_uploaded_file($tmp_name, "PULMFiles/$title")){
-
-            $sql = "insert into PULMdoc values($index_no,'$name','PULMFiles/$title','$title');";
-            mysqli_query($conn, $sql);
-            $status = 'Successfully the (<strong>'.$name.'</strong>) file uploaded!';
-      }else{
-          $status = 'There was an error uploading the file.';
-      }
+  if(isset($name)&&!empty($name)){
+    $type = mime_content_type($tmp_name);
+    $sql="select filetitle from PULMdoc where filetitle='$title'";
+    $result = mysqli_query($conn, $sql);
+    if($result->num_rows){
+      $status="Title name already exists";
     }
     else{
-      $status = 'File format not supported';
+      if($type == 'application/pdf' || $type == 'application/msword' || $type == 'application/vnd.ms-excel' || $type == 'text/plain' ){
+        if(move_uploaded_file($tmp_name, "PULMFiles/$title")){
+
+              $sql = "insert into PULMdoc values($index_no,'$name','PULMFiles/$title','$title');";
+              mysqli_query($conn, $sql);
+              $status = 'Successfully the (<strong>'.$name.'</strong>) file uploaded!';
+        }else{
+          $status = 'There was an error uploading the file.';
+        }
+      }
+      else{
+        $status = 'File format not supported';
+      }
     }
   }
-}else{
-      $status = 'Please choose a file';
+  else{
+    $status = 'Please choose a file';
   }
-
 }
 ?>
 
@@ -161,28 +174,35 @@ if(isset($name)&&!empty($name)){
             </div>
             <div id="navbar">
                 <ul>
-                    <li><a href="#Add Patient">Add Patient</a></li>
-                    <li><a href="#View patient">View Patient</a></li>
-                    <li><a href="#Search patient">Search Patient</a></li>
-                    <li><a href="#Manage Documents">Manage Documents</a></li>
+                   <li><a href="Layoutaddpatient.php">Add Patient</a></li>
+                   <li><a href="displaypatient.php">View Patient</a></li>
+                   <li><a href="displaypatient.php">Search Patient</a></li>
+                   <li><a href="documents.php">Manage Documents</a></li>
                 </ul>
             </div>
         </div>
         <div id="content_area">
             <div id="form" align="center">
-                <form action="Pulmonary.php" method="post" id="frm">
+              <?php if(isset($_POST['submit1'])){
+                    if(isset($_GET['status'])){
+                        $link="status=edit&addpatient=".$_GET['addpatient'];
+                        header("Location: clinical_diagnosis.php?".$link);
+                    }
+                    else {
+                        $link="addpatient=".$_GET['addpatient'];
+                        header("Location: clinical_diagnosis.php?".$link);
+                    }
+                  }
+              ?>
+                <form action=<?php echo "clinical_diagnosis.php?addpatient=".$_GET['addpatient']?> method="post" id="frm">
                     <div id="heading" align="center">
-                        <h1>Pulmonary Function Test:</h1>
+                        <h1>Pulmonary Function Test</h1>
                     </div>
                     <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
                         <tr>
                             <th>Pulmonary Funtion Test:</th>
                             <td>
-                                <input type="radio" name="Pulmonary" value="true">Yes</td>
-                            <td>
-                                <input type="radio" name="Pulmonary" value="false">No</td>
-                            <td>
-                                <input type="submit" name="submit" value="Go">
+                                <input type="submit" name="submit1" value="No Avaliability">
                             </td>
                         </tr>
                     </table>
@@ -203,39 +223,47 @@ if(isset($name)&&!empty($name)){
                        <tr>
                           <td></td>
                           <td>Impression:</td>
-                          <td><textarea name=impression_B rows="5" cols="20"></textarea></td>
-                          <td><textarea name=impression_1 rows="5" cols="20"></textarea></td>
+                          <td><input name=impression_B rows="5" cols="20" value=<?php echo ((isset($_GET[ 'status'])) ? $row[ 'impressionB'] : ""); ?>></input></td>
+                          <td><input name=impression_1 rows="5" cols="20" value=<?php echo ((isset($_GET[ 'status'])) ? $row[ 'impression1'] : ""); ?>></input></td>
                           <td></td>
                        </tr>
+
+                       <?php
+                          if(isset($_GET['status'])){
+                           echo "<tr>";
+                             echo "<th>status:</th>";
+                             echo "<td><input type='text' name='status' value ='edit' readonly> </td>";
+                           echo "</tr>";
+                          }
+                          ?>
                     </table>
                     <input type="submit" value="Save and Continue" align="center">
                 </form>
                 <div id="heading" align="center">
-                        <h3>Attached pdf file:</h3>
+                        <h3>Attached pdf file</h3>
                     </div>
                     <form action=<?php echo "pulmonary.php?addpatient=".$_GET['addpatient']?> method="POST" enctype="multipart/form-data">
                         <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
                             <tr>
                                 <th></th>
                                 <th></th>
-                                <th></th>
                                 <td><strong>Title: </strong></td>
                                 <td>
                                     <input type="text" name="title" required>
                                 </td>
+                                <th></th>
                             </tr>
                             <tr>
-                                <th></th>
                                 <th></th>
                                 <th></th>
                                 <td><strong>File name:</strong></td>
                                 <td>
                                     <input type="file" name="file" />
                                 </td>
+                                <th></th>
                             </tr>
                             </tr>
                             <tr>
-                              <th></th>
                               <th></th>
                               <th></th>
                               <?php
@@ -245,13 +273,11 @@ if(isset($name)&&!empty($name)){
                                 }
                                 echo '</th>';
                               ?>
+                              <th></th>
                             </tr>
                         </table>
                         <input type="submit" name="submit" value="Upload"/>
                     </form>
-            </div>
-            <div id="heading" align="center">
-				<button><strong>Next</strong></button>
             </div>
         </div>
     </div>

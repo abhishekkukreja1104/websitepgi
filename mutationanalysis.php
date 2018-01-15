@@ -120,40 +120,44 @@
             </div>
             <div id="navbar">
                 <ul>
-                    <li><a href="#Add Patient">Add Patient</a></li>
-                    <li><a href="#View patient">View Patient</a></li>
-                    <li><a href="#Search patient">Search Patient</a></li>
-                    <li><a href="#Manage Documents">Manage Documents</a></li>
+                   <li><a href="Layoutaddpatient.php">Add Patient</a></li>
+                   <li><a href="displaypatient.php">View Patient</a></li>
+                   <li><a href="displaypatient.php">Search Patient</a></li>
+                   <li><a href="documents.php">Manage Documents</a></li>
                 </ul>
             </div>
         </div>
         <div id="content_area">
             <div id="form" align="center">
-                <form action=<?php echo "mutationanalysis.php?addpatient=".$_GET['addpatient']?> method="post" id="frm">
+
+              <div id="form" align="center">
+                <?php if(isset($_POST['submit1'])){
+                      if(isset($_GET['status'])){
+                          $link="status=edit&addpatient=".$_GET['addpatient'];
+                          header("Location: 2Decho.php?".$link);
+                      }
+                      else {
+                          $link="addpatient=".$_GET['addpatient'];
+                          header("Location: 2Decho.php?".$link);
+
+                      }
+                    }
+                ?>
+                <form method="post" id="frm">
                     <div id="heading" align="center">
                         <h1>Mutation Analysis</h1>
                     </div>
                     <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
+
                         <tr>
                             <th>Mutation Analysis:</th>
                             <td>
-                                <input type="radio" name="Mutation" value="true">Yes</td>
-                            <td>
-                                <input type="radio" name="Mutation" value="false">No</td>
-                            <td>
-                                <input type="submit" name="submit" value="Go">
+                                <input type="submit" name="submit1" value="Not Avaliable">
                             </td>
                         </tr>
                     </table>
                 </form>
-                <?php
-                $DisplayForm = False;
-                if(isset($_POST['Mutation'])){
-                	if($_POST['Mutation'] == 'true')
-                	$DisplayForm = True;
-                }
-                if($DisplayForm){
-                	?>
+
                 <form action="includes/addmutationanalysis.php" method="post">
                     <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
                       <tr>
@@ -182,13 +186,20 @@
                             </select></td>
                             <th></th>
                         </tr>
+
+                              <?php
+                                 if(isset($_GET['status'])){
+                                      	echo "<tr>";
+                                    		echo "<th>status:</th>";
+                                     		echo "<td><input type='text' name='status' value ='edit' readonly> </td>";
+                                      	echo "</tr>";
+                                 }
+                             ?>
                     </table>
 
                     <input type="submit" value="Save and Continue" align="center">
                 </form>
-                <?php
-                }
-            ?>
+
             </div>
         </div>
     </div>

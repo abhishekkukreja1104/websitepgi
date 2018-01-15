@@ -3,7 +3,7 @@ include_once 'includes/dbh.php';
 
 
 if(isset($_GET['status'])){
-    if($_GET['status']=="edit"){
+
         $sqlB = "select * from NUCB where index_no =".$_GET['addpatient'];
         $sql1 = "select * from NUC1 where index_no =".$_GET['addpatient'];
         $resultB = mysqli_query($conn, $sqlB);
@@ -12,12 +12,11 @@ if(isset($_GET['status'])){
         $row1=false;
    if($resultB!=false){
          $rowB = mysqli_fetch_array($resultB);
-         echo $rowB['scan_type'];
+         
    }
    if($result1!=false)
      $row1 = mysqli_fetch_array($result1);
-     echo $row1['scan_type'];
-  }
+
  }
 
 
@@ -180,12 +179,12 @@ if(isset($name)&&!empty($name)){
                 <img src="http://indianphptregistry.com/images/logo.png">
             </div>
             <div id="navbar">
-                <ul>
-                    <li><a href="#Add Patient">Add Patient</a></li>
-                    <li><a href="#View patient">View Patient</a></li>
-                    <li><a href="#Search patient">Search Patient</a></li>
-                    <li><a href="#Manage Documents">Manage Documents</a></li>
-                </ul>
+              <ul>
+                <li><a href="../Layoutaddpatient.php">Add Patient</a></li>
+                <li><a href="../displaypatient.php">View Patient</a></li>
+                <li><a href="../displaypatient.php">Search Patient</a></li>
+                <li><a href="../documents.php">Manage Documents</a></li>
+              </ul>
             </div>
         </div>
         <div id="content_area">
@@ -194,20 +193,6 @@ if(isset($name)&&!empty($name)){
                     <div id="heading" align="center">
                         <h1>Nuclear Medicine:</h1>
                     </div>
-                    <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
-
-                        <tr>
-                            <th>Nuclear Medicine:</th>
-                            <td>
-                                <input type="radio" name="Radiology" value="true">Yes</td>
-                            <td>
-                                <input type="radio" name="Radiology" value="false">No</td>
-                            <td>
-                                <input type="submit" name="submit" value="Go">
-                            </td>
-                        </tr>
-                    </table>
-                </form>
                 <form action="includes/addnuclearmedicine.php" method = "POST" >
                     <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20" >
                        <tr>
@@ -238,51 +223,10 @@ if(isset($name)&&!empty($name)){
                           <td></td>
                        </tr>
                     </table>
-                    <input type="submit" value="Save and Continue" align="center">
                 </form>
-                <div id="heading" align="center">
-                        <h3>Attached pdf file:</h3>
-                    </div>
-                    <form action=<?php echo "nuclearmedicine.php?addpatient=".$_GET['addpatient']?> method="POST" enctype="multipart/form-data">
-                        <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <td><strong>Title: </strong></td>
-                                <td>
-                                    <input type="text" name="title" pattern = "[A-Za-z0-9]{1, }" title="avoid spaces in title" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <td><strong>File name:</strong></td>
-                                <td>
-                                    <input type="file" name="file" />
-                                </td>
-                            </tr>
-                            </tr>
-                            <tr>
-                              <th></th>
-                              <th></th>
-                              <th></th>
-                              <?php
-                                echo '<th>';
-                                if(isset($status)){
-                                  echo $status;
-                                }
-                                echo '</th>';
-                              ?>
-                            </tr>
-                        </table>
-                        <input type="submit" name="submit" value="Upload"/>
-                    </form>
+                
             </div>
-            <div id="heading" align="center">
-				<button><strong>Next</strong></button>
-            </div>
+            
         </div>
     </div>
 </body>

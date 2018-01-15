@@ -1,6 +1,5 @@
 <?php
 include_once 'includes/dbh.php';
-
 if(isset($_GET['status'])){
     if($_GET['status']=="edit"){
         $sqlB = "select * from BONB where index_no =".$_GET['addpatient'];
@@ -177,16 +176,28 @@ if(isset($name)&&!empty($name)){
                 </div>
                 <div id="navbar">
                     <ul>
-                        <li><a href="#Add Patient">Add Patient</a></li>
-                        <li><a href="#View patient">View Patient</a></li>
-                        <li><a href="#Search patient">Search Patient</a></li>
-                        <li><a href="#Manage Documents">Manage Documents</a></li>
+                       <li><a href="Layoutaddpatient.php">Add Patient</a></li>
+                       <li><a href="displaypatient.php">View Patient</a></li>
+                       <li><a href="displaypatient.php">Search Patient</a></li>
+                       <li><a href="documents.php">Manage Documents</a></li>
                     </ul>
                 </div>
             </div>
             <div id="content_area">
                 <div id="form" align="center">
-                    <form action="Bone_Biopsy.php" method="post">
+                  <?php if(isset($_POST['submit1'])){
+                        if(isset($_GET['status'])){
+                            $link="status=edit&addpatient=".$_GET['addpatient'];
+                            header("Location: nuclearmedicine.php?".$link);
+                        }
+                        else {
+                            $link="addpatient=".$_GET['addpatient'];
+                            header("Location: nuclearmedicine.php?".$link);
+
+                        }
+                      }
+                  ?>
+                    <form method="POST">
                         <div id="heading" align="center">
                             <h1>Bone Biopsy</h1>
                         </div>
@@ -194,11 +205,7 @@ if(isset($name)&&!empty($name)){
                             <tr>
                                 <th>Bone Biospy:</th>
                                 <td>
-                                    <input type="radio" name="Radiology" value="true">Yes</td>
-                                <td>
-                                    <input type="radio" name="Radiology" value="false">No</td>
-                                <td>
-                                    <input type="submit" name="submit" value="Go">
+                                    <input type="submit" name="submit1" value="Not Avaliable">
                                 </td>
                             </tr>
                         </table>
@@ -316,9 +323,6 @@ if(isset($name)&&!empty($name)){
                         </table>
                         <input type="submit" name="submit" value="Upload" />
                     </form>
-                </div>
-                <div id="heading" align="center">
-                    <button>Next</button>
                 </div>
             </div>
         </div>

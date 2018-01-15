@@ -60,7 +60,7 @@
 		$index_no = $_POST['index_no'];
 		$sql = "UPDATE MBD set
 						name='$Name',
-						 DOB='$DOB',
+						 age='$DOB',
 						 sex='$Sex',
 						 admission_no=$Admission_No,
 						 CR_no=$CR_No,
@@ -94,7 +94,7 @@
 
 	}else{
 		$sql = "insert into MBD
-		(name, DOB, sex, CR_no, admission_no, EC_no, DOA, DOS, DOD, address, telephone, mobile, email, self, parents, grandparents, r_physicians, presenting, deformity, n_o_fracture, bone_pain, short_stature, teeth_abnormality, duration, ht, wt, BMI,family_history) values
+		(name, age, sex, CR_no, admission_no, EC_no, DOA, DOS, DOD, address, telephone, mobile, email, self, parents, grandparents, r_physicians, presenting, deformity, n_o_fracture, bone_pain, short_stature, teeth_abnormality, duration, ht, wt, BMI,family_history) values
 		('$Name',
 		'$DOB',
 		'$Sex',
@@ -139,3 +139,4 @@
 	echo $sql;
 
 	?>
+

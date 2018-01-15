@@ -106,10 +106,10 @@
             </div>
             <div id="navbar">
                <ul>
-                  <li><a href="#Add Patient">Add Patient</a></li>
+                  <li><a href="Layoutaddpatient.php">Add Patient</a></li>
                   <li><a href="displaypatient.php">View Patient</a></li>
-                  <li><a href="#Search patient">Search Patient</a></li>
-                  <li><a href="#Manage Documents">Manage Documents</a></li>
+                  <li><a href="displaypatient.php">Search Patient</a></li>
+                  <li><a href="documents.php">Manage Documents</a></li>
                </ul>
             </div>
          </div>

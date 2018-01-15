@@ -160,10 +160,10 @@ if(isset($name)&&!empty($name)){
             </div>
             <div id="navbar">
                 <ul>
-                    <li><a href="#Add Patient">Add Patient</a></li>
-                    <li><a href="#View patient">View Patient</a></li>
-                    <li><a href="#Search patient">Search Patient</a></li>
-                    <li><a href="#Manage Documents">Manage Documents</a></li>
+                  <li><a href="../Layoutaddpatient.php">Add Patient</a></li>
+                  <li><a href="../displaypatient.php">View Patient</a></li>
+                  <li><a href="../displaypatient.php">Search Patient</a></li>
+                  <li><a href="../documents.php">Manage Documents</a></li>
                 </ul>
             </div>
         </div>
@@ -207,50 +207,9 @@ if(isset($name)&&!empty($name)){
                           <td></td>
                        </tr>
                     </table>
-                    <input type="submit" value="Save and Continue" align="center">
+                 
                 </form>
-                <div id="heading" align="center">
-                        <h3>Attached pdf file:</h3>
-                    </div>
-                    <form action=<?php echo "2Decho.php?addpatient=".$_GET['addpatient']?> method="POST" enctype="multipart/form-data">
-                        <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <td><strong>Title: </strong></td>
-                                <td>
-                                    <input type="text" name="title" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <td><strong>File name:</strong></td>
-                                <td>
-                                    <input type="file" name="file" />
-                                </td>
-                            </tr>
-                            </tr>
-                            <tr>
-                              <th></th>
-                              <th></th>
-                              <th></th>
-                              <?php
-                                echo '<th>';
-                                if(isset($status)){
-                                  echo $status;
-                                }
-                                echo '</th>';
-                              ?>
-                            </tr>
-                        </table>
-                        <input type="submit" name="submit" value="Upload"/>
-                    </form>
-            </div>
-            <div id="heading" align="center">
-				<button><strong>Next</strong></button>
+                
             </div>
         </div>
     </div>
