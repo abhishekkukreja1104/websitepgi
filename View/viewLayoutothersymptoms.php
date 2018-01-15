@@ -1,3 +1,4 @@
+
 <?php
 	include_once 'includes/dbh.php';
 
@@ -1132,18 +1133,8 @@
 
     </td>
 </tr>
-		<?php
-		if(isset($_GET['status'])){
-			echo "<tr>";
-				echo "<th>status:</th>";
-				echo "<td><input type='text' name='status' value ='edit' readonly> </td>";
-			echo "</tr>";
-		}
-		?>
 		</table>
-		<div id="submit" align="center">
-            <input type="submit" value="Save and Continue" align="center">
-        </div>
+	
 	</form>
 </div>
 </div>

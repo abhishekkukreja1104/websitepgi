@@ -1,3 +1,4 @@
+
 <?php
 	include_once 'includes/dbh.php';
 ?>
@@ -143,7 +144,7 @@
     </thead>
     <tbody>
         <?php
-        $sql = "select name, index_no, DOB, sex, address, mobile, parents from MBD;";
+        $sql = "select name, index_no, age, sex, address, mobile, parents from MBD;";
 		$result=mysqli_query($conn,$sql);
 
         while( $row = mysqli_fetch_array($result)) : ?>
@@ -174,7 +175,7 @@
 						?>
             <td><?php echo $row['index_no']; ?></td>
             <td><?php echo $row['name']; ?></td>
-            <td><?php echo $row['DOB']; ?></td>
+            <td><?php echo $row['age']; ?></td>
             <td><?php echo $row['sex']; ?></td>
             <td><?php echo $row['address']; ?></td>
             <td><?php echo $row['mobile']; ?></td>
@@ -207,7 +208,7 @@
 						<?php }else { echo "<td>no value</td>";} ?>
 
 						<?php if($PUL->num_rows) {?>
-						<td><a id="edit_link" href=<?php echo "View/view2Decho.php?status=yes&addpatient=".$row['index_no'];?>>View</a></td>
+						<td><a id="edit_link" href=<?php echo "View/viewpulmonary.php?status=yes&addpatient=".$row['index_no'];?>>View</a></td>
 						<?php }else { echo "<td>no value</td>";} ?>
 				</tr>
         <?php endwhile ?>

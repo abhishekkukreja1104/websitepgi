@@ -1,3 +1,4 @@
+
 <?php
 	include_once 'includes/dbh.php';
   $row= false;
@@ -133,7 +134,7 @@
                   </tr>
                   <tr>
                      <th>DOB:<font color="red">*</font></th>
-                     <td><input type="date" name="DOB" required readonly value = <?php echo $row['DOB']; ?> ></td>
+                     <td><input type="text" name="DOB" required readonly value = <?php echo $row['age']; ?> ></td>
                   </tr>
                   <tr>
                      <th>Sex:<font color="red">*</font></th>
@@ -239,9 +240,6 @@
                      <td><input type="text" name="family_history" rows="5" cols="48" readonly value = <?php echo $row['family_history']; ?> ></td>
                   </tr>
                </table>
-               <div id="submit" align="center">
-                  <input type="submit" value="Save and Continue" align="center">
-               </div>
               </form>
             </div>
          </div>

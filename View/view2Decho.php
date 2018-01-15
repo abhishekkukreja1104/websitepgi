@@ -1,3 +1,4 @@
+
 <?php
 include_once 'includes/dbh.php';
 
@@ -207,50 +208,9 @@ if(isset($name)&&!empty($name)){
                           <td></td>
                        </tr>
                     </table>
-                    <input type="submit" value="Save and Continue" align="center">
+                 
                 </form>
-                <div id="heading" align="center">
-                        <h3>Attached pdf file:</h3>
-                    </div>
-                    <form action=<?php echo "2Decho.php?addpatient=".$_GET['addpatient']?> method="POST" enctype="multipart/form-data">
-                        <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <td><strong>Title: </strong></td>
-                                <td>
-                                    <input type="text" name="title" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <td><strong>File name:</strong></td>
-                                <td>
-                                    <input type="file" name="file" />
-                                </td>
-                            </tr>
-                            </tr>
-                            <tr>
-                              <th></th>
-                              <th></th>
-                              <th></th>
-                              <?php
-                                echo '<th>';
-                                if(isset($status)){
-                                  echo $status;
-                                }
-                                echo '</th>';
-                              ?>
-                            </tr>
-                        </table>
-                        <input type="submit" name="submit" value="Upload"/>
-                    </form>
-            </div>
-            <div id="heading" align="center">
-				<button><strong>Next</strong></button>
+                
             </div>
         </div>
     </div>
