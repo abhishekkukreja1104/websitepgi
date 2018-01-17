@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -138,11 +139,13 @@
                     </table>
                 </form>
             </div>
+
             <form action="treatment.php"method="POST">
                 <div class="row">
                   <div class="col-md-12" align="center" id="submit">
                      <input type="submit" name= "next" value="Next" align="center">
                   </div>
+
                 </div>
             </form>
         </div>

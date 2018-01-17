@@ -3,22 +3,32 @@
 
   if(isset($_GET['status'])){
     if($_GET['status']=="edit"){
+      $sqlB = "select * from OSB where index_no =".$_GET['addpatient'];
+
       $sql3 = "select * from OS3 where index_no =".$_GET['addpatient'];
       $sql6 = "select * from OS6 where index_no =".$_GET['addpatient'];
       $sql1 = "select * from OS1 where index_no =".$_GET['addpatient'];
       $sql2 = "select * from OS2 where index_no =".$_GET['addpatient'];
       $sql5 = "select * from OS5 where index_no =".$_GET['addpatient'];
+      $resultB = mysqli_query($conn, $sqlB);
+
       $result3 = mysqli_query($conn, $sql3);
       $result6 = mysqli_query($conn, $sql6);
       $result1 = mysqli_query($conn, $sql1);
       $result2 = mysqli_query($conn, $sql2);
       $result5 = mysqli_query($conn, $sql5);
+      $rowB=false;
+
       $row3=false;
       $row6=false;
       $row1=false;
       $row2=false;
       $row5=false;
 
+
+            if($resultB!=false){
+              $rowB = mysqli_fetch_array($result3);
+            }
       if($result3!=false){
         $row3 = mysqli_fetch_array($result3);
       }
@@ -153,7 +163,7 @@
                    <th id= "up" style="font-size:18px">Follow-up</th>
                    <th ></th>
                    <th ></th>
-                </tr>   
+                </tr>
               <tr>
                   <th></th>
                   <th id="up">Base line</th>
@@ -2260,13 +2270,13 @@
       <td><select name="Syndactyly_B">
         <option value="unknown">--Select--</option>
           <option value="yes" <?php if(isset($_GET['status'])){
-              if($rowB['Syndactyly'] == 'yes'){
+              if($rowB['syndactyly'] == 'yes'){
                 echo "selected";
               }
             }
           ?>>Yes</option>
           <option value="no" <?php if(isset($_GET['status'])){
-              if($rowB['Syndactyly'] == 'no'){
+              if($rowB['syndactyly'] == 'no'){
                 echo "selected";
               }
             }
@@ -3977,7 +3987,7 @@
         echo "<td><input type='text' name='status' value ='edit' readonly> </td>";
       echo "</tr>";
     }
-    ?>                
+    ?>
     </tbody>
   </table>
     <div class="row">
@@ -3985,7 +3995,7 @@
           <input type="submit" value="Save and Continue" align="center">
        </div>
     </div>
-    </form>            
+    </form>
    </div>
 </body>
 </html>
