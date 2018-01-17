@@ -59,137 +59,103 @@ if(isset($name)&&!empty($name)){
 }
 ?>
 
-<html>
-
-<head>
-    <title>Nuclear Medicine</title>
-    <link rel="stylesheet" type="text/css" href="form_style.css">
-</head>
-<style>
-    body {
-        background: #96B8DA;
-        margin: 0;
-    }
-
-    #container {
-        width: 1200px;
-        margin: 0 auto;
-        background: #ffffff;
-    }
-
-    #header {
-        width: 100%;
-        border-bottom: 1px solid #c7c7c7;
-        background: #ffffff;
-    }
-
-    #logo {
-        width: 100%;
-        height: 130px;
-    }
-
-    #heading {
-        width: 100%;
-        background: #518B47;
-        padding: 0px;
-        padding-bottom: 10px;
-        padding-top: 10px;
-        color: white;
-    }
-
-    #submit {
-        width: 100%;
-        background: #518B47;
-        padding: 0px;
-        padding-bottom: 10px;
-        padding-top: 10px;
-    }
-
-    #form {
-        width: 100%;
-        background: #ffffff;
-        padding: 0px;
-        padding-bottom: 10px;
-        padding-top: 10px;
-        color: black;
-    }
-
-    #navbar {
-        height: 40px;
-        clear: both;
-        width: 100%;
-    }
-
-    #up {
-        text-align: center;
-    }
-
-    #navbar ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-    }
-
-    #navbar ul li {
-        float: left;
-        border-right: 1px solid #bbb;
-    }
-
-    #navbar ul li a {
-        display: block;
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Nuclear Medicine</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+   </head>
+   <style>
+      .table>tbody>tr>td,
+      .table>tbody>tr>th {
+        border-top: none;
+      }
+      body{
+         font-family: 'Georgia';
+         background: #96B8DA;
+      }
+      #logo{
+         background: #ffffff;
+      }
+      .container{
+         background-color: #ffffff;
+      }
+      #heading{
+         font-weight: bold;
+         background: #518B47;
+         padding-bottom: 1%;
+         color: white;
+       }
+       #nav{
+        font-size: 16px;
+        background: #1F4F96;
         color: #ffffff;
-        text-align: center;
-        background-color: #1F4F96;
-        width: 299px;
-        padding-top: 20px;
-        padding-bottom: 20px;
         font-weight: bold;
-        text-decoration: none;
-    }
-
-    #navbar ul li a:hover {
-        background-color: #111;
-    }
-
-    th {
-        text-align: left;
-    }
-
-    td {
-        padding-top: 10px;
-        margin: 0 auto;
-        align-items: center;
-    }
-
-    input[type="number"] {
-        display: inline-block;
-        width: 100px;
-    }
-
-    input[type="text"] {
-        display: inline-block;
-        width: 100px;
-    }
-</style>
-
+        padding: 2%;
+       }
+       #nav:hover{
+         background-color: #111;
+       }
+       th{
+         text-align: left;
+       }
+       td{
+         text-align: left;
+       }
+       #up{
+         text-align: center;
+       }
+       #submit{
+         width: 100%;
+         padding: 0px;
+         padding-bottom: 10px;
+         padding-top: 10px;
+       }
+       .table{
+        margin-top: 1%;
+        margin-left: 27%;
+        width: 60%;
+        border: none;
+       }
+   </style>
 <body>
-    <div id="container">
-        <div id="header">
-            <div id="logo" align="center">
-                <img src="http://indianphptregistry.com/images/logo.png">
+    <div class="container">
+      <div class="row">
+         <div class="col-md-12" id="logo" align="center">
+            <img class="img-responsive" src="http://indianphptregistry.com/images/logo.png" alt="indianphptregistry">
+         </div>
+      </div>
+      <div class="row">
+         <a href="Layoutaddpatient.php">
+            <div class="col-md-3" align="center" id="nav">
+               Add Patient
             </div>
-            <div id="navbar">
-                <ul>
-                   <li><a href="Layoutaddpatient.php">Add Patient</a></li>
-                   <li><a href="displaypatient.php">View Patient</a></li>
-                   <li><a href="displaypatient.php">Search Patient</a></li>
-                   <li><a href="documents.php">Manage Documents</a></li>
-                </ul>
+         </a>
+         <a href="displaypatient.php">
+            <div class="col-md-3" align="center" id="nav">
+               View Patient
             </div>
-        </div>
-        <div id="content_area">
-            <div id="form" align="center">
+         </a>
+         <a href="displaypatient.php">
+            <div class="col-md-3" align="center" id="nav">
+               Search Patient
+            </div>
+         </a>
+         <a href="documents">
+            <div class="col-md-3" align="center" id="nav">
+               Manage Documents
+            </div>
+         </a>
+      </div>
+      <div class="row">
+         <div class="col-md-12" align="center" id="heading">
+            <h1>Nuclear Medicine</h1>
+         </div>
+      </div>
 
                 <?php if(isset($_POST['submit1'])){
                       if(isset($_GET['status'])){
@@ -204,12 +170,8 @@ if(isset($name)&&!empty($name)){
                     }
                 ?>
                 <form method="post" id="frm">
-                    <div id="heading" align="center">
-                        <h1>Nuclear Medicine</h1>
-                    </div>
-                    <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
-
-                        <tr>
+                    <table class="table table-hover" align="center">                    
+                       <tr>
                             <th>Nuclear Medicine:</th>
 
                             <td>
@@ -219,20 +181,19 @@ if(isset($name)&&!empty($name)){
                     </table>
                 </form>
                 <form action="includes/addnuclearmedicine.php" method = "POST" >
-                    <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20" >
-                       <tr>
-                          <th></th>
-                          <th style="font-size:23px"><font face="verdana"></font></th>
-                          <th style="font-size:23px"><font face="verdana">Base line</font></th>
-                          <th style="font-size:23px"><font face="verdana">1 year</font></th>
-                          <th></th>
-                       </tr>
+                    <table class="table table-hover" align="center">
+                      <thead>
+                         <tr>
+                            <th style="font-size:23px"><font face="verdana"></font></th>
+                            <th style="font-size:23px" id="up"><font face="verdana">Base line</font></th>
+                            <th style="font-size:23px" id="up"><font face="verdana">1 year</font></th>
+                         </tr>
+                      </thead> 
                        <tr>
                           <th>Index Number</th>
                           <td><input type="text" name="addpatient" value=<?php echo $_GET['addpatient']?> readonly></td>
                        </tr>
                        <tr>
-                          <td></td>
                           <td>Scan Type:</td>
                           <td><select name="scan_type_B">
                               <option value="unknown">-Select-</option>
@@ -251,43 +212,40 @@ if(isset($name)&&!empty($name)){
                           <td></td>
                        </tr>
                        <tr>
-                          <td></td>
                           <td>Impression:</td>
                           <td><input name=impression_B rows="5" cols="20" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></textarea></td>
                           <td><input name=impression_1 rows="5" cols="20" value = <?php echo ((isset($_GET['status'])) ? $row1['impression'] : ""); ?>></textarea></td>
                           <td></td>
                        </tr>
                     </table>
-                    <input type="submit" value="Save and Continue" align="center">
+                    <div class="row">
+                  <div class="col-md-12" align="center" id="submit">
+                     <input type="submit" value="Save and Continue" align="center">
+                  </div>
+               </div>
                 </form>
-                <div id="heading" align="center">
-                        <h3>Attached pdf file</h3>
-                    </div>
+                <div class="row">
+         <div class="col-md-12" align="center" id="heading">
+            <h3>Attached pdf file</h3>
+         </div>
+                </div>
+                
                     <form action=<?php echo "nuclearmedicine.php?addpatient=".$_GET['addpatient']?> method="POST" enctype="multipart/form-data">
-                        <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
+                        <table class="table table-hover" align="center">
                             <tr>
-                                <th></th>
-                                <th></th>
                                 <td><strong>Title: </strong></td>
                                 <td>
                                     <input type="text" name="title" pattern = "[A-Za-z0-9]{1, }" title="avoid spaces in title" required>
                                 </td>
-                                <th></th>
                             </tr>
                             <tr>
-                                <th></th>
-                                <th></th>
                                 <td><strong>File name:</strong></td>
                                 <td>
                                     <input type="file" name="file" />
                                 </td>
-                                <th></th>
                             </tr>
                             </tr>
                             <tr>
-                              <th></th>
-                              <th></th>
-                              <th></th>
                               <?php
                                 echo '<th>';
                                 if(isset($status)){
@@ -297,7 +255,12 @@ if(isset($name)&&!empty($name)){
                               ?>
                             </tr>
                         </table>
-                        <input type="submit" name="submit" value="Upload"/>
+                             <div class="row">
+                  <div class="col-md-12" align="center" id="submit">
+                     <input type="submit" value="Upload" align="center">
+                  </div>
+               </div>
+                        
                     </form>
             </div>
         </div>
