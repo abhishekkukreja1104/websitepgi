@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <title>Clinical diagnosis dropdown</title>
+      <title>Osteoporosis dropdown</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -98,54 +97,31 @@
       </div>
       <div class="row">
          <div class="col-md-12" align="center" id="heading">
-            <h1>Clinical diagnosis dropdown</h1>
+            <h1>Osteoporosis dropdown</h1>
          </div>
       </div>
             <div id="form" align="center">
                 <form action="clinical_diagnosis.php" method="post">
                     <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
                         <tr>
-                            <th>Clinical diagnosis dropdown:</th>
-                            <td>
-                                <select name="disease">
-                                    <option value="unknown">-Select-</option>
-                                    <option value="rickets">Rickets</option>
-                                    <option value="rickets_osteomalacia">Rickets and Osteomalacia</option>
-                                    <option value="Osteomalacia" <?php if(isset($_POST['disease'])){ if($_POST['disease'] == 'Osteomalacia') echo 'selected';}?>>Osteomalacia</option>
-                                    <option value="Osteogenesis">Osteogenesis imperfecta</option>
-                                    <option value="Fibrous">Fibrous Dysplasia</option>
-                                    <option value="Paget">Paget's disease</option>
-                                    <option value="Osteopetrosis">Osteopetrosis</option>
-                                    <option value="Spondyloepiphyseal">Spondyloepiphyseal dysplasia</option>
-                                    <option value="Fibrogenesis">Fibrogenesis imperfecta ossium</option>
-                                    <option value="Osteoporosis" <?php if(isset($_POST['disease'])){ if($_POST['disease'] == 'Osteoporosis') echo 'selected';}?>>Osteoporosis</option>
-                                    <option value="Hypo_Osteomalacia">Hypophosphatemic & Vitamin D Deficiency Osteomalacia</option>
-                                    <option value="Pyknodysostosis">Pyknodysostosis</option>
-                                    <option value="Camurati">Camurati-Engelmann Disease</option>
-                                    <option value="Melorheostosis">Melorheostosis</option>
-                                    <option value="Osteomyelosclerosis">Osteomyelosclerosis</option>
-                                    <option value="Achondroplasis">Achondroplasis</option>
-                                    <option value="Enchondromatosis">Enchondromatosis</option>
-                                    <option value="Multiple_Exostoses">Multiple Exostoses</option>
-                                    <option value="Sclerosteosis">Sclerosteosis</option>
-                                    <option value="Tumoral">Tumoral Calcinosis</option>
-                                    <option value="Mucopolysaccharidosis">Mucopolysaccharidosis</option>
-                                    <option value="Pseudohypoparathyroidism">Pseudohypoparathyroidism</option>
-                                    <option value="Bartter">Bartter-like syndrome</option>
-                                    <option value="Any_other">Any other</option>
-                                </select>
-                            </td>
+                            <th>Osteoporosis dropdown:</th>
+                                <td>
+                                    <select name="Osteoporosis">
+                                        <option value="unknown">-Select-</option>
+                                        <option value="Juvenile">Juvenile</option>
+                                        <option value="Young">Young</option>
+                                        <option value="Senior">Senior</option>
+                                    </select>
+                                </td>
                         </tr>
                     </table>
                 </form>
             </div>
-
             <form action="treatment.php"method="POST">
                 <div class="row">
                   <div class="col-md-12" align="center" id="submit">
                      <input type="submit" name= "next" value="Next" align="center">
                   </div>
-
                 </div>
             </form>
         </div>
