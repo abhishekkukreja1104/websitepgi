@@ -103,6 +103,10 @@
             <div id="form" align="center">
                 <form action="clinical_diagnosis.php" method="post">
                     <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
+                      <th>Index Number</th>
+                      <td>
+                          <input type="text" name="addpatient" value=<?php echo $_GET[ 'addpatient']?> readonly>
+                      </td>
                         <tr>
                             <th>Osteoporosis dropdown:</th>
                                 <td>
