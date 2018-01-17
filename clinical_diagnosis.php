@@ -1,3 +1,17 @@
+<?php
+include_once 'includes/dbh.php';
+if(isset($_GET['status'])){
+    if($_GET['status']=="edit"){
+        $sql = "select * from BONB where index_no =".$_GET['addpatient'];
+        $result = mysqli_query($conn, $sql);
+        $row=false;
+   if($result!=false){
+         $row = mysqli_fetch_array($result);
+   }
+}
+}
+$osteoporosis_sub = "unkown";
+?>
 <html>
 
 <head>
@@ -128,6 +142,7 @@
             </div>
         </div>
         <div id="content_area">
+
             <div id="form" align="center">
                 <form action="clinical_diagnosis.php" method="post">
                     <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
@@ -193,10 +208,11 @@
                     if($_POST['disease'] == 'Osteoporosis')
                     $DisplayOsteoporosis = True;
                 }
+                $o = "unkown";
                 if($DisplayOsteoporosis){
                     ?>
                                 <td>
-                                    <select name="Osteoporosis">
+                                    <select name="Osteoporosis" method = "POST">
                                         <option value="unknown">-Select-</option>
                                         <option value="Juvenile">Juvenile</option>
                                         <option value="Young">Young</option>
@@ -204,6 +220,14 @@
                                     </select>
                                 </td>
                                 <?php
+
+                                $o = $_POST['Osteoporosis'];
+                }
+                if(isset($_POST['next'])){
+                  $sql = "insert into CD(index_no, disease, subDF) values(5, 'Osteoporosis', ".$o;
+                  echo $sql; 
+                  mysqli_query($conn,$sql);
+                  header("Location: 2Decho.php?addpatient=".$index_no);
                 }
                 ?>
                         </tr>
@@ -211,9 +235,10 @@
                     <input type="submit" value="Save and Continue" align="center">
                 </form>
             </div>
-            <form action="treatment.php"method="POST">
+
+            <form  method="POST">
                 <div id="heading" align="center">
-                        <input type="submit" name= "next" value="Next" align="center">
+                        <input type="submit" id = "next" name= "next" value="Next" align="center">
                 </div>
             </form>
         </div>

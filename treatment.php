@@ -129,7 +129,7 @@
         </div>
         <div id="content_area">
             <div id="form" align="center">
-                <form action="Layoutaddpatient.php">
+                <form action="includes.php" method="post">
                     <div id="heading" align="center">
                         <h1>Treatment</h1>
                     </div>
@@ -180,6 +180,61 @@
             </div>
         </div>
     </div>
+    <?php
+
+      if(isset($_POST['submit'])){
+        $Calcium = 0;
+        $VitD = 0;
+        $Bisphosphonates = 0;
+        $Calcitonin = 0;
+        $RhPTH = 0;
+        $Denosumeb = 0;
+        $Estrogen = 0;
+        $Glucocorticoids = 0;
+        $Any_other = 0;
+
+
+        if($_POST['Calcium']=='yes')
+          $Calcium = 1;
+
+        if($_POST['vitD']=='yes')
+          $VitD = 1;
+
+        if($_POST['Bisphosphonates']=='yes')
+          $Bisphosphonates = 1;
+
+        if($_POST['Calcitonin']=='yes')
+          $Calcitonin = 1;
+
+        if($_POST['$RhPTH']=='yes')
+          $RhPTH = 1;
+
+        if($_POST['Denosumeb']=='yes')
+          $Denosumeb = 1;
+
+        if($_POST['Estrogen']=='yes')
+          $Estrogen = 1;
+
+        if($_POST['Glucocorticoids']=='yes')
+          $Glucocorticoids = 1;
+
+        if($_POST['any_other']=='yes')
+          $Any_other = 1;
+
+        $sql =  "insert into TM values(2,
+          $Calcium,
+          $VitD,
+          $Bisphosphonates,
+          $Calcitonin,
+          $RhPTH,
+          $Denosumeb,
+          $Estrogen,
+          $Glucocorticoids,
+          $Any_other)";
+          
+
+      }
+     ?>
 </body>
 
 </html>
