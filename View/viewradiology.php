@@ -328,55 +328,23 @@ if(isset($name)&&!empty($name)){
                             <input type="submit" style="font-size: 15px" value="Submit and continue">
                         </div>
                     </form>
-										<form action=<?php echo "radiology.php?addpatient=".$_GET['addpatient']?> method="POST" enctype="multipart/form-data">
-											<div class="box" id="heading">
-												<h1  align="center">Add new file</h1>
-											</div>
-											<table cellpadding="3" bgcolor="FFFFFF" align="center"
-											cellspacing="20">
-											<tr>
-												<th></th>
-												<th></th>
-												<th></th>
-												<th></th>
-												<th></th>
-												<th ></th>
-												<th ></th>
-											</tr>
-											<tr>
-												<th></th>
-												<th></th>
-												<th></th>
-												<td><strong>Title: </strong></td>
-												<td><input type="text" name="title" pattern = "[A-Za-z0-9]{1, }" title="avoid spaces in title" required></td>
-											</tr>
-											<tr>
-												<th></th>
-												<th></th>
-												<th></th>
-												<td><strong>File:</strong></td>
-												<td><input type="file" name="file" /></td>
-											</tr>
-											<tr>
-												<th></th>
-												<th></th>
-												<th></th>
-												<?php
-													echo '<th>';
-													if(isset($status)){
-														echo $status;
-													}
-													echo '</th>';
-												?>
-											</tr>
-											</table>
-											<div class="box" id="heading">
-												<input type="submit" name="submit" value="Upload"/>
-											</div>
-											</tr>
-										</form>
-
-
+				    <table id = "customers">
+                      <th>FileTitle</th>
+                      <th>Filename</th>
+                      <th>View</th>
+                      <th>Delete</th>
+                      <?php
+                        $sql = "select * from STF";
+                        $result = mysqli_query($conn, $sql);
+                        while($row = mysqli_fetch_array($result)): ?>
+                          <tr>
+                            <td><?php echo $row['filetitle']; ?></td>
+                            <td><?php echo $row['filename']; ?></td>
+                            <td><a id="edit_link" href=<?php echo $row['filepath'];?>>View</a></td>
+                            <td><a id="edit_link" href=<?php echo "documents.php?delete=".$row['filepath'];?>>delete</a></td>
+                          </tr>
+                      <?php endwhile ?>
+                    </table>
             </div>
         </div>
     </div>
