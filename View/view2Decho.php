@@ -2,6 +2,14 @@
 <?php
 include_once 'includes/dbh.php';
 
+
+if(isset($_GET['delete'])){
+  $value = $_GET['delete'];
+  $sql="delete from RADdoc where filepath='$value'";
+  mysqli_query($conn, $sql);
+  unlink($_GET['delete']);
+  echo $sql;
+}
 $index_no = $_GET['addpatient'];
 if(isset($_POST['submit'])){
 $name = $_FILES['file']['name'];
@@ -9,32 +17,6 @@ $tmp_name = $_FILES['file']['tmp_name'];
 $location = 'uploads';
 $title = $_POST['title'];
 $status = '' ;
-
-if(isset($name)&&!empty($name)){
-  $type = mime_content_type($tmp_name);
-  $sql="select filetitle from ECHOdoc where filetitle='$title'";
-  $result = mysqli_query($conn, $sql);
-  if($result->num_rows){
-    $status="Title name already exists";
-  }
-  else{
-    if($type == 'application/pdf' || $type == 'application/msword' || $type == 'application/vnd.ms-excel' || $type == 'text/plain' ){
-      if(move_uploaded_file($tmp_name, "ECHOFiles/$title")){
-
-            $sql = "insert into ECHOdoc values($index_no,'$name','ECHOFiles/$title','$title');";
-            mysqli_query($conn, $sql);
-            $status = 'Successfully the (<strong>'.$name.'</strong>) file uploaded!';
-      }else{
-          $status = 'There was an error uploading the file.';
-      }
-    }
-    else{
-      $status = 'File format not supported';
-    }
-  }
-}else{
-      $status = 'Please choose a file';
-  }
 
 }
 ?>
@@ -136,18 +118,7 @@ if(isset($name)&&!empty($name)){
          </div>
       </div>
                 <form action="2D_echo.php" method="post" id="frm">
-                  <table class="table table-hover" align="center">
-                        <tr>
-                            <th>2D-Echo Test:</th>
-                            <td>
-                                <input type="radio" name="Pulmonary" value="true">Yes</td>
-                            <td>
-                                <input type="radio" name="Pulmonary" value="false">No</td>
-                            <td>
-                                <input type="submit" name="submit" value="Go">
-                            </td>
-                        </tr>
-                    </table>
+                  
                 </form>
                 <form action = "includes/add2Decho.php" method="POST">
                   <table class="table table-hover" align="center">
@@ -166,30 +137,33 @@ if(isset($name)&&!empty($name)){
                           <td><textarea name=impression_1 rows="5" cols="20"></textarea></td>
                        </tr>
                     </table>
-                 
+
                 </form>
-                
+
             <table class="table table-hover" align="center">
-             <thead> 
-            <tr>  
+             <thead>
+            <tr>
               <th>FileTitle</th>
               <th>Filename</th>
               <th>View</th>
               <th>Delete</th>
-            </tr> 
+            </tr>
             </thead>
-            <tbody> 
+            <tbody>
             <?php
-              $sql = "select * from STF";
+              $index_no = $_GET['addpatient'];
+              $sql = "select * from ECHOdoc where index_no = ".$index_no;
               $result = mysqli_query($conn, $sql);
+              if($result){
               while($row = mysqli_fetch_array($result)): ?>
                 <tr>
                   <td><?php echo $row['filetitle']; ?></td>
                   <td><?php echo $row['filename']; ?></td>
                   <td><a id="edit_link" href=<?php echo $row['filepath'];?>>View</a></td>
-                  <td><a id="edit_link" href=<?php echo "documents.php?delete=".$row['filepath'];?>>delete</a></td>
+                  <td><a id="edit_link" href=<?php echo "view2Decho.php?addpatient=$index_no&delete=".$row['filepath'];?>>delete</a></td>
                 </tr>
-            <?php endwhile ?>
+            <?php endwhile;
+          } ?>
             </tbody>
             </table>
         </div>

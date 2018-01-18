@@ -111,6 +111,7 @@
         <tr>
             <th>Admission No</th>
             <th>Name</th>
+						<th>Disease</th>
             <th>Age</th>
             <th>Sex</th>
             <th>Address</th>
@@ -138,6 +139,9 @@
         <tr>
             <!--Each table column is echoed in to a td cell-->
                   <?php
+										 $sql = "select * from CD where index_no=".$row['index_no'];
+										 $CD = mysqli_query($conn, $sql);
+
                      $sql = "select index_no from RADB where index_no=".$row['index_no'];
                      $RAD = mysqli_query($conn, $sql);
 
@@ -162,7 +166,21 @@
                   ?>
             <td><?php echo $row['index_no']; ?></td>
             <td><?php echo $row['name']; ?></td>
-            <td><?php echo $row['DOB']; ?></td>
+						<?php if($CD->num_rows) {
+						echo "<td>";
+									$row1 = mysqli_fetch_array($CD);
+									if(strcmp($row1['disease'],'Osteomalacia')==0)
+										echo $row1['disease'].'->'.$row1['subDF'];
+									else if(strcmp($row1['disease'],'Osteoporosis')==0)
+											echo $row1['disease'].'->'.$row1['subDF'];
+									else {
+										echo $row1['disease'];
+									}
+						echo "</td>";
+						}else { echo "<td>no value</td>";
+						} ?>
+
+						<td><?php echo $row['DOB']; ?></td>
             <td><?php echo $row['sex']; ?></td>
             <td><?php echo $row['address']; ?></td>
             <td><?php echo $row['mobile']; ?></td>

@@ -124,7 +124,7 @@
                   </tr>
                   <tr>
                      <th>DOB:<font color="red">*</font></th>
-                     <td><input type="text" name="DOB" required readonly value = <?php echo $row['age']; ?> ></td>
+                     <td><input type="text" name="DOB" required readonly value = <?php echo $row['DOB']; ?> ></td>
                   </tr>
                   <tr>
                      <th>Sex:<font color="red">*</font></th>
