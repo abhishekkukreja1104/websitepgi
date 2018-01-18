@@ -1,3 +1,4 @@
+
 <html>
 
 <head>
@@ -129,8 +130,8 @@
         </div>
         <div id="content_area">
             <div id="form" align="center">
-                
-                
+
+
                 <form action="includes/addmutationanalysis.php" method="post">
                     <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
                       <tr>
@@ -154,23 +155,7 @@
                     </table>
                 </form>
             </div>
-            <table id = "customers">
-              <th>FileTitle</th>
-              <th>Filename</th>
-              <th>View</th>
-              <th>Delete</th>
-              <?php
-                $sql = "select * from STF";
-                $result = mysqli_query($conn, $sql);
-                while($row = mysqli_fetch_array($result)): ?>
-                  <tr>
-                    <td><?php echo $row['filetitle']; ?></td>
-                    <td><?php echo $row['filename']; ?></td>
-                    <td><a id="edit_link" href=<?php echo $row['filepath'];?>>View</a></td>
-                    <td><a id="edit_link" href=<?php echo "documents.php?delete=".$row['filepath'];?>>delete</a></td>
-                  </tr>
-              <?php endwhile ?>
-            </table>
+            
         </div>
     </div>
 </body>

@@ -15,7 +15,7 @@
         $row1 = mysqli_fetch_array($result1);
     }
    }
-   
+
    $index_no = $_GET['addpatient'];
    if(isset($_POST['submit'])){
    $name = $_FILES['file']['name'];
@@ -23,7 +23,8 @@
    $location = 'uploads';
    $title = $_POST['title'];
    $status = '' ;
-   
+
+
    if(isset($name)&&!empty($name)){
      $type = mime_content_type($tmp_name);
      $sql="select filetitle from BONdoc where filetitle='$title'";
@@ -34,7 +35,7 @@
      else{
        if($type == 'application/pdf' || $type == 'application/msword' || $type == 'application/vnd.ms-excel' || $type == 'text/plain' ){
          if(move_uploaded_file($tmp_name, "BONFiles/$title")){
-   
+
                $sql = "insert into BONdoc values($index_no,'$name','BONFiles/$title','$title');";
                mysqli_query($conn, $sql);
                $status = 'Successfully the (<strong>'.$name.'</strong>) file uploaded!';
@@ -49,7 +50,7 @@
    }else{
          $status = 'Please choose a file';
      }
-   
+
    }
    ?>
 <!DOCTYPE html>
@@ -148,7 +149,7 @@
                else {
                    $link="addpatient=".$_GET['addpatient'];
                    header("Location: nuclearmedicine.php?".$link);
-               
+
                }
                }
                ?>
@@ -163,7 +164,7 @@
                </table>
             </form>
             <form action="includes/addbonebiopsy.php" method="POST">
-               <table class="table table-hover" align="center"> 
+               <table class="table table-hover" align="center">
                   <thead>
                   <tr>
                      <th></th>
@@ -245,7 +246,7 @@
                      }
                      ?>
                   </tbody>
-                  
+
                </table>
                <div id="submit">
                  <input type="submit" value="Save and Continue" align="center">
@@ -257,10 +258,12 @@
                </div>
             </div>
             <form action=<?php echo "bonebiopsy.php?addpatient=".$_GET[ 'addpatient']?> method="POST" enctype="multipart/form-data">
+
               <div class="row">
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
               <table class="table table-hover" align="center"> 
+
                   <tr>
                      <th>Title:</th>
                      <th>
