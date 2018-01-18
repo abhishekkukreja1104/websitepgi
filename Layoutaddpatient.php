@@ -69,8 +69,6 @@
        }
        .table{
         margin-top: 1%;
-        margin-left: 27%;
-        width: 60%;
         border: none;
        }
    </style>
@@ -92,12 +90,12 @@
                View Patient
             </div>
          </a>
-         <a href="displaypatient.php">
+         <a href="search.php">
             <div class="col-md-3" align="center" id="nav">
                Search Patient
             </div>
          </a>
-         <a href="documents">
+         <a href="documents.php">
             <div class="col-md-3" align="center" id="nav">
                Manage Documents
             </div>
@@ -109,6 +107,10 @@
          </div>
       </div>
             <form action = "includes/addpatient.php" method = "POST">
+
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-8">  
                <table class="table table-hover" align="center"> 
                  <?php
              		if(isset($_GET['status'])){
@@ -233,12 +235,14 @@
                      <td><textarea name="family_history" rows="5" cols="48" value = <?php echo $row['family_history']; ?>></textarea></td>
                   </tr>
                </table>
+              </div>
+            </div>
                <div class="row">
                   <div class="col-md-12" align="center" id="submit">
                      <input type="submit" value="Save and Continue" align="center">
                   </div>
                </div>
-            </form>
+            </form>    
       </div>
    </body>
 </html>

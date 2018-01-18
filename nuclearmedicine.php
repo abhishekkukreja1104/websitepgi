@@ -104,11 +104,15 @@ if(isset($name)&&!empty($name)){
          text-align: left;
        }
        td{
-         text-align: left;
+         text-align: center;
        }
        #up{
          text-align: center;
        }
+       input[type = "text"]{
+        display: inline-block;
+        width: 100%;
+      }
        #submit{
          width: 100%;
          padding: 0px;
@@ -117,9 +121,6 @@ if(isset($name)&&!empty($name)){
        }
        .table{
         margin-top: 1%;
-        margin-left: 27%;
-        width: 60%;
-        border: none;
        }
    </style>
 <body>
@@ -140,12 +141,12 @@ if(isset($name)&&!empty($name)){
                View Patient
             </div>
          </a>
-         <a href="displaypatient.php">
+         <a href="search.php">
             <div class="col-md-3" align="center" id="nav">
                Search Patient
             </div>
          </a>
-         <a href="documents">
+         <a href="documents.php">
             <div class="col-md-3" align="center" id="nav">
                Manage Documents
             </div>
@@ -172,7 +173,7 @@ if(isset($name)&&!empty($name)){
                 <form method="post" id="frm">
                     <table class="table table-hover" align="center">                    
                        <tr>
-                            <th>Nuclear Medicine:</th>
+                            <td><strong>Nuclear Medicine:</strong></td>
 
                             <td>
                                 <input type="submit" name="submit1" value="No Avaliability">
@@ -194,7 +195,7 @@ if(isset($name)&&!empty($name)){
                           <td><input type="text" name="addpatient" value=<?php echo $_GET['addpatient']?> readonly></td>
                        </tr>
                        <tr>
-                          <td>Scan Type:</td>
+                          <th>Scan Type:</th>
                           <td><select name="scan_type_B">
                               <option value="unknown">-Select-</option>
                               <option value="bone_scan">Bone Scan</option>
@@ -212,34 +213,155 @@ if(isset($name)&&!empty($name)){
                           <td></td>
                        </tr>
                        <tr>
-                          <td>Impression:</td>
+                          <th>Impression:</th>
                           <td><input name=impression_B rows="5" cols="20" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></textarea></td>
                           <td><input name=impression_1 rows="5" cols="20" value = <?php echo ((isset($_GET['status'])) ? $row1['impression'] : ""); ?>></textarea></td>
                           <td></td>
                        </tr>
                     </table>
-                    <div class="row">
+        <div class="row">
+           <div class="col-md-12" align="center" id="heading">
+              <h1>DXA</h1>
+           </div>
+        </div>       
+        <table class="table table-hover" align="center">
+               <tr>
+                  <th style="font-size:20px"><font face="verdana">DXA</font></th>
+                  <th></th>
+                  <th></th>
+                  <td style="font-size:20px"><font face="verdana"><strong>Baseline</strong></td>
+                  <th></th>
+                  <th></th>  
+               </tr>
+               <tr>
+                  <th></th>
+                  <td><strong>T-score</strong></td>
+                  <td><strong>Z-score</strong></td>
+                  <td><strong>BMD</strong></td>
+                  <td><strong>BMC</strong></td>
+                  <td><strong>TBS</strong></td>
+               </tr>
+               <tr>
+                  <th>Hip(Neck)</th>
+                  <td><input type="text" name="hipnB_T"></td>
+                  <td><input type="text" name="hipnB_Z"></td>
+                  <td><input type="text" name="hipnB_BMD"></td>
+                  <td><input type="text" name="hipnB_BMC"></td>
+                  <td><input type="text" name="hipnB_TBS"></td>
+               </tr>
+               <tr>
+                  <th>Hip(Total)</th>
+                  <td><input type="text" name="hiptB_T"></td>
+                  <td><input type="text" name="hiptB_Z"></td>
+                  <td><input type="text" name="hiptB_BMD"></td>
+                  <td><input type="text" name="hiptB_BMC"></td>
+                  <td><input type="text" name="hiptB_TBS"></td>
+               </tr>
+               <tr>
+                  <th>Spine</th>
+                  <td><input type="text" name="spineB_T"></td>
+                  <td><input type="text" name="spineB_Z"></td>
+                  <td><input type="text" name="spineB_BMD"></td>
+                  <td><input type="text" name="spineB_BMC"></td>
+                  <td><input type="text" name="spineB_TBS"></td>
+               </tr>
+               <tr>
+                  <th>Radius</th>
+                  <td><input type="text" name="radiusB_T"></td>
+                  <td><input type="text" name="radiusB_Z"></td>
+                  <td><input type="text" name="radiusB_BMD"></td>
+                  <td><input type="text" name="radiusB_BMC"></td>
+                  <td><input type="text" name="radiusB_TBS"></td>
+               </tr>
+               <tr>
+                  <th>Whole body</th>
+                  <td><input type="text" name="wholeB_T"></td>
+                  <td><input type="text" name="wholeB_Z"></td>
+                  <td><input type="text" name="wholeB_BMD"></td>
+                  <td><input type="text" name="wholeB_BMC"></td>
+                  <td><input type="text" name="wholeB_TBS"></td>
+               </tr>
+               <tr>
+                  <th style="font-size:20px"><font face="verdana">DXA</font></th>
+                  <th></th>
+                  <th></th>
+                  <td style="font-size:20px"><font face="verdana"><strong>1 year</strong></td>
+                  <th></th>
+                  <th></th>
+               </tr>
+               <tr>
+                  <th></th>
+                  <td><strong>T-score</strong></td>
+                  <td><strong>Z-score</strong></td>
+                  <td><strong>BMD</strong></td>
+                  <td><strong>BMC</strong></td>
+                  <td><strong>TBS</strong></td>
+               </tr>
+               <tr>
+                  <th>Hip(Neck)</th>
+                  <td><input type="text" name="hipn1_T"></td>
+                  <td><input type="text" name="hipn1_Z"></td>
+                  <td><input type="text" name="hipn1_BMD"></td>
+                  <td><input type="text" name="hipn1_BMC"></td>
+                  <td><input type="text" name="hipn1_TBS"></td>
+               </tr>
+               <tr>
+                  <th>Hip(Total)</th>
+                  <td><input type="text" name="hipt1_T"></td>
+                  <td><input type="text" name="hipt1_Z"></td>
+                  <td><input type="text" name="hipt1_BMD"></td>
+                  <td><input type="text" name="hipt1_BMC"></td>
+                  <td><input type="text" name="hipt1_TBS"></td>
+               </tr>
+               <tr>
+                  <th>Spine</th>
+                  <td><input type="text" name="spine1_T"></td>
+                  <td><input type="text" name="spine1_Z"></td>
+                  <td><input type="text" name="spine1_BMD"></td>
+                  <td><input type="text" name="spine1_BMC"></td>
+                  <td><input type="text" name="spine1_TBS"></td>
+               </tr>
+               <tr>
+                  <th>Radius</th>
+                  <td><input type="text" name="radius1_T"></td>
+                  <td><input type="text" name="radius1_Z"></td>
+                  <td><input type="text" name="radius1_BMD"></td>
+                  <td><input type="text" name="radius1_BMC"></td>
+                  <td><input type="text" name="radius1_TBS"></td>
+               </tr>
+               <tr>
+                  <th>Whole body</th>
+                  <td><input type="text" name="whole1_T"></td>
+                  <td><input type="text" name="whole1_Z"></td>
+                  <td><input type="text" name="whole1_BMD"></td>
+                  <td><input type="text" name="whole1_BMC"></td>
+                  <td><input type="text" name="whole1_TBS"></td>
+               </tr>
+            </table>
+            <div class="row">
                   <div class="col-md-12" align="center" id="submit">
                      <input type="submit" value="Save and Continue" align="center">
                   </div>
                </div>
                 </form>
-                <div class="row">
-         <div class="col-md-12" align="center" id="heading">
-            <h3>Attached pdf file</h3>
-         </div>
+            <div class="row">  
+                 <div class="col-md-12" align="center" id="heading">
+                    <h3>Attached pdf file</h3>
+                 </div>
                 </div>
-                
                     <form action=<?php echo "nuclearmedicine.php?addpatient=".$_GET['addpatient']?> method="POST" enctype="multipart/form-data">
+                      <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
                         <table class="table table-hover" align="center">
                             <tr>
-                                <td><strong>Title: </strong></td>
-                                <td>
+                                <td><strong>Title:</strong></td>
+                                <th>
                                     <input type="text" name="title" pattern = "[A-Za-z0-9]{1, }" title="avoid spaces in title" required>
-                                </td>
+                                </th>
                             </tr>
                             <tr>
-                                <td><strong>File name:</strong></td>
+                                <td><strong>File:</strong></td>
                                 <td>
                                     <input type="file" name="file" />
                                 </td>
@@ -255,6 +377,8 @@ if(isset($name)&&!empty($name)){
                               ?>
                             </tr>
                         </table>
+                      </div>
+                      </div>  
                              <div class="row">
                   <div class="col-md-12" align="center" id="submit">
                      <input type="submit" value="Upload" align="center">

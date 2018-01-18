@@ -97,7 +97,7 @@ if(isset($name)&&!empty($name)){
          text-align: left;
        }
        td{
-         text-align: left;
+         text-align: center;
        }
        #up{
          text-align: center;
@@ -110,8 +110,7 @@ if(isset($name)&&!empty($name)){
        }
        .table{
         margin-top: 1%;
-        margin-left: 27%;
-        width: 60%;
+        width: 50%;
         border: none;
        }
    </style>
@@ -133,12 +132,12 @@ if(isset($name)&&!empty($name)){
                View Patient
             </div>
          </a>
-         <a href="displaypatient.php">
+         <a href="search.php">
             <div class="col-md-3" align="center" id="nav">
                Search Patient
             </div>
          </a>
-         <a href="documents">
+         <a href="documents.php">
             <div class="col-md-3" align="center" id="nav">
                Manage Documents
             </div>
@@ -184,7 +183,7 @@ if(isset($name)&&!empty($name)){
                           <td><input type="text" name="addpatient" value=<?php echo $_GET['addpatient']?> readonly></td>
                        </tr>
                        <tr>
-                          <td>Impression:</td>
+                          <th>Impression:</th>
                           <td><input name=impression_B rows="5" cols="20" value=<?php echo ((isset($_GET[ 'status'])) ? $row[ 'impressionB'] : ""); ?>></input></td>
                           <td><input name=impression_1 rows="5" cols="20" value=<?php echo ((isset($_GET[ 'status'])) ? $row[ 'impression1'] : ""); ?>></input></td>
                        </tr>
@@ -209,29 +208,24 @@ if(isset($name)&&!empty($name)){
                    </div>
                 </div>
                     <form action=<?php echo "2Decho.php?addpatient=".$_GET['addpatient']?> method="POST" enctype="multipart/form-data">
+                      <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
                           <table class="table table-hover" align="center"> 
                             <tr>
-                                <th></th>
-                                <th></th>
-                                <td><strong>Title: </strong></td>
-                                <td>
+                                <th><strong>Title:</strong></th>
+                                <th>
                                     <input type="text" name="title" required>
-                                </td>
-                                <th></th>
+                                </th>
                             </tr>
                             <tr>
-                                <th></th>
-                                <th></th>
-                                <td><strong>File name:</strong></td>
+                                <th><strong>File:</strong></th>
                                 <td>
                                     <input type="file" name="file" />
                                 </td>
-                                <th></th>
                             </tr>
                             </tr>
                             <tr>
-                              <th></th>
-                              <th></th>
                               <?php
                                 echo '<th>';
                                 if(isset($status)){
@@ -239,9 +233,10 @@ if(isset($name)&&!empty($name)){
                                 }
                                 echo '</th>';
                               ?>
-                              <th></th>
                             </tr>
                         </table>
+                      </div>
+                        </div>
                         <div class="row">
                           <div class="col-md-12" align="center" id="submit">
                              <input type="submit" name="submit" value="Upload"/>
