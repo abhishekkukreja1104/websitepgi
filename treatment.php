@@ -1,3 +1,4 @@
+
 <?php
 include_once 'includes/dbh.php';
 
@@ -121,15 +122,36 @@ include_once 'includes/dbh.php';
         <div id="header">
             <div id="logo" align="center">
                 <img src="http://indianphptregistry.com/images/logo.png">
+
             </div>
-            <div id="navbar">
-                <ul>
-                  <li><a href="Layoutaddpatient.php">Add Patient</a></li>
-                  <li><a href="displaypatient.php">View Patient</a></li>
-                  <li><a href="displaypatient.php">Search Patient</a></li>
-                  <li><a href="documents.php">Manage Documents</a></li>
-                </ul>
+         </div>
+         <div class="row">
+            <a href="Layoutaddpatient.php">
+               <div class="col-md-3" align="center" id="nav">
+                  Add Patient
+               </div>
+            </a>
+            <a href="displaypatient.php">
+               <div class="col-md-3" align="center" id="nav">
+                  View Patient
+               </div>
+            </a>
+            <a href="search.php">
+               <div class="col-md-3" align="center" id="nav">
+                  Search Patient
+               </div>
+            </a>
+            <a href="documents.php">
+               <div class="col-md-3" align="center" id="nav">
+                  Manage Documents
+               </div>
+            </a>
+         </div>
+         <div class="row">
+            <div class="col-md-12" align="center" id="heading">
+               <h1>Treatment</h1>
             </div>
+
         </div>
         <div id="content_area">
             <div id="form" align="center">
@@ -142,6 +164,7 @@ include_once 'includes/dbh.php';
                       <td>
                           <input type="text" name="addpatient" value=<?php echo $_GET[ 'addpatient']?> readonly>
                       </td>
+
                         <tr>
                             <th>Calcium</th>
                             <td><input type="checkbox" name="Calcium" value="yes"></td>
@@ -182,12 +205,17 @@ include_once 'includes/dbh.php';
                         </tr>
 
                     </table>
-                    <input type="submit" value="Save and Continue" align="center">
-
-                </form>
+                    <div id="submit">
+                        <input type="submit" value="Save and Continue" align="center">
+                    </div>
+                    </form>
+                    </div>
+                </div>    
             </div>
+
         </div>
     </div>
+
 
 </body>
 

@@ -43,7 +43,7 @@
          text-align: left;
        }
        td{
-         text-align: left;
+         text-align: center;
        }
        #up{
          text-align: center;
@@ -57,9 +57,7 @@
        }
        .table{
         margin-top: 1%;
-        margin-left: 27%;
-        width: 60%;
-        border: none;
+        width: 50%;
        }
    </style>
 <body>
@@ -80,12 +78,12 @@
                View Patient
             </div>
          </a>
-         <a href="displaypatient.php">
+         <a href="search.php">
             <div class="col-md-3" align="center" id="nav">
                Search Patient
             </div>
          </a>
-         <a href="documents">
+         <a href="documents.php">
             <div class="col-md-3" align="center" id="nav">
                Manage Documents
             </div>
@@ -112,12 +110,11 @@
                 ?>
                 <form method="post">
                     <table class="table table-hover" align="center">
-
                         <tr>
-                            <th>Mutation Analysis:</th>
-                            <td>
-                                <input type="submit" name="submit1" value="Not Avaliable">
-                            </td>
+                          <th>Mutation Analysis:</th>
+                          <td>
+                              <input type="submit" name="submit1" value="Not Available">
+                          </td>
                         </tr>
                     </table>
                 </form>
@@ -125,11 +122,11 @@
                 <form action="includes/addmutationanalysis.php" method="post">
                      <table class="table table-hover" align="center">
                       <tr>
-                         <th>Index Number</th>
+                         <th><strong>Index Number:</strong></th>
                          <td><input type="text" name="addpatient" value=<?php echo $_GET['addpatient']?> readonly></td>
                       </tr>
                         <tr>
-                            <td>Known/Novel:</td>
+                            <th>Known/Novel:</th>
                             <td><select name="known_novel">
                             	<option value="unknown">-Select-</option>
                             	<option value="known">Known</option>
@@ -137,7 +134,7 @@
                             </select></td>
                         </tr>
                         <tr>
-                            <td>Autosomal Dominant/Autosomal Recessive:</td>
+                            <th>Autosomal Dominant/Autosomal Recessive:</th>
                             <td><select name="adorar">
                             	<option value="unknown">-Select-</option>
                             	<option value="dominant">Autosomal Dominant</option>

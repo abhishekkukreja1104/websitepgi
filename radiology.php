@@ -105,7 +105,7 @@
       text-align: left;
       }
       td{
-      text-align: left;
+      text-align: center;
       }
       #up{
       text-align: center;
@@ -140,12 +140,12 @@
                   View Patient
                </div>
             </a>
-            <a href="displaypatient.php">
+            <a href="search.php">
                <div class="col-md-3" align="center" id="nav">
                   Search Patient
                </div>
             </a>
-            <a href="documents">
+            <a href="documents.php">
                <div class="col-md-3" align="center" id="nav">
                   Manage Documents
                </div>
@@ -171,7 +171,7 @@
          <form method="post">
             <table class="table table-hover" align="center">
                <tr>
-                  <th>Radiology:</th>
+                  <td><strong>Radiology:</strong></td>
                   <td><input type="submit" name="submit1" value="Not Avaliable"></td>
                </tr>
             </table>
@@ -180,9 +180,9 @@
             <table class="table table-hover" align="center">
                <tr>
                   <th style="font-size:23px"><font face="verdana">Radiograph</font></th>
-                  <th style="font-size:23px" id="up"><font face="verdana">Base line</font></th>
-                  <th style="font-size:23px" id="up"><font face="verdana">1 year</font></th>
-                  <th style="font-size:23px" id="up"><font face="verdana">5 year</font></th>
+                  <td style="font-size:23px" id="up"><font face="verdana"><strong>Base line</strong></font></td>
+                  <td style="font-size:23px" id="up"><font face="verdana"><strong>1 year</strong></font></td>
+                  <td style="font-size:23px" id="up"><font face="verdana"><strong>5 year</strong></font></td>
                </tr>
                <tr>
                   <th>Index Number</th>
@@ -301,36 +301,39 @@
          </form>
          <form action=<?php echo "radiology.php?addpatient=".$_GET['addpatient']?> method="POST" enctype="multipart/form-data">
             <div class="row">
-            <div class="col-md-12" align="center" id="heading">
-               <h3>Attached pdf file</h3>
-            </div>
-         </div>
-            <table class="table table-hover" align="center">
-               <tr>
-                  <td><strong>Title: </strong></td>
-                  <td><input type="text" name="title" pattern = "[A-Za-z0-9]{1, }" title="avoid spaces in title" required></td>
-               </tr>
-               <tr>
-                  <td><strong>File:</strong></td>
-                  <td><input type="file" name="file" /></td>
-               </tr>
-               <tr>
-                  <?php
-                     echo '<th>';
-                     if(isset($status)){
-                        echo $status;
-                     }
-                     echo '</th>';
-                     ?>
-               </tr>
-            </table>
+	            <div class="col-md-12" align="center" id="heading">
+	               <h3>Attached pdf file</h3>
+	            </div>
+         	</div>
+         	<div class="row">
+         		<div class="col-md-4"></div>
+         		<div class="col-md-4">
+		            <table class="table table-hover" align="center">
+						<tr>
+							<td><strong>Title:</strong></td>
+							<th><input type="text" name="title" pattern = "[A-Za-z0-9]{1, }" title="avoid spaces in title" required></th>
+						</tr>
+						<tr>
+							<td><strong>File:</strong></td>
+							<td><input type="file" name="file" /></td>
+						</tr>
+						<tr>
+						<?php
+						echo '<th>';
+						if(isset($status)){
+						echo $status;
+						}
+						echo '</th>';
+						?>
+						</tr>
+		            </table>
+            	</div>
+         	</div>
             <div id="submit">
                <input type="submit" name="submit" value="Upload"/>
             </div>
             </tr>
          </form>
-      </div>
-      </div>
       </div>
    </body>
 </html>

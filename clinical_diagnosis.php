@@ -101,12 +101,12 @@ if(isset($_GET['status'])){
                View Patient
             </div>
          </a>
-         <a href="displaypatient.php">
+         <a href="search.php">
             <div class="col-md-3" align="center" id="nav">
                Search Patient
             </div>
          </a>
-         <a href="documents">
+         <a href="documents.php">
             <div class="col-md-3" align="center" id="nav">
                Manage Documents
             </div>

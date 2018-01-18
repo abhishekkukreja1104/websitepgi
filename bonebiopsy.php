@@ -98,19 +98,13 @@
       text-align: left;
       }
       td{
-      text-align: left;
+      text-align: center;
       }
       #up{
       text-align: center;
       }
       #submit{
       text-align: center;
-      }
-      .table{
-      margin-top: 1%;
-      margin-left: 27%;
-      width: 60%;
-      border: none;
       }
    </style>
       <body>
@@ -131,12 +125,12 @@
                      View Patient
                   </div>
                </a>
-               <a href="displaypatient.php">
+               <a href="search.php">
                   <div class="col-md-3" align="center" id="nav">
                      Search Patient
                   </div>
                </a>
-               <a href="documents">
+               <a href="documents.php">
                   <div class="col-md-3" align="center" id="nav">
                      Manage Documents
                   </div>
@@ -162,7 +156,7 @@
             <form method="POST">
                <table class="table table-hover" align="center">
                   <tr>
-                     <th>Bone Biospy:</th>
+                     <td><strong>Bone Biospy:</strong></td>
                      <td>
                         <input type="submit" name="submit1" value="Not Avaliable">
                      </td>
@@ -174,7 +168,7 @@
                   <thead>
                   <tr>
                      <th></th>
-                     <th style="font-size:23px" id="up"><font face="verdana">Radiograph</font></th>
+                     <th style="font-size:23px" ><font face="verdana">Radiograph</font></th>
                      <th style="font-size:23px" id="up"><font face="verdana">Base line</font></th>
                      <th style="font-size:23px" id="up"><font face="verdana">1 year</font></th>
                      <th></th>
@@ -190,7 +184,7 @@
                     </tr>
                     <tr>
                      <td></td>
-                     <td><strong>Histopathology</strong> no</td>
+                     <th>Histopathology no</th>
                      <td>
                         <input type="number" name="histo_B" value=<?php echo ((isset($_GET['status'])) ? $rowB[ 'histo_B'] : ""); ?>>
                      </td>
@@ -201,7 +195,7 @@
                   </tr>
                   <tr>
                      <td></td>
-                     <td>Site of bone biopsy</td>
+                     <th>Site of bone biopsy</th>
                      <td>
                         <input type="text" name="site_B" value= <?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'site_B'] : ""); ?>>
                      </td>
@@ -212,7 +206,7 @@
                   </tr>
                   <tr>
                      <td></td>
-                     <td>Impression</td>
+                     <th>Impression</th>
                      <td>
                         <input type="text" name="ih_B" value=<?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'ih_B'] : ""); ?>>
                      </td>
@@ -234,7 +228,7 @@
                   </tr>
                   <tr>
                      <td></td>
-                     <td>Impression</td>
+                     <th>Impression</th>
                      <td>
                         <input type="text" name="ib_B" value=<?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'ib_B'] : ""); ?>>
                      </td>
@@ -264,19 +258,23 @@
                </div>
             </div>
             <form action=<?php echo "bonebiopsy.php?addpatient=".$_GET[ 'addpatient']?> method="POST" enctype="multipart/form-data">
-              <table class="table table-hover" align="center">
+
+              <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+              <table class="table table-hover" align="center"> 
+
                   <tr>
-                     <td><strong>Title: </strong></td>
-                     <td>
+                     <th>Title:</th>
+                     <th>
                         <input type="text" name="title" required>
-                     </td>
+                     </th>
                   </tr>
                   <tr>
-                     <td><strong>File name:</strong></td>
+                     <th>File:</th>
                      <td>
                         <input type="file" name="file" />
                      </td>
-                  </tr>
                   </tr>
                   <tr>
                      <?php
@@ -288,6 +286,8 @@
                         ?>
                   </tr>
                </table>
+               </div>
+               </div>
                <div id="submit">
                  <input type="submit" name="submit" value="Upload" />
                </div>
