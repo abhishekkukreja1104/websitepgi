@@ -11,116 +11,106 @@
 
 	}
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="en">
    <head>
-      <title>Layout</title>
+      <title>Personal Data</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <style>
-         body{
-         background: #96B8DA;
-         margin: 0;
-         }
-         #container{
-         width: 1200px;
-         margin: 0 auto;
-         background: #ffffff;
-         }
-         #header{
-         width: 100%;
-         border-bottom: 1px solid #c7c7c7;
-         background: #ffffff;
-         }
-         #logo{
-         width: 100%;
-         height: 130px;
-         }
-         #heading{
-         width: 100%;
-         background: #518B47;
-         padding: 0px;
-         padding-bottom: 10px;
-         padding-top: 10px;
-         color: white;
-         }
-         #submit{
-         width: 100%;
-         background: #518B47;
-         padding: 0px;
-         padding-bottom: 10px;
-         padding-top: 10px;
-         }
-         #form{
-         width: 100%;
-         background: #ffffff;
-         padding: 0px;
-         padding-bottom: 10px;
-         padding-top: 10px;
-         color: black;
-         }
-         #navbar{
-         height: 40px;
-         clear: both;
-         width: 100%;
-         }
-         #navbar ul{
-         list-style-type: none;
-         margin: 0;
-         padding: 0;
-         overflow: hidden;
-         }
-         #navbar ul li{
-         float: left;
-         border-right: 1px solid #bbb;
-         }
-         #navbar ul li a{
-         display: block;
-         color: #ffffff;
-         text-align: center;
-         background-color:#1F4F96;
-         width: 299px;
-         padding-top: 20px;
-         padding-bottom: 20px;
-         font-weight:bold;
-         text-decoration: none;
-         }
-         #navbar ul li a:hover{
-         background-color: #111;
-         }
-         th{
-         text-align: left;
-         }
-         td{
-         padding-top: 10px;
-         padding-left: 200px;
-         }
-         input[type = "text"]{
-         display: inline-block;
-         width: 400px;
-         }
-      </style>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
    </head>
+   <style>
+      .table>tbody>tr>td,
+      .table>tbody>tr>th {
+        border-top: none;
+      }
+      body{
+         font-family: 'Georgia';
+         background: #96B8DA;
+      }
+      #logo{
+         background: #ffffff;
+      }
+      .container{
+         background-color: #ffffff;
+      }
+      #heading{
+         font-weight: bold;
+         background: #518B47;
+         padding-bottom: 1%;
+         color: white;
+       }
+       #nav{
+        font-size: 16px;
+        background: #1F4F96;
+        color: #ffffff;
+        font-weight: bold;
+        padding: 2%;
+       }
+       #nav:hover{
+         background-color: #111;
+       }
+       th{
+         text-align: left;
+       }
+       td{
+         text-align: left;
+       }
+       #up{
+         text-align: center;
+       }
+       #submit{
+         width: 100%;
+         background: #518B47;
+         padding: 0px;
+         padding-bottom: 10px;
+         padding-top: 10px;
+       }
+       .table{
+        margin-top: 1%;
+        margin-left: 27%;
+        width: 60%;
+        border: none;
+       }
+   </style>
    <body>
-      <div id="container">
-         <div id="header">
-            <div id="logo" align="center">
-               <img src="http://indianphptregistry.com/images/logo.png">
-            </div>
-            <div id="navbar">
-							<ul>
-								<li><a href="../Layoutaddpatient.php">Add Patient</a></li>
-								<li><a href="../displaypatient.php">View Patient</a></li>
-								<li><a href="../displaypatient.php">Search Patient</a></li>
-								<li><a href="../documents.php">Manage Documents</a></li>
-							</ul>
-            </div>
+      <div class="container">
+      <div class="row">
+         <div class="col-md-12" id="logo" align="center">
+            <img class="img-responsive" src="http://indianphptregistry.com/images/logo.png" alt="indianphptregistry">
          </div>
-         <div id="content_area">
-            <div id="heading" align="center">
-               <h1>Personal Data</h1>
+      </div>
+      <div class="row">
+         <a href="Layoutaddpatient.php">
+            <div class="col-md-3" align="center" id="nav">
+               Add Patient
             </div>
-            <div id="form" align="center">
+         </a>
+         <a href="displaypatient.php">
+            <div class="col-md-3" align="center" id="nav">
+               View Patient
+            </div>
+         </a>
+         <a href="displaypatient.php">
+            <div class="col-md-3" align="center" id="nav">
+               Search Patient
+            </div>
+         </a>
+         <a href="documents">
+            <div class="col-md-3" align="center" id="nav">
+               Manage Documents
+            </div>
+         </a>
+      </div>
+      <div class="row">
+         <div class="col-md-12" align="center" id="heading">
+            <h1>Personal Data</h1>
+         </div>
+      </div>
               <form action = "includes/addpatient.php" method = "POST">
-               <table>
+               <table class="table table-hover" align="center">
                  <?php
              		if(isset($_GET['status'])){
              			echo "<tr>";
