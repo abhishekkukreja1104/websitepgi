@@ -83,22 +83,22 @@
          </div>
       </div>
       <div class="row">
-         <a href="Layoutaddpatient.php">
+         <a href="../Layoutaddpatient.php">
             <div class="col-md-3" align="center" id="nav">
                Add Patient
             </div>
          </a>
-         <a href="displaypatient.php">
+         <a href="../displaypatient.php">
             <div class="col-md-3" align="center" id="nav">
                View Patient
             </div>
          </a>
-         <a href="displaypatient.php">
+         <a href="../search.php">
             <div class="col-md-3" align="center" id="nav">
                Search Patient
             </div>
          </a>
-         <a href="documents">
+         <a href="../documents.php">
             <div class="col-md-3" align="center" id="nav">
                Manage Documents
             </div>

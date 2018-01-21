@@ -165,7 +165,7 @@ if(isset($name)&&!empty($name)){
                         <tr>
                             <th>2D-Echo Test:</th>
                             <td>
-                                <input type="submit" name="submit1" value="No Avaliability">
+                                <input type="submit" name="submit1" value="Not Available">
                             </td>
                         </tr>
                     </table>
@@ -173,11 +173,14 @@ if(isset($name)&&!empty($name)){
                 <form action = "includes/add2Decho.php" method="POST">
 
                       <table class="table table-hover" align="center"> 
+                       <thead> 
                        <tr>
                           <th style="font-size:23px"><font face="verdana"></font></th>
                           <th id = "up" style="font-size:23px"><font face="verdana">Base line</font></th>
                           <th id = "up" style="font-size:23px"><font face="verdana">1 year</font></th>
                        </tr>
+                       </thead>
+                       <tbody>
                        <tr>
                           <th>Index Number</th>
                           <td><input type="text" name="addpatient" value=<?php echo $_GET['addpatient']?> readonly></td>
@@ -195,6 +198,7 @@ if(isset($name)&&!empty($name)){
                                 echo "</tr>";
                          }
                          ?>
+                         </tbody>
                     </table>
                      <div class="row">
                         <div class="col-md-12" align="center" id="submit">

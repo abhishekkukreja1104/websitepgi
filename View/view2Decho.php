@@ -24,7 +24,7 @@ $status = '' ;
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <title>Personal Data</title>
+      <title>2D Echo Test</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -66,7 +66,7 @@ $status = '' ;
          text-align: left;
        }
        td{
-         text-align: left;
+         text-align: center;
        }
        #up{
          text-align: center;
@@ -82,6 +82,11 @@ $status = '' ;
         margin-top: 1%;
         border: none;
        }
+       .view th{
+       	color: #ffffff;
+       	text-align: center;
+       	background-color: #24596B;
+       }
    </style>
 <body>
   <div class="container">
@@ -91,22 +96,22 @@ $status = '' ;
          </div>
       </div>
       <div class="row">
-         <a href="Layoutaddpatient.php">
+         <a href="../Layoutaddpatient.php">
             <div class="col-md-3" align="center" id="nav">
                Add Patient
             </div>
          </a>
-         <a href="displaypatient.php">
+         <a href="../displaypatient.php">
             <div class="col-md-3" align="center" id="nav">
                View Patient
             </div>
          </a>
-         <a href="displaypatient.php">
+         <a href="../search.php">
             <div class="col-md-3" align="center" id="nav">
                Search Patient
             </div>
          </a>
-         <a href="documents">
+         <a href="../documents.php">
             <div class="col-md-3" align="center" id="nav">
                Manage Documents
             </div>
@@ -117,22 +122,20 @@ $status = '' ;
             <h1>2D Echo test</h1>
          </div>
       </div>
-                <form action="2D_echo.php" method="post" id="frm">
-                  
-                </form>
+
                 <form action = "includes/add2Decho.php" method="POST">
                   <table class="table table-hover" align="center">
                        <tr>
                           <th style="font-size:23px"><font face="verdana"></font></th>
-                          <th style="font-size:23px"><font face="verdana">Base line</font></th>
-                          <th style="font-size:23px"><font face="verdana">1 year</font></th>
+                          <td style="font-size:23px"><font face="verdana"><strong>Base line</strong></font></td>
+                          <td style="font-size:23px"><font face="verdana"><strong>1 year</strong></font></td>
                        </tr>
                        <tr>
                           <th>Index Number</th>
                           <td><input type="text" name="addpatient" value=<?php echo $_GET['addpatient']?> readonly></td>
                        </tr>
                        <tr>
-                          <td>Impression:</td>
+                          <th>Impression:</th>
                           <td><textarea name=impression_B rows="5" cols="20"></textarea></td>
                           <td><textarea name=impression_1 rows="5" cols="20"></textarea></td>
                        </tr>
@@ -140,11 +143,13 @@ $status = '' ;
 
                 </form>
 
-            <table class="table table-hover" align="center">
-             <thead>
-            <tr>
-              <th>FileTitle</th>
-              <th>Filename</th>
+              
+            <table class="table table-hover view" align="center">
+             <thead> 
+            <tr>  
+              <th>File Title</th>
+              <th>File Name</th>
+
               <th>View</th>
               <th>Delete</th>
             </tr>

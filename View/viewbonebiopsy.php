@@ -36,193 +36,147 @@ $status = '' ;
 
 ?>
 
-    <html>
-
-    <head>
-        <title>Bone Biopsy</title>
-        <link rel="stylesheet" type="text/css" href="form_style.css">
-    </head>
-    <style>
-        body {
-            background: #96B8DA;
-            margin: 0;
-        }
-
-        #container {
-            width: 1200px;
-            margin: 0 auto;
-            background: #ffffff;
-            height: 900px;
-        }
-
-        #header {
-            width: 100%;
-            border-bottom: 1px solid #c7c7c7;
-            background: #ffffff;
-        }
-
-        #logo {
-            width: 100%;
-            height: 130px;
-        }
-
-        #heading {
-            width: 100%;
-            background: #518B47;
-            padding: 0px;
-            padding-bottom: 10px;
-            padding-top: 10px;
-            color: white;
-        }
-
-        #submit {
-            width: 100%;
-            background: #518B47;
-            padding: 0px;
-            padding-bottom: 10px;
-            padding-top: 10px;
-        }
-
-        #form {
-            width: 100%;
-            background: #ffffff;
-            padding: 0px;
-            padding-bottom: 10px;
-            padding-top: 10px;
-            color: black;
-        }
-
-        #navbar {
-            height: 40px;
-            clear: both;
-            width: 100%;
-        }
-
-        #up {
-            text-align: center;
-        }
-
-        #navbar ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        #navbar ul li {
-            float: left;
-            border-right: 1px solid #bbb;
-        }
-
-        #navbar ul li a {
-            display: block;
-            color: #ffffff;
-            text-align: center;
-            background-color: #1F4F96;
-            width: 299px;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        #navbar ul li a:hover {
-            background-color: #111;
-        }
-
-        th {
-            text-align: left;
-        }
-
-        td {
-            padding-top: 10px;
-            margin: 0 auto;
-            align-items: center;
-        }
-
-        input[type="number"] {
-            display: inline-block;
-            width: 100px;
-        }
-
-        input[type="text"] {
-            display: inline-block;
-            width: 100px;
-        }
-    </style>
-
-    <body>
-        <div id="container">
-            <div id="header">
-                <div id="logo" align="center">
-                    <img src="http://indianphptregistry.com/images/logo.png">
-                </div>
-                <div id="navbar">
-                  <ul>
-                    <li><a href="../Layoutaddpatient.php">Add Patient</a></li>
-                    <li><a href="../displaypatient.php">View Patient</a></li>
-                    <li><a href="../displaypatient.php">Search Patient</a></li>
-                    <li><a href="../documents.php">Manage Documents</a></li>
-                  </ul>
-                </div>
+    !DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Bone Biopsy</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+   </head>
+   <style>
+      .table>tbody>tr>td,
+      .table>tbody>tr>th {
+        border-top: none;
+      }
+      body{
+         font-family: 'Georgia';
+         background: #96B8DA;
+      }
+      #logo{
+         background: #ffffff;
+      }
+      .container{
+         background-color: #ffffff;
+      }
+      #heading{
+         font-weight: bold;
+         background: #518B47;
+         padding-bottom: 1%;
+         color: white;
+       }
+       #nav{
+        font-size: 16px;
+        background: #1F4F96;
+        color: #ffffff;
+        font-weight: bold;
+        padding: 2%;
+       }
+       #nav:hover{
+         background-color: #111;
+       }
+       th{
+         text-align: left;
+       }
+       td{
+         text-align: center;
+       }
+       #up{
+         text-align: center;
+       }
+       #submit{
+         width: 100%;
+         background: #518B47;
+         padding: 0px;
+         padding-bottom: 10px;
+         padding-top: 10px;
+       }
+       .table{
+        margin-top: 1%;
+        border: none;
+       }
+       .view th{
+        color: #ffffff;
+        text-align: center;
+        background-color: #24596B;
+       }
+   </style>
+<body>
+  <div class="container">
+      <div class="row">
+         <div class="col-md-12" id="logo" align="center">
+            <img class="img-responsive" src="http://indianphptregistry.com/images/logo.png" alt="indianphptregistry">
+         </div>
+      </div>
+      <div class="row">
+         <a href="../Layoutaddpatient.php">
+            <div class="col-md-3" align="center" id="nav">
+               Add Patient
             </div>
-            <div id="content_area">
-                <div id="form" align="center">
-
-                        <div id="heading" align="center">
-                            <h1>Bone Biopsy</h1>
-                        </div>
-                                        <form action="includes/addbonebiopsy.php" method="POST">
-                        <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
-
+         </a>
+         <a href="../displaypatient.php">
+            <div class="col-md-3" align="center" id="nav">
+               View Patient
+            </div>
+         </a>
+         <a href="../search.php">
+            <div class="col-md-3" align="center" id="nav">
+               Search Patient
+            </div>
+         </a>
+         <a href="../documents.php">
+            <div class="col-md-3" align="center" id="nav">
+               Manage Documents
+            </div>
+         </a>
+      </div>
+      <div class="row">
+         <div class="col-md-12" align="center" id="heading">
+            <h1>Bone Biopsy</h1>
+         </div>
+      </div>                                   
+      <form action="includes/addbonebiopsy.php" method="POST">
+                        <table class="table table-hover" align="center">
                             <tr>
-                                <td></td>
                                 <th>Index Number</th>
                                 <td>
                                     <input type="text" name="addpatient" value=<?php echo $_GET[ 'addpatient']?> readonly></td>
                             </tr>
                             <tr>
-                                <th></th>
                                 <th style="font-size:23px"><font face="verdana">Radiograph</font></th>
-                                <th style="font-size:23px"><font face="verdana">Base line</font></th>
-                                <th style="font-size:23px"><font face="verdana">1 year</font></th>
-                                <th></th>
+                                <td style="font-size:23px"><font face="verdana"><strong>Base line</strong></font></td>
+                                <td style="font-size:23px"><font face="verdana"><strong>1 year</strong></font></td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td><strong>Histopathology</strong> no</td>
+                                <th>Histopathology No</th>
                                 <td>
                                     <input type="number" name="histo_B" readonly value=<?php echo ((isset($_GET['status'])) ? $rowB[ 'histo_B'] : ""); ?>>
                                 </td>
                                 <td>
                                     <input type="number" name="histo_1" readonly value=<?php echo ((isset($_GET['status'])) ? $row1[ 'histo_B'] : ""); ?>>
                                 </td>
-                                <td></td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td>Site of bone biopsy</td>
+                                <th>Site of bone biopsy</th>
                                 <td>
                                     <input type="text" name="site_B" readonly value= <?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'site_B'] : ""); ?>>
                                 </td>
                                 <td>
                                     <input type="text" name="site_1" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'site_B'] : ""); ?>>
                                 </td>
-                                <td></td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td>Impression</td>
+                                <th>Impression</th>
                                 <td>
                                     <input type="text" name="ih_B" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'ih_B'] : ""); ?>>
                                 </td>
                                 <td>
                                     <input type="text" name="ih_1" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'ih_B'] : ""); ?>>
                                 </td>
-                                <td></td>
                             </tr>
                             <tr>
-                                <td></td>
                                 <th>BHMP</th>
                                 <td>
                                     <input type="text" name="bhmp_B" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'bhmp_B'] : ""); ?>>
@@ -230,30 +184,31 @@ $status = '' ;
                                 <td>
                                     <input type="text" name="bhmp_1" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'bhmp_B'] : ""); ?>>
                                 </td>
-                                <td></td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td>Impression</td>
+                                <th>Impression</th>
                                 <td>
                                     <input type="text" name="ib_B" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'ib_B'] : ""); ?>>
                                 </td>
                                 <td>
                                     <input type="text" name="ib_1" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'ib_B'] : ""); ?>>
                                 </td>
-                                <td></td>
                             </tr>
 
                         </table>
 
                     </form>
+                  <table class="table table-hover view" align="center">
+                     <thead> 
+                    <tr>  
+                      <th>File Title</th>
+                      <th>File Name</th>
+                      <th>View</th>
+                      <th>Delete</th>
+                    </tr> 
+                    </thead>
+                    <tbody> 
 
-                </div>
-                <table id = "customers">
-                  <th>FileTitle</th>
-                  <th>Filename</th>
-                  <th>View</th>
-                  <th>Delete</th>
                   <?php
                     $sql = "select * from BONdoc where index_no = ".$_GET['addpatient'];
                     $result = mysqli_query($conn, $sql);
@@ -268,9 +223,12 @@ $status = '' ;
                       </tr>
                   <?php endwhile;
                 } ?>
-                  </table>
+                             
+                    </tbody>
+
+            </table>
+
             </div>
-        </div>
     </body>
 
     </html>

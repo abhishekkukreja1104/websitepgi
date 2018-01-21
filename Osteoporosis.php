@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <title>Osteoporosis dropdown</title>
+      <title>Osteoporosis Dropdown</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -97,7 +97,7 @@
       </div>
       <div class="row">
          <div class="col-md-12" align="center" id="heading">
-            <h1>Osteoporosis dropdown</h1>
+            <h1>Osteoporosis Dropdown</h1>
          </div>
       </div>
             <div id="form" align="center">
@@ -108,7 +108,7 @@
                           <input type="text" name="addpatient" value=<?php echo $_GET[ 'addpatient']?> readonly>
                       </td>
                         <tr>
-                            <th>Osteoporosis dropdown:</th>
+                            <th>Osteoporosis Dropdown:</th>
                                 <td>
                                     <select name="Osteoporosis">
                                         <option value="unknown">-Select-</option>

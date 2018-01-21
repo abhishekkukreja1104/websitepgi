@@ -109,10 +109,7 @@ if(isset($name)&&!empty($name)){
        #up{
          text-align: center;
        }
-       input[type = "text"]{
-        display: inline-block;
-        width: 100%;
-      }
+      
        #submit{
          width: 100%;
          padding: 0px;
@@ -174,9 +171,8 @@ if(isset($name)&&!empty($name)){
                     <table class="table table-hover" align="center">                    
                        <tr>
                             <td><strong>Nuclear Medicine:</strong></td>
-
                             <td>
-                                <input type="submit" name="submit1" value="No Avaliability">
+                                <input type="submit" name="submit1" value="Not Available">
                             </td>
                         </tr>
                     </table>
