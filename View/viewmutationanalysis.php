@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -83,67 +84,35 @@
             <div class="col-md-3" align="center" id="nav">
                View Patient
             </div>
-         </a>
-         <a href="../search.php">
-            <div class="col-md-3" align="center" id="nav">
-               Search Patient
-            </div>
-         </a>
-         <a href="../documents.php">
-            <div class="col-md-3" align="center" id="nav">
-               Manage Documents
-            </div>
-         </a>
-      </div>
-      <div class="row">
-         <div class="col-md-12" align="center" id="heading">
-            <h1>Mutation Analysis</h1>
-         </div>
-      </div>   
-        <div class="row">
-            <div class="col-md-3"></div>       
-            <div class="col-md-6">
-            <form action="includes/addmutationanalysis.php" method="post">
-                <table class="table table-hover" align="center">
-                  <tr>
-                     <th>Index Number</th>
-                     <td><input type="text" name="addpatient" value=<?php echo $_GET['addpatient']?> readonly></td>
-                  </tr>
-                    <tr>
-                        <th>Known/Novel:</th>
-                        <td><input type="text" name="known_novel"></td>
-                    </tr>
-                    <tr>
-                        <th>Autosomal Dominant/Autosomal Recessive:</th>
-                        <td><input type = "text" name="adorar"></td>
-                    </tr>
-                </table>
-            </form>
-        </div>
-        </div>        
-                <table class="table table-hover view" align="center">
-                    <thead> 
-                    <tr>  
-                      <th>File Title</th>
-                      <th>File Name</th>
-                      <th>View</th>
-                      <th>Delete</th>
-                    </tr> 
-                    </thead>
-                    <tbody> 
-                    <?php
-                      $sql = "select * from STF";
-                      $result = mysqli_query($conn, $sql);
-                      while($row = mysqli_fetch_array($result)): ?>
+        <div id="content_area">
+            <div id="form" align="center">
+
+
+                <form action="includes/addmutationanalysis.php" method="post">
+                    <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
+                      <tr>
+                         <th>Index Number</th>
+                         <td><input type="text" name="addpatient" value=<?php echo $_GET['addpatient']?> readonly></td>
+                      </tr>
                         <tr>
-                          <td><?php echo $row['filetitle']; ?></td>
-                          <td><?php echo $row['filename']; ?></td>
-                          <td><a id="edit_link" href=<?php echo $row['filepath'];?>>View</a></td>
-                          <td><a id="edit_link" href=<?php echo "documents.php?delete=".$row['filepath'];?>>delete</a></td>
+                            <th></th>
+                            <td>Known/Novel:</td>
+                            <th></th>
+                            <td><input type="text" name="known_novel"></td>
+                            <th></th>
                         </tr>
-                    <?php endwhile ?>
-                    </tbody>
-                </table>
+                        <tr>
+                            <th></th>
+                            <td>Autosomal Dominant/Autosomal Recessive:</td>
+                            <th></th>
+                            <td><input type = "text" name="adorar"></td>
+                            <th></th>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            
+
         </div>
     </div>
 </body>

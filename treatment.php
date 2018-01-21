@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -66,6 +67,7 @@
          <div class="row">
             <div class="col-md-12" id="logo" align="center">
                <img class="img-responsive" src="http://indianphptregistry.com/images/logo.png" alt="indianphptregistry">
+
             </div>
          </div>
          <div class="row">
@@ -94,12 +96,20 @@
             <div class="col-md-12" align="center" id="heading">
                <h1>Treatment</h1>
             </div>
-         </div>
-         <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-               <form action="Layoutaddpatient.php">
-                <table class="table table-hover" align="center">
+
+        </div>
+        <div id="content_area">
+            <div id="form" align="center">
+                <form action="includes/addtreatment.php" method="POST">
+                    <div id="heading" align="center">
+                        <h1>Treatment</h1>
+                    </div>
+                    <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
+                      <th>Index Number</th>
+                      <td>
+                          <input type="text" name="addpatient" value=<?php echo $_GET[ 'addpatient']?> readonly>
+                      </td>
+
                         <tr>
                             <th>Calcium</th>
                             <td><input type="checkbox" name="Calcium" value="yes"></td>
@@ -147,6 +157,11 @@
                     </div>
                 </div>    
             </div>
+
+        </div>
+    </div>
+
+
 </body>
 
 </html>

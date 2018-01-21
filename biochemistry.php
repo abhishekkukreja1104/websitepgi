@@ -149,7 +149,7 @@
                    <th id= "up" style="font-size:18px">Follow-up</th>
                    <th ></th>
                    <th ></th>
-                </tr>   
+                </tr>
               <tr>
                <th></th>
                   <th id="up">Base Line</th>
@@ -525,33 +525,32 @@
                             <td>
                                 <input type="number" name="DSDNA_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'DSDNA'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="DSDNA_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'DSDNA'] : ""); ?>></td>
+                                <input type="number" name="DSDNA_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'DSDNA'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="DSDNA_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'DSDNA'] : ""); ?>></td>
+                                <input type="number" name="DSDNA_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'DSDNA'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="DSDNA_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'DSDNA'] : ""); ?>></td>
+                                <input type="number" name="DSDNA_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'DSDNA'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="DSDNA_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'DSDNA'] : ""); ?>></td>
+                                <input type="number" name="DSDNA_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'DSDNA'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>IgAtTGAb</th>
                             <td>
-                                <input type="number" name="IgAtTGAb_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'IgAtTGAb'] : ""); ?>></td>
+                                <input type="number" name="IgAtTGAb_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'IgAtTGAb'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="IgAtTGAb_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'IgAtTGAb'] : ""); ?>></td>
+                                <input type="number" name="IgAtTGAb_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'IgAtTGAb'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="IgAtTGAb_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'IgAtTGAb'] : ""); ?>></td>
+                                <input type="number" name="IgAtTGAb_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'IgAtTGAb'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="IgAtTGAb_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'IgAtTGAb'] : ""); ?>></td>
+                                <input type="number" name="IgAtTGAb_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'IgAtTGAb'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="IgAtTGAb_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'IgAtTGAb'] : ""); ?>></td>
+                                <input type="number" name="IgAtTGAb_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'IgAtTGAb'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="IgAtTGAb_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'IgAtTGAb'] : ""); ?>></td>
+                                <input type="number" name="IgAtTGAb_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'IgAtTGAb'] : ""); ?>></td>
                         </tr>
                           <tr>
                         <th>H<sub>2</sub>Breath test</th>
                         <td>
-                            </select>
                             <select name="Breath_test_D">
                               <option value="unknown">--Select--</option>
                                 <option value="yes" <?php if(isset($_GET['status'])){
@@ -570,7 +569,7 @@
                         </td>
                         <td>
                             </select>
-                            <select name="Breath_test_D">
+                            <select name="Breath_test_3">
                               <option value="unknown">--Select--</option>
                                 <option value="yes" <?php if(isset($_GET['status'])){
                                     if($row3['Breath_test'] == 'yes'){
@@ -586,8 +585,7 @@
                                 ?>>No</option>
                               </select>
                         </td><td>
-                            </select>
-                            <select name="Breath_test_D">
+                            <select name="Breath_test_6">
                               <option value="unknown">--Select--</option>
                                 <option value="yes" <?php if(isset($_GET['status'])){
                                     if($row6['Breath_test'] == 'yes'){
@@ -603,8 +601,7 @@
                                 ?>>No</option>
                               </select>
                         </td><td>
-                            </select>
-                            <select name="Breath_test_D">
+                            <select name="Breath_test_1">
                               <option value="unknown">--Select--</option>
                                 <option value="yes" <?php if(isset($_GET['status'])){
                                     if($row1['Breath_test'] == 'yes'){
@@ -620,8 +617,7 @@
                                 ?>>No</option>
                               </select>
                         </td><td>
-                            </select>
-                            <select name="Breath_test_D">
+                            <select name="Breath_test_2">
                               <option value="unknown">--Select--</option>
                                 <option value="yes" <?php if(isset($_GET['status'])){
                                     if($row2['Breath_test'] == 'yes'){
@@ -637,8 +633,7 @@
                                 ?>>No</option>
                               </select>
                         </td><td>
-                            </select>
-                            <select name="Breath_test_D">
+                            <select name="Breath_test_5">
                               <option value="unknown">--Select--</option>
                                 <option value="yes" <?php if(isset($_GET['status'])){
                                     if($row5['Breath_test'] == 'yes'){
@@ -694,7 +689,7 @@
                               echo "</tr>";
                            }
                         ?>
-                        </tr>     
+                        </tr>
           </tbody>
       </table>
       <div class="row">
@@ -702,7 +697,7 @@
             <input type="submit" value="Save and Continue" align="center">
          </div>
       </div>
-      </form>            
+      </form>
    </div>
 </body>
 </html>

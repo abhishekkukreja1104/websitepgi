@@ -1,7 +1,7 @@
 <?php
    include_once 'includes/dbh.php';
-   
-   
+
+
    if(isset($_GET['status'])){
        if($_GET['status']=="edit"){
            $sqlB = "select * from RADB where index_no =".$_GET['addpatient'];
@@ -22,8 +22,8 @@
         $row5 = mysqli_fetch_array($result5);
       }
     }
-   
-   
+
+
    $index_no = $_GET['addpatient'];
    if(isset($_POST['submit'])){
    $name = $_FILES['file']['name'];
@@ -31,7 +31,7 @@
    $location = 'uploads';
    $title = $_POST['title'];
    $status = '' ;
-   
+
    if(isset($name)&&!empty($name)){
      $type = mime_content_type($tmp_name);
      $sql="select filetitle from RADdoc where filetitle='$title'";
@@ -42,7 +42,7 @@
      else{
        if($type == 'application/pdf' || $type == 'application/msword' || $type == 'application/vnd.ms-excel' || $type == 'text/plain' ){
          if(move_uploaded_file($tmp_name, "RADFiles/$title")){
-   
+
                $sql = "insert into RADdoc values($index_no,'$name','RADFiles/$title','$title');";
                mysqli_query($conn, $sql);
                $status = 'Successfully the (<strong>'.$name.'</strong>) file uploaded!';
@@ -57,7 +57,7 @@
    }else{
          $status = 'Please choose a file';
      }
-   
+
    }
    ?>
 <!DOCTYPE html>
@@ -164,7 +164,7 @@
             else {
                 $link="addpatient=".$_GET['addpatient'];
                 header("Location: bonebiopsy.php?".$link);
-            
+
             }
             }
             ?>
@@ -189,7 +189,9 @@
               <tbody> 
                <tr>
                   <th>Index Number</th>
+
                   <td><input type="text" name="addpatient" value=<?php echo $_GET['addpatient']?> readonly></td>
+
                </tr>
                <tr>
                   <th>Skull lateral view</th>
