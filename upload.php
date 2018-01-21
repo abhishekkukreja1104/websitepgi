@@ -36,141 +36,115 @@ if(isset($name)&&!empty($name)){
 }
 ?>
 
-<html>
-<head>
-  <title>Add new file</title>
-  <link rel="stylesheet" type="text/css" href="form_style.css">
-</head>
-<style>
-  body{
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Upload</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+   </head>
+   <style>
+      .table>tbody>tr>td,
+      .table>tbody>tr>th {
+        border-top: none;
+      }
+      body{
+         font-family: 'Georgia';
          background: #96B8DA;
-         margin: 0;
-         }
-         #container{
-         width: 1200px;
-         margin: 0 auto;
+      }
+      #logo{
          background: #ffffff;
-         }
-         #header{
-         width: 100%;
-         border-bottom: 1px solid #c7c7c7;
-         background: #ffffff;
-         }
-         #logo{
-         width: 100%;
-         height: 130px;
-         }
-         #heading{
-         width: 100%;
+      }
+      .container{
+         background-color: #ffffff;
+      }
+      #heading{
+         font-weight: bold;
          background: #518B47;
-         padding: 0px;
-         padding-bottom: 10px;
-         padding-top: 10px;
+         padding-bottom: 1%;
          color: white;
-         }
-         #submit{
-         width: 100%;
-         background: #518B47;
-         padding: 0px;
-         padding-bottom: 10px;
-         padding-top: 10px;
-         }
-         #form{
-         width: 100%;
-         background: #ffffff;
-         padding: 0px;
-         padding-bottom: 10px;
-         padding-top: 10px;
-         color: black;
-         }
-         #navbar{
-         height: 40px;
-         clear: both;
-         width: 100%;
-         }
-         #navbar ul{
-         list-style-type: none;
-         margin: 0;
-         padding: 0;
-         overflow: hidden;
-         }
-         #navbar ul li{
-         float: left;
-         border-right: 1px solid #bbb;
-         }
-         #navbar ul li a{
-         display: block;
-         color: #ffffff;
-         text-align: center;
-         background-color:#1F4F96;
-         width: 299px;
-         padding-top: 20px;
-         padding-bottom: 20px;
-         font-weight:bold;
-         text-decoration: none;
-         }
-         #navbar ul li a:hover{
+       }
+       #nav{
+        font-size: 16px;
+        background: #1F4F96;
+        color: #ffffff;
+        font-weight: bold;
+        padding: 2%;
+       }
+       #nav:hover{
          background-color: #111;
-         }
-         th{
+       }
+       th{
+         text-align: center;
+         color: #ffffff;
+         padding: 5%;
+       }
+       td{
          text-align: left;
-         }
-         td{
-         padding-top: 10px;
-         padding-left: 200px;
-         }
-         input[type = "text"]{
-         display: inline-block;
-         width: 400px;
-</style>
-<body>
-  <div id="container">
-         <div id="header">
-            <div id="logo" align="center">
-               <img src="http://indianphptregistry.com/images/logo.png">
-            </div>
-            <div id="navbar">
-              <ul>
-                <li><a href="../Layoutaddpatient.php">Add Patient</a></li>
-                <li><a href="../displaypatient.php">View Patient</a></li>
-                <li><a href="../displaypatient.php">Search Patient</a></li>
-                <li><a href="../documents.php">Manage Documents</a></li>
-              </ul>
-            </div>
-            <div align = "center" id = "heading">
-                <h1>Add new file</h1>
-          </div>
+       }
+       #up{
+         text-align: center;
+       }
+       #submit{
+         width: 100%;
+         padding-bottom: 0;
+       }
+       .table{
+        margin-top: 8%;
+        border: none;
+       }
+   </style>
+   <body>
+      <div class="container">
+      <div class="row">
+         <div class="col-md-12" id="logo" align="center">
+            <img class="img-responsive" src="http://indianphptregistry.com/images/logo.png" alt="indianphptregistry">
          </div>
-        </div>
+      </div>
+      <div class="row">
+         <a href="Layoutaddpatient.php">
+            <div class="col-md-3" align="center" id="nav">
+               Add Patient
+            </div>
+         </a>
+         <a href="displaypatient.php">
+            <div class="col-md-3" align="center" id="nav">
+               View Patient
+            </div>
+         </a>
+         <a href="search.php">
+            <div class="col-md-3" align="center" id="nav">
+               Search Patient
+            </div>
+         </a>
+         <a href="documents.php">
+            <div class="col-md-3" align="center" id="nav">
+               Manage Documents
+            </div>
+         </a>
+      </div>
+      <div class="row">
+         <div class="col-md-12" align="center" id="heading">
+            <h1>Add new file</h1>
+         </div>
+      </div>
   <form action="<?php echo $action; ?>" method="POST" enctype="multipart/form-data">
-    <table cellpadding="3" bgcolor="FFFFFF" align="center"
-    cellspacing="20">
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+    <table class="table table-hover" align="center">  
     <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th ></th>
-      <th ></th>
-    </tr>
-    <tr>
-      <th></th>
-      <th></th>
       <td><strong>Title: </strong></td>
       <td><input type="text" name="title" pattern = "[A-Za-z0-9]{1, }" title="avoid spaces in title" required></td>
-      <th></th>
     </tr>
     <tr>
-      <th></th>
-      <th></th>
       <td><strong>File:</strong></td>
       <td><input type="file" name="file" /></td>
-      <th></th>
     </tr>
     <tr>
-      <th></th>
-      <th></th>
       <?php
         echo '<th>';
         if(isset($status)){
@@ -178,13 +152,15 @@ if(isset($name)&&!empty($name)){
         }
         echo '</th>';
       ?>
-      <th></th>
     </tr>
     </table>
-    <div align = "center" id="heading">
-      <input type="submit" name="submit" value="Upload and continue"/>
+  </div>
     </div>
-    </tr>
+    <div class="row">
+      <div class="col-md-12" align="center" id="submit">
+        <input type="submit" name="submit" value="Upload and continue"/>
+      </div>
+    </div>
   </form>
 </body>﻿
 </html>

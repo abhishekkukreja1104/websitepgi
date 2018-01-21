@@ -178,14 +178,18 @@
          </form>
          <form action ="includes/addradioproperties.php" method="POST">
             <table class="table table-hover" align="center">
+              <thead>
                <tr>
                   <th style="font-size:23px"><font face="verdana">Radiograph</font></th>
-                  <td style="font-size:23px" id="up"><font face="verdana"><strong>Base line</strong></font></td>
-                  <td style="font-size:23px" id="up"><font face="verdana"><strong>1 year</strong></font></td>
-                  <td style="font-size:23px" id="up"><font face="verdana"><strong>5 year</strong></font></td>
+                  <th style="font-size:23px" id="up"><font face="verdana"><strong>Base line</strong></font></th>
+                  <th style="font-size:23px" id="up"><font face="verdana"><strong>1 year</strong></font></th>
+                  <th style="font-size:23px" id="up"><font face="verdana"><strong>5 year</strong></font></th>
                </tr>
+              </thead>
+              <tbody> 
                <tr>
                   <th>Index Number</th>
+                  <td><input type="text" name="addpatient" value=<?php echo $_GET['addpatient']?> readonly></td>
                </tr>
                <tr>
                   <th>Skull lateral view</th>
@@ -291,6 +295,7 @@
                     echo "</tr>";
                   }
                   ?>
+                </tbody>  
             </table>
             <div id="submit">
                  <input type="submit" value="Save and Continue" align="center">

@@ -157,12 +157,15 @@ if(isset($_POST['submit'])){
                     }
                   }
               ?>
+              <div class="row">
+                  <div class="col-md-3"></div>
+                  <div class="col-md-6">
                 <form action=<?php echo "clinical_diagnosis.php?addpatient=".$_GET['addpatient']?> method="post" id="frm">
                     <table class="table table-hover" align="center">
                         <tr>
                             <th>Pulmonary Funtion Test:</th>
                             <td>
-                                <input type="submit" name="submit1" value="No Avaliability">
+                                <input type="submit" name="submit1" value="Not Available">
                             </td>
                         </tr>
                     </table>
@@ -199,6 +202,8 @@ if(isset($_POST['submit'])){
                   </div>
                </div>
                 </form>
+                </div>
+                </div>
                 <div class="row">
          <div class="col-md-12" align="center" id="heading">
             <h3>Attahced pdf file</h3>
