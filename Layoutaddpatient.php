@@ -77,9 +77,13 @@
    <body>
       <div class="container">
       <div class="row">
-         <div class="col-md-12" id="logo" align="center">
-            <img class="img-responsive" src="http://indianphptregistry.com/images/logo.png" alt="indianphptregistry">
-         </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-6" id="logo" align="center">
+          <img class="img-responsive" src="http://indianphptregistry.com/images/logo.png" alt="indianphptregistry">
+        </div>
+        <div class="col-md-3" id="logout">
+          
+        </div>
       </div>
       <div class="row">
          <a href="Layoutaddpatient.php">
@@ -138,7 +142,8 @@
                   </tr>
                   <tr>
                      <th>CR No.:<font color="red">*</font></form></th>
-                     <td><input type="text" name="CR_No" pattern="[0-9]{1,12}" title="Only numbers are allowed and max length is 12 digits" required value = <?php echo $row['CR_no']; ?>></td>
+                     <td><input type="text" name="CR_No" pattern="[0-9]{12}" title="Only number are allowed and max length is 12 digits" required value = <?php echo $row['CR_no']; ?>></td>
+
                   </tr>
                   <tr>
                      <th>Admission No:</th>
