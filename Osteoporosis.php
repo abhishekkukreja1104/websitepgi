@@ -58,20 +58,27 @@
        }
        .table{
         margin-top: 1%;
-        margin-left: 27%;
-        width: 60%;
         border: none;
        }
        #form{
         padding: 2%;
        }
+       #logout{
+       font-size: 15px;
+       text-align: right;
+       margin-top: 5%;
+       }
    </style>
 <body>
     <div class="container">
       <div class="row">
-         <div class="col-md-12" id="logo" align="center">
-            <img class="img-responsive" src="http://indianphptregistry.com/images/logo.png" alt="indianphptregistry">
-         </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-6" id="logo" align="center">
+          <img class="img-responsive" src="RARE_MBD.png" alt="RARE MBD">
+        </div>
+        <div class="col-md-3" id="logout">
+          <a href="login.php">LOGOUT</a>
+        </div>
       </div>
       <div class="row">
          <a href="Layoutaddpatient.php">
@@ -100,9 +107,11 @@
             <h1>Osteoporosis Dropdown</h1>
          </div>
       </div>
-            <div id="form" align="center">
-                <form action="includes/addosteoporosis.php" method="POST">
-                    <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
+        <form action="includes/addosteoporosis.php" method="POST">
+          <div class="row">
+            <div class="col-md-3"></div>
+              <div class="col-md-6">
+                    <table class="table table-hover">
                       <th>Index Number</th>
                       <td>
                           <input type="text" name="addpatient" value=<?php echo $_GET[ 'addpatient']?> readonly>
@@ -119,9 +128,13 @@
                                 </td>
                         </tr>
                     </table>
-                    <div class="col-md-12" align="center" id="submit">
-                       <input type="submit" name= "next" value="Next" align="center">
-                    </div>
+                  </div>
+                </div> 
+                <div class="row">
+                  <div class="col-md-12" align="center" id="submit">
+                     <input type="submit" name= "next" value="Next" align="center">
+                  </div>
+                </div>    
                 </form>
             
 </body>

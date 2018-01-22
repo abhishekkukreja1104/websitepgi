@@ -108,13 +108,22 @@
       #year{
       width: 10%;  
       }
+      #logout{
+      font-size: 15px;
+      text-align: right;
+      margin-top: 5%;
+    }
    </style>
       <body>
          <div class="container">
             <div class="row">
-               <div class="col-md-12" id="logo" align="center">
-                  <img class="img-responsive" src="RARE_MBD.png" alt="indianphptregistry">
-               </div>
+              <div class="col-md-3"></div>
+              <div class="col-md-6" id="logo" align="center">
+                <img class="img-responsive" src="RARE_MBD.png" alt="RARE MBD">
+              </div>
+              <div class="col-md-3" id="logout">
+                <a href="login.php">LOGOUT</a>
+              </div>
             </div>
             <div class="row">
                <a href="Layoutaddpatient.php">

@@ -58,20 +58,27 @@
        }
        .table{
         margin-top: 1%;
-        margin-left: 27%;
-        width: 60%;
         border: none;
        }
        #form{
         padding: 2%;
        }
+       #logout{
+       font-size: 15px;
+       text-align: right;
+       margin-top: 5%;
+       }
    </style>
 <body>
     <div class="container">
       <div class="row">
-         <div class="col-md-12" id="logo" align="center">
-            <img class="img-responsive" src="http://indianphptregistry.com/images/logo.png" alt="indianphptregistry">
-         </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-6" id="logo" align="center">
+          <img class="img-responsive" src="RARE_MBD.png" alt="RARE MBD">
+        </div>
+        <div class="col-md-3" id="logout">
+          <a href="login.php">LOGOUT</a>
+        </div>
       </div>
       <div class="row">
          <a href="Layoutaddpatient.php">
@@ -100,41 +107,45 @@
             <h1>Osteomalacia Dropdown</h1>
          </div>
       </div>
-            <div id="form" align="center">
-                <form action="includes/addostomalasia.php" method="post">
-                    <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
+            <form action="includes/addostomalasia.php" method="post">
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-8">
+                  <table class="table table-hover">
+                    <tr>
                       <th>Index Number</th>
                       <td>
-                          <input type="text" name="addpatient" value=<?php echo $_GET[ 'addpatient']?> readonly>
+                        <input type="text" name="addpatient" value=<?php echo $_GET[ 'addpatient']?> readonly>
                       </td>
-
+                    </tr>  
                         <tr>
-                            <th>Osteomalacia Dropdown:</th>
-                                <td>
-                                    <select name="Osteomalacia1">
-                                        <option value="unknown">-Select-</option>
-                                        <option value="Vit_D3">Vit D3 deficiency</option>
-                                        <option value="Hypophosphatemic">Hypophosphatemic</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <select name="Osteomalacia2">
-                                        <option value="unknown">-Select-</option>
-                                        <option value="Malabsorption">Malabsorption</option>
-                                        <option value="Nutritional">Nutritional</option>
-                                        <option value="Tumor_Induced">Tumor Induced</option>
-                                        <option value="Tenofovir_Induced">Tenofovir Induced</option>
-                                    </select>
-                                </td>
+                          <th>Osteomalacia Dropdown:</th>
+                            <td>
+                              <select name="Osteomalacia1">
+                                  <option value="unknown">-Select-</option>
+                                  <option value="Vit_D3">Vit D3 deficiency</option>
+                                  <option value="Hypophosphatemic">Hypophosphatemic</option>
+                              </select>
+                            </td>
+                            <td>
+                              <select name="Osteomalacia2">
+                                  <option value="unknown">-Select-</option>
+                                  <option value="Malabsorption">Malabsorption</option>
+                                  <option value="Nutritional">Nutritional</option>
+                                  <option value="Tumor_Induced">Tumor Induced</option>
+                                  <option value="Tenofovir_Induced">Tenofovir Induced</option>
+                              </select>
+                            </td>
                         </tr>
                     </table>
-                    <div class="col-md-12" align="center" id="submit">
-                       <input type="submit" name="Next" align="center">
                     </div>
-                </form>
-            </div>
-
-
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12" align="center" id="submit">
+                      <input type="submit" name="Next" align="center">
+                    </div>
+                  </div>  
+                </form>    
         </div>
 </body>
 

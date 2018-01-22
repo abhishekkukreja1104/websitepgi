@@ -31,8 +31,8 @@ if(isset($_GET['status'])){
         border-top: none;
       }
       body{
-         font-family: 'Georgia';
-         background: #96B8DA;
+        font-family: 'Georgia';
+        background: #96B8DA;
       }
       #logo{
          background: #ffffff;
@@ -60,34 +60,39 @@ if(isset($_GET['status'])){
          text-align: left;
        }
        td{
-         padding: 5%;
-         text-align: left;
+        text-align: center;
        }
        #up{
          text-align: center;
        }
        #submit{
          width: 100%;
-         padding: 0px;
-         padding-bottom: 10px;
-         padding-top: 10px;
+         padding:1%;
+         background: #518B47;
        }
        .table{
         margin-top: 1%;
-        margin-left: 27%;
-        width: 60%;
         border: none;
        }
        #form{
         padding: 2%;
        }
+       #logout{
+       font-size: 15px;
+       text-align: right;
+       margin-top: 5%;
+       }
    </style>
 <body>
     <div class="container">
       <div class="row">
-         <div class="col-md-12" id="logo" align="center">
-            <img class="img-responsive" src="http://indianphptregistry.com/images/logo.png" alt="indianphptregistry">
-         </div>
+        <div class="col-md-3"></div>
+          <div class="col-md-6" id="logo" align="center">
+            <img class="img-responsive" src="RARE_MBD.png" alt="RARE MBD">
+          </div>
+          <div class="col-md-3" id="logout">
+            <a href="login.php">LOGOUT</a>
+          </div>
       </div>
       <div class="row">
          <a href="Layoutaddpatient.php">
@@ -116,9 +121,11 @@ if(isset($_GET['status'])){
             <h1>Clinical diagnosis dropdown</h1>
          </div>
       </div>
-            <div id="form" align="center">
-                <form action = "includes/addclinicaldiagnosis.php" method="post">
-                    <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
+            <form action = "includes/addclinicaldiagnosis.php" method="post">
+              <div class="row">
+                <div class="col-md-3"></div>
+                  <div class="col-md-6">
+                    <table class="table table-hover">
                         <tr>
                           <th>Index Number</th>
                                   <td>
@@ -161,6 +168,8 @@ if(isset($_GET['status'])){
                             </td>
                         </tr>
                     </table>
+                  </div>
+                </div>
                     <div class="row">
                     <div class="col-md-12" align="center" id="submit">
                        <input type="submit" name = "submit" value="Next" align="center">
@@ -169,11 +178,6 @@ if(isset($_GET['status'])){
                 </form>
 
             </div>
-
-
-
-        </div>
-
 </body>
 
 </html>
