@@ -1,6 +1,8 @@
 <?php
 	include_once 'includes/dbh.php';
-  $row= false;
+	$localIP = getHostByName(getHostName());
+	echo $localIP;
+	$row= false;
 	if(isset($_GET['index_no']) ){
 		if($_GET['status']=="edit"){
 				$sql = "select * from MBD where index_no=".$_GET['index_no'].";";
@@ -114,8 +116,8 @@
 
       <div class="row">
         <div class="col-md-3"></div>
-        <div class="col-md-8">  
-               <table class="table table-hover" align="center"> 
+        <div class="col-md-8">
+               <table class="table table-hover" align="center">
                  <?php
              		if(isset($_GET['status'])){
              			echo "<tr>";
@@ -141,6 +143,7 @@
                   <tr>
                      <th>CR No.:<font color="red">*</font></form></th>
                      <td><input type="text" name="CR_No" pattern="[0-9]{12}" title="Only number are allowed and max length is 12 digits" required value = <?php echo $row['CR_no']; ?>></td>
+
                   </tr>
                   <tr>
                      <th>Admission No:</th>
@@ -173,7 +176,7 @@
                   <tr>
                      <th>Mobile:<font color="red">*</font></th>
                      <td><input type="number" name="Mobile" required value = <?php echo $row['mobile']; ?>></td>
-                  </tr>   
+                  </tr>
                   <tr>
                      <th>Email:</th>
                      <td><input type="email" name="Email" value = <?php echo $row['email']; ?>></td>
@@ -246,7 +249,7 @@
                      <input type="submit" value="Save and Continue" align="center">
                   </div>
                </div>
-            </form>    
+            </form>
       </div>
    </body>
 </html>

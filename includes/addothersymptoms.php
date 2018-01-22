@@ -5,6 +5,9 @@
 	$index_no = $_POST['addpatient'];
 		if(isset($_POST['status'])){
 
+			$sql = "delete from OSB where index_no=".$index_no;
+			echo $sql;
+			mysqli_query($conn, $sql);
 			$sql = "delete from OS3 where index_no=".$index_no;
 			echo $sql;
 			mysqli_query($conn, $sql);
@@ -24,6 +27,138 @@
 		}
 
 
+			$Asymptomatic = $_POST['Asymptomatic_B'];
+			$Bone_pain= $_POST['Bone_pain_B'];
+			$Backache= $_POST['Backache_B'];
+			$Bony_Swelling= $_POST['Bony_Swelling_B'];
+			$Cripple= $_POST['Cripple_B'];
+			$Fracture= $_POST['Fracture_B'];
+			$Anorexia= $_POST['Anorexia_B'];
+			$Constipation= $_POST['Constipation_B'];
+			$Loss_of_teeth= $_POST['Loss_of_teeth_B'];
+			$Cataract= $_POST['Cataract_B'];
+			$Renal_Colic= $_POST['Renal_Colic_B'];
+			$Round_face= $_POST['Round_face_B'];
+			$Short_stature= $_POST['Short_stature_B'];
+			$Cafe= $_POST['Cafe_B'];
+			$Blue_sclera= $_POST['Blue_sclera_B'];
+			$Dentinogenesis_imperfecta= $_POST['Dentinogenesis_imperfecta_B'];
+			$Acoustic_damage= $_POST['Acoustic_damage_B'];
+			$UL= $_POST['UL_B'];
+			$LL= $_POST['LL_B'];
+			$spine= $_POST['spine_B'];
+			$Hyper_extensibility= $_POST['Hyper_extensibility_B'];
+			$Syndactyly=$_POST['Syndactyly_B'];
+			$Tufting_of_phalanges= $_POST['Tufting_of_phalanges_B'];
+			$Short_4_th_metacarpal= $_POST['Short_4_th_metacarpal_B'];
+			$Tarsal= $_POST['Tarsal_B'];
+			$Upper_Segment= $_POST['Upper_Segment_B'];
+			$Arched_palate= $_POST['Arched_palate_B'];
+			$Waddling_gait= $_POST['Waddling_gait_B'];
+			$Exostosis= $_POST['Exostosis_B'];
+			$Hypoplasia_of_mandible= $_POST['Hypoplasia_of_mandible_B'];
+			$Monostotic= $_POST['Monostotic_B'];
+			$Polyostotic_lesion= $_POST['Polyostotic_lesion_B'];
+			$Hyperprolactinaemia= $_POST['Hyperprolactinaemia_B'];
+			$Weakness_Fatiguability= $_POST['Weakness_Fatiguability_B'];
+			$Joint_pain= $_POST['Joint_pain_B'];
+			$Visual_impairment= $_POST['Visual_impairment_B'];
+			$Precocious_puberty= $_POST['Precocious_puberty_B'];
+			$Hypophosphatemic_rickets= $_POST['Hypophosphatemic_rickets_B'];
+			$Facial_asymmetry= $_POST['Facial_asymmetry_B'];
+			$Any_other= $_POST['Any_other_B'];
+
+			$sql = "insert into OSB (index_no,
+						Asymptomatic,
+						Bone_pain,
+						Backache,
+						Bony_Swelling,
+						Cripple,
+						Fracture,
+						Anorexia,
+						Constipation,
+						Loss_of_teeth,
+						Cataract,
+						Renal_Colic,
+						Round_face,
+						Short_stature,
+						cafe,
+						Blue_sclera,
+						Dentinogenesis_imperfecta,
+						Acoustic_damage,
+						UL,
+						LL,
+						spine,
+						Hyper_extensibility,
+						syndactyly,
+						Tufting_of_phalanges,
+						Short_4_th_metacarpal,
+						Tarsal,
+						Upper_Segment,
+						Arched_palate,
+						Waddling_gait,
+						Exostosis,
+						Hypoplasia_of_mandible,
+						Monostotic,
+						Polyostotic_lesion,
+						Hyperprolactinaemia,
+						Weakness_Fatiguability,
+						Joint_pain,
+						Visual_impairment,
+						Precocious_puberty,
+						Hypophosphatemic_rickets,
+						Facial_asymmetry,
+						Any_other) values ($index_no,
+							'$Asymptomatic',
+							'$Bone_pain',
+							'$Backache',
+							'$Bony_Swelling',
+							'$Cripple',
+							'$Fracture',
+							'$Anorexia',
+							'$Constipation',
+							'$Loss_of_teeth',
+							'$Cataract',
+							'$Renal_Colic',
+							'$Round_face',
+							'$Short_stature',
+							'$Cafe',
+							'$Blue_sclera',
+							'$Dentinogenesis_imperfecta',
+							'$Acoustic_damage',
+							'$UL',
+							'$LL',
+							'$spine',
+							'$Hyper_extensibility',
+							'$Syndactyly',
+							'$Tufting_of_phalanges',
+							'$Short_4_th_metacarpal',
+							'$Tarsal',
+							'$Upper_Segment',
+							'$Arched_palate',
+							'$Waddling_gait',
+							'$Exostosis',
+							'$Hypoplasia_of_mandible',
+							'$Monostotic',
+							'$Polyostotic_lesion',
+							'$Hyperprolactinaemia',
+							'$Weakness_Fatiguability',
+							'$Joint_pain',
+							'$Visual_impairment',
+							'$Precocious_puberty',
+							'$Hypophosphatemic_rickets',
+							'$Facial_asymmetry',
+							'$Any_other');";
+
+			mysqli_query($conn,$sql);
+
+			$result = mysqli_query($conn, $sql);
+		if ( false===$result ) {
+		  printf("error: %s\n", mysqli_error($conn));
+		}
+		else {
+		  echo 'done.';
+		}
 
 	$Asymptomatic = $_POST['Asymptomatic_3'];
 	$Bone_pain= $_POST['Bone_pain_3'];

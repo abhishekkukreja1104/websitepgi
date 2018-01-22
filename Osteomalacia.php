@@ -101,8 +101,13 @@
          </div>
       </div>
             <div id="form" align="center">
-                <form action="clinical_diagnosis.php" method="post">
+                <form action="includes/addostomalasia.php" method="post">
                     <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
+                      <th>Index Number</th>
+                      <td>
+                          <input type="text" name="addpatient" value=<?php echo $_GET[ 'addpatient']?> readonly>
+                      </td>
+
                         <tr>
                             <th>Osteomalacia Dropdown:</th>
                                 <td>
@@ -123,15 +128,13 @@
                                 </td>
                         </tr>
                     </table>
+                    <div class="col-md-12" align="center" id="submit">
+                       <input type="submit" name="Next" align="center">
+                    </div>
                 </form>
             </div>
-            <form action="treatment.php"method="POST">
-                <div class="row">
-                  <div class="col-md-12" align="center" id="submit">
-                     <input type="submit" name= "next" value="Next" align="center">
-                  </div>
-                </div>
-            </form>
+
+
         </div>
 </body>
 

@@ -1,3 +1,20 @@
+<?php
+include_once 'includes/dbh.php';
+
+
+if(isset($_GET['status'])){
+    if($_GET['status']=="edit"){
+        $sql = "select * from NUCB where index_no =".$_GET['addpatient'];
+        $result = mysqli_query($conn, $sql);
+        $row=false;
+   if($result!=false){
+         $row = mysqli_fetch_array($result);
+
+   }
+ }
+}
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -51,7 +68,6 @@
        }
        #submit{
          width: 100%;
-         background: #518B47;
          padding: 0px;
          padding-bottom: 10px;
          padding-top: 10px;
@@ -101,16 +117,24 @@
          </div>
       </div>
             <div id="form" align="center">
-                <form action="clinical_diagnosis.php" method="post">
+                <form action = "includes/addclinicaldiagnosis.php" method="post">
                     <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
                         <tr>
+                          <th>Index Number</th>
+                                  <td>
+                                    <input type="text" name="addpatient" value=<?php echo $_GET[ 'addpatient']?> readonly>
+                                  </td>
+                        </tr>
+                        <tr>
                             <th>Clinical diagnosis dropdown:</th>
-                            <td>
-                                <select name="disease">
+
+                                  
+                                  <td>
+                                  <select name="disease">
                                     <option value="unknown">-Select-</option>
                                     <option value="rickets">Rickets</option>
                                     <option value="rickets_osteomalacia">Rickets and Osteomalacia</option>
-                                    <option value="Osteomalacia" <?php if(isset($_POST['disease'])){ if($_POST['disease'] == 'Osteomalacia') echo 'selected';}?>>Osteomalacia</option>
+                                    <option value="Osteomalacia">Osteomalacia</option>
                                     <option value="Osteogenesis">Osteogenesis imperfecta</option>
                                     <option value="Fibrous">Fibrous Dysplasia</option>
                                     <option value="Paget">Paget's disease</option>
@@ -137,16 +161,19 @@
                             </td>
                         </tr>
                     </table>
+                    <div class="row">
+                    <div class="col-md-12" align="center" id="submit">
+                       <input type="submit" name = "submit" value="Next" align="center">
+                    </div>
+                    </div>
                 </form>
+
             </div>
-            <form action="treatment.php"method="POST">
-                <div class="row">
-                  <div class="col-md-12" align="center" id="submit">
-                     <input type="submit" name= "next" value="Next" align="center">
-                  </div>
-                </div>
-            </form>
+
+
+
         </div>
+
 </body>
 
 </html>

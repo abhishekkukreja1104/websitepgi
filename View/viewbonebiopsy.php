@@ -1,6 +1,14 @@
+
 <?php
 include_once 'includes/dbh.php';
+if(isset($_GET['delete'])){
+  $value = $_GET['delete'];
+  $sql="delete from BONdoc where filepath='$value'";
+  mysqli_query($conn, $sql);
+  unlink($_GET['delete']);
+  echo $sql;
 
+}
 if(isset($_GET['status'])){
 
         $sqlB = "select * from BONB where index_no =".$_GET['addpatient'];
@@ -24,37 +32,10 @@ $tmp_name = $_FILES['file']['tmp_name'];
 $location = 'uploads';
 $title = $_POST['title'];
 $status = '' ;
-
-if(isset($name)&&!empty($name)){
-  $type = mime_content_type($tmp_name);
-  $sql="select filetitle from BONdoc where filetitle='$title'";
-  $result = mysqli_query($conn, $sql);
-  if($result->num_rows){
-    $status="Title name already exists";
-  }
-  else{
-    if($type == 'application/pdf' || $type == 'application/msword' || $type == 'application/vnd.ms-excel' || $type == 'text/plain' ){
-      if(move_uploaded_file($tmp_name, "BONFiles/$title")){
-
-            $sql = "insert into BONdoc values($index_no,'$name','BONFiles/$title','$title');";
-            mysqli_query($conn, $sql);
-            $status = 'Successfully the (<strong>'.$name.'</strong>) file uploaded!';
-      }else{
-          $status = 'There was an error uploading the file.';
-      }
-    }
-    else{
-      $status = 'File format not supported';
-    }
-  }
-}else{
-      $status = 'Please choose a file';
-  }
-
 }
+
 ?>
 
-    !DOCTYPE html>
 <html lang="en">
    <head>
       <title>Bone Biopsy</title>
@@ -154,7 +135,7 @@ if(isset($name)&&!empty($name)){
          <div class="col-md-12" align="center" id="heading">
             <h1>Bone Biopsy</h1>
          </div>
-      </div>                                   
+      </div>
       <form action="includes/addbonebiopsy.php" method="POST">
                         <table class="table table-hover" align="center">
                             <tr>
@@ -212,33 +193,39 @@ if(isset($name)&&!empty($name)){
                                     <input type="text" name="ib_1" readonly value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'ib_B'] : ""); ?>>
                                 </td>
                             </tr>
-                           
+
                         </table>
-                        
+
                     </form>
                   <table class="table table-hover view" align="center">
-                     <thead> 
-                    <tr>  
+                     <thead>
+                    <tr>
                       <th>File Title</th>
                       <th>File Name</th>
                       <th>View</th>
                       <th>Delete</th>
-                    </tr> 
+                    </tr>
                     </thead>
-                    <tbody> 
-                    <?php
-                      $sql = "select * from STF";
-                      $result = mysqli_query($conn, $sql);
-                      while($row = mysqli_fetch_array($result)): ?>
-                        <tr>
-                          <td><?php echo $row['filetitle']; ?></td>
-                          <td><?php echo $row['filename']; ?></td>
-                          <td><a id="edit_link" href=<?php echo $row['filepath'];?>>View</a></td>
-                          <td><a id="edit_link" href=<?php echo "documents.php?delete=".$row['filepath'];?>>delete</a></td>
-                        </tr>
-                    <?php endwhile ?>
+                    <tbody>
+
+                  <?php
+                    $sql = "select * from BONdoc where index_no = ".$_GET['addpatient'];
+                    $result = mysqli_query($conn, $sql);
+                    $index_no = $_GET['addpatient'];
+                    if($result){
+                    while($row = mysqli_fetch_array($result)): ?>
+                      <tr>
+                        <td><?php echo $row['filetitle']; ?></td>
+                        <td><?php echo $row['filename']; ?></td>
+                        <td><a id="edit_link" href=<?php echo $row['filepath'];?>>View</a></td>
+                        <td><a id="edit_link" href=<?php echo "viewbonebiopsy.php?addpatient=$index_no&delete=".$row['filepath'];?>>delete</a></td>
+                      </tr>
+                  <?php endwhile;
+                } ?>
+
                     </tbody>
-                    </table>
+
+            </table>
 
             </div>
     </body>

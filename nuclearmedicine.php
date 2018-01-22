@@ -119,6 +119,11 @@ if(isset($name)&&!empty($name)){
        .table{
         margin-top: 1%;
        }
+       input[type = "text"]{
+         display: inline-block;
+         width: 100%;
+         height: 25%;
+       }
    </style>
 <body>
     <div class="container">
@@ -382,9 +387,7 @@ if(isset($name)&&!empty($name)){
                                 echo '</th>';
                               ?>
                             </tr>
-                        </table>
-                      </div>
-                      </div>  
+                        </table>  
                              <div class="row">
                   <div class="col-md-12" align="center" id="submit">
                      <input type="submit" value="Upload" align="center">

@@ -149,7 +149,7 @@
                    <th id= "up" style="font-size:18px">Follow-up</th>
                    <th ></th>
                    <th ></th>
-                </tr>   
+                </tr>
               <tr>
                <th></th>
                   <th id="up">Base Line</th>
@@ -176,382 +176,381 @@
                         <tr>
                             <th>S. Ca (mg/dl)</th>
                             <td>
-                                <input type="number" name="S_Ca_D" step="any" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'S_Ca'] : ""); ?> ></td>
+                                <input type="number" name="S_Ca_D" step="any" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'S_Ca'] : ""); ?> ></td>
                             <td>
-                                <input type="number" name="S_Ca_3" step="any" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'S_Ca'] : ""); ?> ></td>
+                                <input type="number" name="S_Ca_3" step="any" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'S_Ca'] : ""); ?> ></td>
                             <td>
-                                <input type="number" name="S_Ca_6" step="any" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'S_Ca'] : ""); ?> ></td>
+                                <input type="number" name="S_Ca_6" step="any" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'S_Ca'] : ""); ?> ></td>
                             <td>
-                                <input type="number" name="S_Ca_1" step="any" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'S_Ca'] : ""); ?>></td>
+                                <input type="number" name="S_Ca_1" step="any" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'S_Ca'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="S_Ca_2" step="any" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'S_Ca'] : ""); ?>></td>
+                                <input type="number" name="S_Ca_2" step="any" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'S_Ca'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="S_Ca_5" step="any" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'S_Ca'] : ""); ?>></td>
+                                <input type="number" name="S_Ca_5" step="any" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'S_Ca'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>S. albumin (mg/dl)</th>
                             <td>
-                                <input type="number" name="S_albumin_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'S_albumin'] : ""); ?>></td>
+                                <input type="number" name="S_albumin_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'S_albumin'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="S_albumin_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'S_albumin'] : ""); ?>></td>
+                                <input type="number" name="S_albumin_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'S_albumin'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="S_albumin_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'S_albumin'] : ""); ?>></td>
+                                <input type="number" name="S_albumin_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'S_albumin'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="S_albumin_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'S_albumin'] : ""); ?>></td>
+                                <input type="number" name="S_albumin_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'S_albumin'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="S_albumin_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'S_albumin'] : ""); ?>></td>
+                                <input type="number" name="S_albumin_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'S_albumin'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="S_albumin_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'S_albumin'] : ""); ?>></td>
+                                <input type="number" name="S_albumin_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'S_albumin'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>S. alkaline phosphatase(IU/L)</th>
                             <td>
-                                <input type="number" name="S_alkaline_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'S_alkaline'] : ""); ?>></td>
+                                <input type="number" name="S_alkaline_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'S_alkaline'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="S_alkaline_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'S_alkaline'] : ""); ?>></td>
+                                <input type="number" name="S_alkaline_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'S_alkaline'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="S_alkaline_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'S_alkaline'] : ""); ?>></td>
+                                <input type="number" name="S_alkaline_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'S_alkaline'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="S_alkaline_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'S_alkaline'] : ""); ?>></td>
+                                <input type="number" name="S_alkaline_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'S_alkaline'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="S_alkaline_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'S_alkaline'] : ""); ?>></td>
+                                <input type="number" name="S_alkaline_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'S_alkaline'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="S_alkaline_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'S_alkaline'] : ""); ?>></td>
+                                <input type="number" name="S_alkaline_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'S_alkaline'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>25(OH) D (ng/ml)</th>
                             <td>
-                                <input type="number" name="OHD_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'OHD'] : ""); ?>></td>
+                                <input type="number" name="OHD_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'OHD'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="OHD_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'OHD'] : ""); ?>></td>
+                                <input type="number" name="OHD_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'OHD'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="OHD_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'OHD'] : ""); ?>></td>
+                                <input type="number" name="OHD_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'OHD'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="OHD_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'OHD'] : ""); ?>></td>
+                                <input type="number" name="OHD_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'OHD'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="OHD_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'OHD'] : ""); ?>></td>
+                                <input type="number" name="OHD_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'OHD'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="OHD_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'OHD'] : ""); ?>></td>
+                                <input type="number" name="OHD_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'OHD'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>iPTH (pg/ml)</th>
                             <td>
-                                <input type="number" name="iPTH_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'iPTH'] : ""); ?>></td>
+                                <input type="number" name="iPTH_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'iPTH'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="iPTH_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'iPTH'] : ""); ?>></td>
+                                <input type="number" name="iPTH_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'iPTH'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="iPTH_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'iPTH'] : ""); ?>></td>
+                                <input type="number" name="iPTH_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'iPTH'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="iPTH_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'iPTH'] : ""); ?>></td>
+                                <input type="number" name="iPTH_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'iPTH'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="iPTH_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'iPTH'] : ""); ?>></td>
+                                <input type="number" name="iPTH_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'iPTH'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="iPTH_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'iPTH'] : ""); ?>></td>
+                                <input type="number" name="iPTH_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'iPTH'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>FGF-23(RU/ml)</th>
                             <td>
-                                <input type="number" name="FGF_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'FGF'] : ""); ?>></td>
+                                <input type="number" name="FGF_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'FGF'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="FGF_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'FGF'] : ""); ?>></td>
+                                <input type="number" name="FGF_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'FGF'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="FGF_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'FGF'] : ""); ?>></td>
+                                <input type="number" name="FGF_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'FGF'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="FGF_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'FGF'] : ""); ?>></td>
+                                <input type="number" name="FGF_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'FGF'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="FGF_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'FGF'] : ""); ?>></td>
+                                <input type="number" name="FGF_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'FGF'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="FGF_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'FGF'] : ""); ?>></td>
+                                <input type="number" name="FGF_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'FGF'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>Na<sup>+</sup>(mEq/L)</th>
                             <td>
-                                <input type="number" name="Na_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'Na'] : ""); ?>></td>
+                                <input type="number" name="Na_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'Na'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Na_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'Na'] : ""); ?>></td>
+                                <input type="number" name="Na_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'Na'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Na_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'Na'] : ""); ?>></td>
+                                <input type="number" name="Na_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'Na'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Na_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'Na'] : ""); ?>></td>
+                                <input type="number" name="Na_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'Na'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Na_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'Na'] : ""); ?>></td>
+                                <input type="number" name="Na_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'Na'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Na_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'Na'] : ""); ?>></td>
+                                <input type="number" name="Na_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'Na'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>K<sup>+</sup>(mEq/L)</th>
                             <td>
-                                <input type="number" name="K_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'K'] : ""); ?>></td>
+                                <input type="number" name="K_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'K'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="K_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'K'] : ""); ?>></td>
+                                <input type="number" name="K_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'K'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="K_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'K'] : ""); ?>></td>
+                                <input type="number" name="K_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'K'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="K_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'K'] : ""); ?>></td>
+                                <input type="number" name="K_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'K'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="K_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'K'] : ""); ?>></td>
+                                <input type="number" name="K_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'K'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="K_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'K'] : ""); ?>></td>
+                                <input type="number" name="K_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'K'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>Cl<sup>-</sup>(mEq/L)</th>
                             <td>
-                                <input type="number" name="Cl_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'Cl'] : ""); ?>></td>
+                                <input type="number" name="Cl_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'Cl'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Cl_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'Cl'] : ""); ?>></td>
+                                <input type="number" name="Cl_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'Cl'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Cl_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'Cl'] : ""); ?>></td>
+                                <input type="number" name="Cl_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'Cl'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Cl_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'Cl'] : ""); ?>></td>
+                                <input type="number" name="Cl_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'Cl'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Cl_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'Cl'] : ""); ?>></td>
+                                <input type="number" name="Cl_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'Cl'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Cl_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'Cl'] : ""); ?>></td>
+                                <input type="number" name="Cl_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'Cl'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>SPO<sub>4</sub><sup>3-</sup>(mg%)</th>
                             <td>
-                                <input type="number" name="SPO_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'SPO'] : ""); ?>></td>
+                                <input type="number" name="SPO_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'SPO'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="SPO_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'SPO'] : ""); ?>></td>
+                                <input type="number" name="SPO_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'SPO'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="SPO_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'SPO'] : ""); ?>></td>
+                                <input type="number" name="SPO_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'SPO'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="SPO_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'SPO'] : ""); ?>></td>
+                                <input type="number" name="SPO_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'SPO'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="SPO_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'SPO'] : ""); ?>></td>
+                                <input type="number" name="SPO_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'SPO'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="SPO_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'SPO'] : ""); ?>></td>
+                                <input type="number" name="SPO_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'SPO'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>24 hour urine Ca (mg/24 hour)</th>
                             <td>
-                                <input type="number" name="Ca_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'Ca'] : ""); ?>></td>
+                                <input type="number" name="Ca_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'Ca'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Ca_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'Ca'] : ""); ?>></td>
+                                <input type="number" name="Ca_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'Ca'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Ca_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'Ca'] : ""); ?>></td>
+                                <input type="number" name="Ca_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'Ca'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Ca_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'Ca'] : ""); ?>></td>
+                                <input type="number" name="Ca_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'Ca'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Ca_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'Ca'] : ""); ?>></td>
+                                <input type="number" name="Ca_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'Ca'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Ca_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'Ca'] : ""); ?>></td>
+                                <input type="number" name="Ca_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'Ca'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>24 hour urine creatinine (mg/24 hour)</th>
                             <td>
-                                <input type="number" name="creatinine_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'creatinine'] : ""); ?>></td>
+                                <input type="number" name="creatinine_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'creatinine'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="creatinine_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'creatinine'] : ""); ?>></td>
+                                <input type="number" name="creatinine_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'creatinine'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="creatinine_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'creatinine'] : ""); ?>></td>
+                                <input type="number" name="creatinine_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'creatinine'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="creatinine_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'creatinine'] : ""); ?>></td>
+                                <input type="number" name="creatinine_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'creatinine'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="creatinine_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'creatinine'] : ""); ?>></td>
+                                <input type="number" name="creatinine_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'creatinine'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="creatinine_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'creatinine'] : ""); ?>></td>
+                                <input type="number" name="creatinine_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'creatinine'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>24 hour urine Phosphorus (mg/24hour)</th>
                             <td>
-                                <input type="number" name="Phosphorous_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'Phosphorous'] : ""); ?>></td>
+                                <input type="number" name="Phosphorous_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'Phosphorous'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Phosphorous_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'Phosphorous'] : ""); ?>></td>
+                                <input type="number" name="Phosphorous_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'Phosphorous'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Phosphorous_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'Phosphorous'] : ""); ?>></td>
+                                <input type="number" name="Phosphorous_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'Phosphorous'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Phosphorous_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'Phosphorous'] : ""); ?>></td>
+                                <input type="number" name="Phosphorous_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'Phosphorous'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Phosphorous_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'Phosphorous'] : ""); ?>></td>
+                                <input type="number" name="Phosphorous_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'Phosphorous'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Phosphorous_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'Phosphorous'] : ""); ?>></td>
+                                <input type="number" name="Phosphorous_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'Phosphorous'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>EGFR</th>
                             <td>
-                                <input type="number" name="EGFR_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'EGFR'] : ""); ?>></td>
+                                <input type="number" name="EGFR_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'EGFR'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="EGFR_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'EGFR'] : ""); ?>></td>
+                                <input type="number" name="EGFR_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'EGFR'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="EGFR_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'EGFR'] : ""); ?>></td>
+                                <input type="number" name="EGFR_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'EGFR'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="EGFR_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'EGFR'] : ""); ?>></td>
+                                <input type="number" name="EGFR_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'EGFR'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="EGFR_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'EGFR'] : ""); ?>></td>
+                                <input type="number" name="EGFR_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'EGFR'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="EGFR_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'EGFR'] : ""); ?>></td>
+                                <input type="number" name="EGFR_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'EGFR'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>Tmp/GFR (mg/dl)</th>
                             <td>
-                                <input type="number" name="GFR_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'GFR'] : ""); ?>></td>
+                                <input type="number" name="GFR_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'GFR'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="GFR_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'GFR'] : ""); ?>></td>
+                                <input type="number" name="GFR_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'GFR'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="GFR_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'GFR'] : ""); ?>></td>
+                                <input type="number" name="GFR_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'GFR'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="GFR_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'GFR'] : ""); ?>></td>
+                                <input type="number" name="GFR_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'GFR'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="GFR_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'GFR'] : ""); ?>></td>
+                                <input type="number" name="GFR_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'GFR'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="GFR_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'GFR'] : ""); ?>></td>
+                                <input type="number" name="GFR_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'GFR'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>Beta–Cross laps (CTx)</th>
                             <td>
-                                <input type="number" name="laps_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'laps'] : ""); ?>></td>
+                                <input type="number" name="laps_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'laps'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="laps_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'laps'] : ""); ?>></td>
+                                <input type="number" name="laps_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'laps'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="laps_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'laps'] : ""); ?>></td>
+                                <input type="number" name="laps_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'laps'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="laps_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'laps'] : ""); ?>></td>
+                                <input type="number" name="laps_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'laps'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="laps_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'laps'] : ""); ?>></td>
+                                <input type="number" name="laps_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'laps'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="laps_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'laps'] : ""); ?>></td>
+                                <input type="number" name="laps_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'laps'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>P1NP</th>
                             <td>
-                                <input type="number" name="P1NP_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'P1NP'] : ""); ?>></td>
+                                <input type="number" name="P1NP_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'P1NP'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="P1NP_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'P1NP'] : ""); ?>></td>
+                                <input type="number" name="P1NP_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'P1NP'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="P1NP_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'P1NP'] : ""); ?>></td>
+                                <input type="number" name="P1NP_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'P1NP'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="P1NP_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'P1NP'] : ""); ?>></td>
+                                <input type="number" name="P1NP_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'P1NP'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="P1NP_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'P1NP'] : ""); ?>></td>
+                                <input type="number" name="P1NP_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'P1NP'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="P1NP_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'P1NP'] : ""); ?>></td>
+                                <input type="number" name="P1NP_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'P1NP'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>N-Mid Osteocalcin</th>
                             <td>
-                                <input type="number" name="Osteocalcin_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'Osteocalcin'] : ""); ?>></td>
+                                <input type="number" name="Osteocalcin_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'Osteocalcin'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Osteocalcin_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'Osteocalcin'] : ""); ?>></td>
+                                <input type="number" name="Osteocalcin_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'Osteocalcin'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Osteocalcin_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'Osteocalcin'] : ""); ?>></td>
+                                <input type="number" name="Osteocalcin_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'Osteocalcin'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Osteocalcin_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'Osteocalcin'] : ""); ?>></td>
+                                <input type="number" name="Osteocalcin_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'Osteocalcin'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Osteocalcin_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'Osteocalcin'] : ""); ?>></td>
+                                <input type="number" name="Osteocalcin_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'Osteocalcin'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Osteocalcin_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'Osteocalcin'] : ""); ?>></td>
+                                <input type="number" name="Osteocalcin_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'Osteocalcin'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>Urine p<sup>H</sup></th>
                             <td>
-                                <input type="number" name="Urine_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'Urine'] : ""); ?>></td>
+                                <input type="number" name="Urine_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'Urine'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Urine_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'Urine'] : ""); ?>></td>
+                                <input type="number" name="Urine_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'Urine'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Urine_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'Urine'] : ""); ?>></td>
+                                <input type="number" name="Urine_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'Urine'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Urine_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'Urine'] : ""); ?>></td>
+                                <input type="number" name="Urine_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'Urine'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Urine_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'Urine'] : ""); ?>></td>
+                                <input type="number" name="Urine_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'Urine'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Urine_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'Urine'] : ""); ?>></td>
+                                <input type="number" name="Urine_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'Urine'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>Serum p<sup>H</sup></th>
                             <td>
-                                <input type="number" name="Serum_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'Serum'] : ""); ?>></td>
+                                <input type="number" name="Serum_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'Serum'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Serum_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'Serum'] : ""); ?>></td>
+                                <input type="number" name="Serum_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'Serum'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Serum_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'Serum'] : ""); ?>></td>
+                                <input type="number" name="Serum_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'Serum'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Serum_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'Serum'] : ""); ?>></td>
+                                <input type="number" name="Serum_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'Serum'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Serum_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'Serum'] : ""); ?>></td>
+                                <input type="number" name="Serum_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'Serum'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Serum_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'Serum'] : ""); ?>></td>
+                                <input type="number" name="Serum_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'Serum'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>Serum HCo<sub>3</sub></th>
                             <td>
-                                <input type="number" name="SerumHCo_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'SerumHCo'] : ""); ?>></td>
+                                <input type="number" name="SerumHCo_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'SerumHCo'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="SerumHCo_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'SerumHCo'] : ""); ?>></td>
+                                <input type="number" name="SerumHCo_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'SerumHCo'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="SerumHCo_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'SerumHCo'] : ""); ?>></td>
+                                <input type="number" name="SerumHCo_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'SerumHCo'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="SerumHCo_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'SerumHCo'] : ""); ?>></td>
+                                <input type="number" name="SerumHCo_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'SerumHCo'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="SerumHCo_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'SerumHCo'] : ""); ?>></td>
+                                <input type="number" name="SerumHCo_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'SerumHCo'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="SerumHCo_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'SerumHCo'] : ""); ?>></td>
+                                <input type="number" name="SerumHCo_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'SerumHCo'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>Anion gap</th>
                             <td>
-                                <input type="number" name="anion_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'anion'] : ""); ?>></td>
+                                <input type="number" name="anion_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'anion'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="anion_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'anion'] : ""); ?>></td>
+                                <input type="number" name="anion_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'anion'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="anion_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'anion'] : ""); ?>></td>
+                                <input type="number" name="anion_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'anion'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="anion_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'anion'] : ""); ?>></td>
+                                <input type="number" name="anion_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'anion'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="anion_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'anion'] : ""); ?>></td>
+                                <input type="number" name="anion_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'anion'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="anion_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'anion'] : ""); ?>></td>
+                                <input type="number" name="anion_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'anion'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>ANCA</th>
                             <td>
-                                <input type="number" name="ANCA_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'ANCA'] : ""); ?>></td>
+                                <input type="number" name="ANCA_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'ANCA'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="ANCA_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'ANCA'] : ""); ?>></td>
+                                <input type="number" name="ANCA_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'ANCA'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="ANCA_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'ANCA'] : ""); ?>></td>
+                                <input type="number" name="ANCA_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'ANCA'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="ANCA_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'ANCA'] : ""); ?>></td>
+                                <input type="number" name="ANCA_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'ANCA'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="ANCA_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'ANCA'] : ""); ?>></td>
+                                <input type="number" name="ANCA_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'ANCA'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="ANCA_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'ANCA'] : ""); ?>></td>
+                                <input type="number" name="ANCA_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'ANCA'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>DS DNA</th>
                             <td>
-                                <input type="number" name="DSDNA_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'DSDNA'] : ""); ?>></td>
+                                <input type="number" name="DSDNA_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'DSDNA'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="DSDNA_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'DSDNA'] : ""); ?>></td>
+                                <input type="number" name="DSDNA_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'DSDNA'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="DSDNA_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'DSDNA'] : ""); ?>></td>
+                                <input type="number" name="DSDNA_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'DSDNA'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="DSDNA_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'DSDNA'] : ""); ?>></td>
+                                <input type="number" name="DSDNA_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'DSDNA'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="DSDNA_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'DSDNA'] : ""); ?>></td>
+                                <input type="number" name="DSDNA_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'DSDNA'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="DSDNA_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'DSDNA'] : ""); ?>></td>
+                                <input type="number" name="DSDNA_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'DSDNA'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>IgAtTGAb</th>
                             <td>
-                                <input type="number" name="IgAtTGAb_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'IgAtTGAb'] : ""); ?>></td>
+                                <input type="number" name="IgAtTGAb_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'IgAtTGAb'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="IgAtTGAb_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'IgAtTGAb'] : ""); ?>></td>
+                                <input type="number" name="IgAtTGAb_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'IgAtTGAb'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="IgAtTGAb_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'IgAtTGAb'] : ""); ?>></td>
+                                <input type="number" name="IgAtTGAb_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'IgAtTGAb'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="IgAtTGAb_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'IgAtTGAb'] : ""); ?>></td>
+                                <input type="number" name="IgAtTGAb_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'IgAtTGAb'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="IgAtTGAb_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'IgAtTGAb'] : ""); ?>></td>
+                                <input type="number" name="IgAtTGAb_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'IgAtTGAb'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="IgAtTGAb_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'IgAtTGAb'] : ""); ?>></td>
+                                <input type="number" name="IgAtTGAb_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'IgAtTGAb'] : ""); ?>></td>
                         </tr>
                           <tr>
                         <th>H<sub>2</sub>Breath test</th>
                         <td>
-                            </select>
                             <select name="Breath_test_D">
                               <option value="unknown">--Select--</option>
                                 <option value="yes" <?php if(isset($_GET['status'])){
@@ -570,7 +569,7 @@
                         </td>
                         <td>
                             </select>
-                            <select name="Breath_test_D">
+                            <select name="Breath_test_3">
                               <option value="unknown">--Select--</option>
                                 <option value="yes" <?php if(isset($_GET['status'])){
                                     if($row3['Breath_test'] == 'yes'){
@@ -586,8 +585,7 @@
                                 ?>>No</option>
                               </select>
                         </td><td>
-                            </select>
-                            <select name="Breath_test_D">
+                            <select name="Breath_test_6">
                               <option value="unknown">--Select--</option>
                                 <option value="yes" <?php if(isset($_GET['status'])){
                                     if($row6['Breath_test'] == 'yes'){
@@ -603,8 +601,7 @@
                                 ?>>No</option>
                               </select>
                         </td><td>
-                            </select>
-                            <select name="Breath_test_D">
+                            <select name="Breath_test_1">
                               <option value="unknown">--Select--</option>
                                 <option value="yes" <?php if(isset($_GET['status'])){
                                     if($row1['Breath_test'] == 'yes'){
@@ -620,8 +617,7 @@
                                 ?>>No</option>
                               </select>
                         </td><td>
-                            </select>
-                            <select name="Breath_test_D">
+                            <select name="Breath_test_2">
                               <option value="unknown">--Select--</option>
                                 <option value="yes" <?php if(isset($_GET['status'])){
                                     if($row2['Breath_test'] == 'yes'){
@@ -637,8 +633,7 @@
                                 ?>>No</option>
                               </select>
                         </td><td>
-                            </select>
-                            <select name="Breath_test_D">
+                            <select name="Breath_test_5">
                               <option value="unknown">--Select--</option>
                                 <option value="yes" <?php if(isset($_GET['status'])){
                                     if($row5['Breath_test'] == 'yes'){
@@ -658,32 +653,32 @@
                         <tr>
                             <th>CKBB</th>
                             <td>
-                                <input type="number" name="CKBB_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'CKBB'] : ""); ?>></td>
+                                <input type="number" name="CKBB_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'CKBB'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="CKBB_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'CKBB'] : ""); ?>></td>
+                                <input type="number" name="CKBB_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'CKBB'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="CKBB_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'CKBB'] : ""); ?>></td>
+                                <input type="number" name="CKBB_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'CKBB'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="CKBB_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'CKBB'] : ""); ?>></td>
+                                <input type="number" name="CKBB_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'CKBB'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="CKBB_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'CKBB'] : ""); ?>></td>
+                                <input type="number" name="CKBB_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'CKBB'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="CKBB_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'CKBB'] : ""); ?>></td>
+                                <input type="number" name="CKBB_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'CKBB'] : ""); ?>></td>
                         </tr>
                         <tr>
                             <th>Any other</th>
                             <td>
-                                <input type="number" name="Any_other_D" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'Any_other'] : ""); ?>></td>
+                                <input type="number" name="Any_other_D" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $rowD[ 'Any_other'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Any_other_3" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row3[ 'Any_other'] : ""); ?>></td>
+                                <input type="number" name="Any_other_3" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row3[ 'Any_other'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Any_other_6" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row6[ 'Any_other'] : ""); ?>></td>
+                                <input type="number" name="Any_other_6" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row6[ 'Any_other'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Any_other_1" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row1[ 'Any_other'] : ""); ?>></td>
+                                <input type="number" name="Any_other_1" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'Any_other'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Any_other_2" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row2[ 'Any_other'] : ""); ?>></td>
+                                <input type="number" name="Any_other_2" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row2[ 'Any_other'] : ""); ?>></td>
                             <td>
-                                <input type="number" name="Any_other_5" step="any" value=< ?php echo ((isset($_GET[ 'status'])) ? $row5[ 'Any_other'] : ""); ?>></td>
+                                <input type="number" name="Any_other_5" step="any" value=<?php echo ((isset($_GET[ 'status'])) ? $row5[ 'Any_other'] : ""); ?>></td>
                         </tr>
                         <tr>
                         <?php
@@ -694,7 +689,7 @@
                               echo "</tr>";
                            }
                         ?>
-                        </tr>     
+                        </tr>
           </tbody>
       </table>
       <div class="row">
@@ -702,7 +697,7 @@
             <input type="submit" value="Save and Continue" align="center">
          </div>
       </div>
-      </form>            
+      </form>
    </div>
 </body>
 </html>
