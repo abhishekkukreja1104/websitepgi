@@ -27,7 +27,7 @@
       align-items: center;
       }
       #submit:hover{
-      background-color: #fff;      
+      background-color: #fff;
       }
    </style>
 <body>
@@ -36,8 +36,8 @@
                   <div class="col-md-3"></div>
                   <div class="col-md-6 form-container">
                         <form>
-                              <p style="text-align:center;"><img src="person.png" height="25%" width="40%"></p> 
-                              <h1 align="center">Login Form</h1>      
+                              <p style="text-align:center;"><img src="person.png" height="25%" width="40%"></p>
+                              <h1 align="center">Login Form</h1>
                               <div class="form-group">
                                     <label for="email">Email</label>
                                     <i class="fa fa-user"></i>
@@ -52,11 +52,12 @@
                                           <input type="checkbox" onclick="show()">Show Password
                                     </label>
                               </div>
-                              <button id="submit" style="margin-top: 5%;" type="submit" class="btn btn-submit btn-block">Submit</button>
+                              <button id="submit" method = 'POST' style="margin-top: 5%;" type="submit" class="btn btn-submit btn-block">Submit</button>
                         </form>
                   </div>
             </div>
       </div>
+
 </body>
 
 </html>
@@ -70,4 +71,11 @@ function show() {
       x.type = "password";
     }
 }
+
+document.getElementById("submit").onclick = function () {
+    var x = document.getElementById("email");
+    var y = document.getElementById("password");
+    if(x.value == "testemail@gmail.com"&& y.value=="password")
+      location.href = "www.yoursite.com";
+};
 </script>
