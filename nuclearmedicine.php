@@ -214,6 +214,16 @@ if(isset($name)&&!empty($name)){
                           <td><input name=impression_1 rows="5" cols="20" value = <?php echo ((isset($_GET['status'])) ? $row1['impression'] : ""); ?>></textarea></td>
                           <td></td>
                        </tr>
+                       <tr>
+                         <th>Any other scan:</th>
+                         <td><input type="text" name="any_B"></td>
+                         <td><input type="text" name="any_1"></td>
+                       </tr>
+                       <tr>
+                         <th>Impression:</th>
+                         <td><input type="text" name="imp_B"></td>
+                         <td><input type="text" name="imp_1"></td>
+                       </tr>
                     </table>
         <div class="row">
            <div class="col-md-12" align="center" id="heading">

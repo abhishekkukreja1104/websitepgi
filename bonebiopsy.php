@@ -105,12 +105,15 @@
       #submit{
       text-align: center;
       }
+      #year{
+      width: 10%;  
+      }
    </style>
       <body>
          <div class="container">
             <div class="row">
                <div class="col-md-12" id="logo" align="center">
-                  <img class="img-responsive" src="http://indianphptregistry.com/images/logo.png" alt="indianphptregistry">
+                  <img class="img-responsive" src="RARE_MBD.png" alt="indianphptregistry">
                </div>
             </div>
             <div class="row">
@@ -182,7 +185,8 @@
                       </td>
                     </tr>
                     <tr>
-                     <td></td>
+                     <td>
+                     </td>
                      <th>Histopathology no</th>
                      <td>
                         <input type="number" name="histo_B" value=<?php echo ((isset($_GET['status'])) ? $rowB[ 'histo_B'] : ""); ?>>
@@ -222,6 +226,17 @@
                      </td>
                      <td>
                         <input type="text" name="bhmp_1" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'bhmp_B'] : ""); ?>>
+                     </td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td></td>
+                     <th>Site of bone biopsy</th>
+                     <td>
+                        <input type="text" name="site_B" value= <?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'site_B'] : ""); ?>>
+                     </td>
+                     <td>
+                        <input type="text" name="site_1" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'site_B'] : ""); ?>>
                      </td>
                      <td></td>
                   </tr>

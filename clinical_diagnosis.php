@@ -131,6 +131,7 @@
                                     <option value="Mucopolysaccharidosis">Mucopolysaccharidosis</option>
                                     <option value="Pseudohypoparathyroidism">Pseudohypoparathyroidism</option>
                                     <option value="Bartter">Bartter-like syndrome</option>
+                                    <option value="Celiac">Celiac disease</option>
                                     <option value="Any_other">Any other</option>
                                 </select>
                             </td>
