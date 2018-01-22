@@ -53,6 +53,7 @@
       #submit{
       width: 100%;
       text-align: center;
+      background-color: #518B47; 
       padding: 0px;
       padding-bottom: 10px;
       padding-top: 10px;
@@ -61,15 +62,23 @@
       margin-top: 1%;
       border: none;
       }
+      #logout{
+       font-size: 15px;
+       text-align: right;
+       margin-top: 5%;
+       }
    </style>
    <body>
       <div class="container">
-         <div class="row">
-            <div class="col-md-12" id="logo" align="center">
-               <img class="img-responsive" src="http://indianphptregistry.com/images/logo.png" alt="indianphptregistry">
-
-            </div>
-         </div>
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6" id="logo" align="center">
+            <img class="img-responsive" src="RARE_MBD.png" alt="RARE MBD">
+          </div>
+          <div class="col-md-3" id="logout">
+            <a href="login.php">LOGOUT</a>
+          </div>
+        </div>
          <div class="row">
             <a href="Layoutaddpatient.php">
                <div class="col-md-3" align="center" id="nav">
@@ -96,17 +105,16 @@
             <div class="col-md-12" align="center" id="heading">
                <h1>Treatment</h1>
             </div>
-
-        </div>
-        <div id="content_area">
-            <div id="form" align="center">
-                <form action="includes/addtreatment.php" method="POST">
-                    <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
+          </div>
+            <form action="includes/addtreatment.php" method="POST">
+              <div class="row">
+                <div class="col-md-3"></div>
+                  <div class="col-md-6">
+                    <table class="table table-hover">
                       <th>Index Number</th>
                       <td>
                           <input type="text" name="addpatient" value=<?php echo $_GET[ 'addpatient']?> readonly>
                       </td>
-
                         <tr>
                             <th>Calcium</th>
                             <td><input type="checkbox" name="Calcium" value="yes"></td>
@@ -147,18 +155,15 @@
                         </tr>
 
                     </table>
-                    <div id="submit">
-                        <input type="submit" value="Save and Continue" align="center">
-                    </div>
-                    </form>
-                    </div>
-                </div>    
-            </div>
-
-        </div>
-    </div>
-
-
+                  </div>
+                </div> 
+                <div class="row">
+                  <div class="col-md-12" id="submit"> 
+                    <input type="submit" value="Save and Continue" align="center">
+                  </div>
+                </div>  
+              </form>
+          </div>
 </body>
 
 </html>
