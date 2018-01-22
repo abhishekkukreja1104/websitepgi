@@ -36,7 +36,6 @@ $status = '' ;
 
 ?>
 
-    !DOCTYPE html>
 <html lang="en">
    <head>
       <title>Bone Biopsy</title>
@@ -136,7 +135,7 @@ $status = '' ;
          <div class="col-md-12" align="center" id="heading">
             <h1>Bone Biopsy</h1>
          </div>
-      </div>                                   
+      </div>
       <form action="includes/addbonebiopsy.php" method="POST">
                         <table class="table table-hover" align="center">
                             <tr>
@@ -199,15 +198,15 @@ $status = '' ;
 
                     </form>
                   <table class="table table-hover view" align="center">
-                     <thead> 
-                    <tr>  
+                     <thead>
+                    <tr>
                       <th>File Title</th>
                       <th>File Name</th>
                       <th>View</th>
                       <th>Delete</th>
-                    </tr> 
+                    </tr>
                     </thead>
-                    <tbody> 
+                    <tbody>
 
                   <?php
                     $sql = "select * from BONdoc where index_no = ".$_GET['addpatient'];
@@ -223,7 +222,7 @@ $status = '' ;
                       </tr>
                   <?php endwhile;
                 } ?>
-                             
+
                     </tbody>
 
             </table>

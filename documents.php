@@ -58,7 +58,7 @@ include_once 'includes/dbh.php';
          padding: 5%;
        }
        td{
-         text-align: left;
+         text-align: center;
        }
        #up{
          text-align: center;
@@ -113,7 +113,7 @@ include_once 'includes/dbh.php';
         </div>
     </div>
 <table class="table table-hover" align="center">
-  <tr>  
+  <tr>
       <th width="30%">File Title</th>
       <th width="30%">File Name</th>
       <th width="20%">View</th>

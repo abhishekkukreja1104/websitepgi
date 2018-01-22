@@ -1,3 +1,7 @@
+<?php
+include_once 'includes/dbh.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -40,7 +44,7 @@
       background-color: #111;
       }
       th{
-      text-align: left;
+      text-align: center;
       }
       td{
       text-align: center;
@@ -95,19 +99,92 @@
             </div>
          </div>
          <div class="row">
+            <form action = "search.php" method="post">
+            <table class="table table-hover">
+                        <tr>
+                            <td><strong>Clinical diagnosis dropdown:</strong></td>
+
+
+                                  <td>
+                                  <select name="disease">
+                                    <option value="unknown">-Select-</option>
+                                    <option value="rickets">Rickets</option>
+                                    <option value="rickets_osteomalacia">Rickets and Osteomalacia</option>
+                                    <option value="Osteomalacia">Osteomalacia</option>
+                                    <option value="Osteogenesis">Osteogenesis imperfecta</option>
+                                    <option value="Fibrous">Fibrous Dysplasia</option>
+                                    <option value="Paget">Paget's disease</option>
+                                    <option value="Osteopetrosis">Osteopetrosis</option>
+                                    <option value="Spondyloepiphyseal">Spondyloepiphyseal dysplasia</option>
+                                    <option value="Fibrogenesis">Fibrogenesis imperfecta ossium</option>
+                                    <option value="Osteoporosis" <?php if(isset($_POST['disease'])){ if($_POST['disease'] == 'Osteoporosis') echo 'selected';}?>>Osteoporosis</option>
+                                    <option value="Hypo_Osteomalacia">Hypophosphatemic & Vitamin D Deficiency Osteomalacia</option>
+                                    <option value="Pyknodysostosis">Pyknodysostosis</option>
+                                    <option value="Camurati">Camurati-Engelmann Disease</option>
+                                    <option value="Melorheostosis">Melorheostosis</option>
+                                    <option value="Osteomyelosclerosis">Osteomyelosclerosis</option>
+                                    <option value="Achondroplasis">Achondroplasis</option>
+                                    <option value="Enchondromatosis">Enchondromatosis</option>
+                                    <option value="Multiple_Exostoses">Multiple Exostoses</option>
+                                    <option value="Sclerosteosis">Sclerosteosis</option>
+                                    <option value="Tumoral">Tumoral Calcinosis</option>
+                                    <option value="Mucopolysaccharidosis">Mucopolysaccharidosis</option>
+                                    <option value="Pseudohypoparathyroidism">Pseudohypoparathyroidism</option>
+                                    <option value="Bartter">Bartter-like syndrome</option>
+                                    <option value="Any_other">Any other</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="row">
+                    <div class="col-md-12" align="center" id="submit">
+                       <input type="submit" name = "submit" value="Go" align="center">
+                    </div>
+                    </div>
+                </form>
+
+         </div>
+         <div class="row">
             <table class="table table-bordered table-hover">
                <thead>
+
+                  <th>Disease</th>
+                  <th>CR Number</th>
                   <th>Admission No</th>
                   <th>Name</th>
-                  <th>Age</th>
                   <th>Sex</th>
                   <th>Address</th>
                   <th>Phone Number</th>
+                  <th>Email</th>
                </thead>
                <tbody>
-                  
+                  <?php
+                     if(isset($_POST['submit'])){
+                     $Disease = $_POST['disease'];
+                     $sql = "select * from CD where disease = '$Disease'";
+                     $result = mysqli_query($conn, $sql);
+                     while($row = mysqli_fetch_array($result)){
+                        $index =  $row['index_no'];
+                        $sqls = "select * from MBD where index_no = '$index'";
+                        $results = mysqli_query($conn, $sqls);
+                        while($rows = mysqli_fetch_array($results)){?>
+                        <tr>
+                          <td><?php echo $Disease; ?></td>
+                          <td><?php echo $rows['CR_no']; ?></td>
+
+                          <td><?php echo $rows['admission_no']; ?></td>
+                          <td><?php echo $rows['name']; ?></td>
+                          <td><?php echo $rows['sex']; ?></td>
+                          <td><?php echo $rows['address']; ?></td>
+                          <td><?php echo $rows['mobile']; ?></td>
+                          <td><?php echo $rows['email']; ?></td>
+                        </tr>
+                    <?php }
+                     }
+                  }
+                  ?>
                </tbody>
-            </table>   
+            </table>
          </div>
  </div>
 </body>

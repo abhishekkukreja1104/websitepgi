@@ -53,7 +53,6 @@
 
    }
    ?>
-<!DOCTYPE html>
 <html lang="en">
    <head>
       <title>Bone Biopsy</title>
@@ -186,10 +185,10 @@
                      <td></td>
                      <th>Histopathology no</th>
                      <td>
-                        <input type="number" name="histo_B" value=<?php echo ((isset($_GET['status'])) ? $rowB[ 'histo_B'] : ""); ?>>
+                        <input type="text" name="histo_B" value=<?php echo ((isset($_GET['status'])) ? $rowB[ 'histo_B'] : ""); ?>>
                      </td>
                      <td>
-                        <input type="number" name="histo_1" value=<?php echo ((isset($_GET['status'])) ? $row1[ 'histo_B'] : ""); ?>>
+                        <input type="text" name="histo_1" value=<?php echo ((isset($_GET['status'])) ? $row1[ 'histo_B'] : ""); ?>>
                      </td>
                      <td></td>
                   </tr>
@@ -223,6 +222,17 @@
                      </td>
                      <td>
                         <input type="text" name="bhmp_1" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'bhmp_B'] : ""); ?>>
+                     </td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td></td>
+                     <th>Site of BHMP</th>
+                     <td>
+                        <input type="text" name="BHMPsite_B" value= <?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'site_B'] : ""); ?>>
+                     </td>
+                     <td>
+                        <input type="text" name="BHMPsite_1" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'site_B'] : ""); ?>>
                      </td>
                      <td></td>
                   </tr>
@@ -262,7 +272,7 @@
               <div class="row">
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
-              <table class="table table-hover" align="center"> 
+              <table class="table table-hover" align="center">
 
                   <tr>
                      <th>Title:</th>

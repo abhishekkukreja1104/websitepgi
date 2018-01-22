@@ -101,9 +101,6 @@
         <div id="content_area">
             <div id="form" align="center">
                 <form action="includes/addtreatment.php" method="POST">
-                    <div id="heading" align="center">
-                        <h1>Treatment</h1>
-                    </div>
                     <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
                       <th>Index Number</th>
                       <td>

@@ -10,22 +10,24 @@ if(isset($_POST['status'])){
 $index_no = $_POST['addpatient'];
 
 $histo = $_POST['histo_B'];
-if($histo==NULL)
-  $histo = 0;
+
 $site = $_POST['site_B'];
 $ih = $_POST['ih_B'];
 
 $bhmp = $_POST['bhmp_B'];
+
+$bhmpsite = $_POST['BHMPsite_B'];
 $ib = $_POST['ib_B'];
 
 $sql = "insert into BONB values(
 
-        $histo,
+        '$histo',
         '$site',
         '$ih',
         '$bhmp',
         '$ib',
-        $index_no
+        $index_no,
+        '$bhmpsite'
           );";
 mysqli_query($conn, $sql);
 echo $sql;
@@ -33,22 +35,23 @@ echo $sql;
 $index_no = $_POST['addpatient'];
 
 $histo = $_POST['histo_1'];
-if($histo==NULL)
-  $histo = 0;
 $site = $_POST['site_1'];
 $ih = $_POST['ih_1'];
 
 $bhmp = $_POST['bhmp_1'];
+
+$bhmpsite = $_POST['BHMPsite_1'];
 $ib = $_POST['ib_1'];
 
 $sql = "insert into BON1 values(
 
-        $histo,
+        '$histo',
         '$site',
         '$ih',
         '$bhmp',
         '$ib',
-        $index_no
+        $index_no,
+        '$bhmpsite'
           );";
 mysqli_query($conn, $sql);
 echo $sql;

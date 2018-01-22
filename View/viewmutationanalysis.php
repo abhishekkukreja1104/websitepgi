@@ -84,29 +84,36 @@
             <div class="col-md-3" align="center" id="nav">
                View Patient
             </div>
-        <div id="content_area">
-            <div id="form" align="center">
+            <a href="search.php">
+               <div class="col-md-3" align="center" id="nav">
+                  Search Patient
+               </div>
+            </a>
+            <a href="documents.php">
+               <div class="col-md-3" align="center" id="nav">
+                  Manage Documents
+               </div>
+            </a>
+         </div>
+         <div class="row">
+            <div class="col-md-12" align="center" id="heading">
+               <h1>Mutation Analysis</h1>
+            </div>
 
-
+        </div>
                 <form action="includes/addmutationanalysis.php" method="post">
-                    <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
+                    <table class="table  table-hover">
                       <tr>
-                         <th>Index Number</th>
+                         <td><strong>Index Number</strong></td>
                          <td><input type="text" name="addpatient" value=<?php echo $_GET['addpatient']?> readonly></td>
                       </tr>
                         <tr>
-                            <th></th>
                             <td>Known/Novel:</td>
-                            <th></th>
                             <td><input type="text" name="known_novel"></td>
-                            <th></th>
                         </tr>
                         <tr>
-                            <th></th>
                             <td>Autosomal Dominant/Autosomal Recessive:</td>
-                            <th></th>
                             <td><input type = "text" name="adorar"></td>
-                            <th></th>
                         </tr>
                     </table>
                 </form>

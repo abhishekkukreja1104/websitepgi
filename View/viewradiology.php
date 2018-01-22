@@ -31,9 +31,6 @@ if(isset($_GET['status'])){
 
  }
 
-
-
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">

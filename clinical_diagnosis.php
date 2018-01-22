@@ -68,7 +68,6 @@ if(isset($_GET['status'])){
        }
        #submit{
          width: 100%;
-         background: #518B47;
          padding: 0px;
          padding-bottom: 10px;
          padding-top: 10px;
@@ -121,12 +120,15 @@ if(isset($_GET['status'])){
                 <form action = "includes/addclinicaldiagnosis.php" method="post">
                     <table cellpadding="3" bgcolor="FFFFFF" align="center" cellspacing="20">
                         <tr>
-                            <th>Clinical diagnosis dropdown:</th>
-
-                                  <th>Index Number</th>
+                          <th>Index Number</th>
                                   <td>
                                     <input type="text" name="addpatient" value=<?php echo $_GET[ 'addpatient']?> readonly>
                                   </td>
+                        </tr>
+                        <tr>
+                            <th>Clinical diagnosis dropdown:</th>
+
+                                  
                                   <td>
                                   <select name="disease">
                                     <option value="unknown">-Select-</option>
@@ -158,10 +160,11 @@ if(isset($_GET['status'])){
                             </td>
                         </tr>
                     </table>
+                    <div class="row">
                     <div class="col-md-12" align="center" id="submit">
                        <input type="submit" name = "submit" value="Next" align="center">
                     </div>
-
+                    </div>
                 </form>
 
             </div>
