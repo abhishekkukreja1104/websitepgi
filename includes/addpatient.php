@@ -90,7 +90,8 @@
 						 where index_no = $index_no;";
 
 						 	mysqli_query($conn,$sql);
-							header("Location: ../Layoutothersymptoms.php?status=edit&addpatient=".$index_no);
+							echo $sql;
+							//header("Location: ../Layoutothersymptoms.php?status=edit&addpatient=".$index_no);
 
 	}else{
 		$sql = "insert into MBD

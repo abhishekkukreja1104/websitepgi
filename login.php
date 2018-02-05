@@ -45,7 +45,7 @@
                               </div>
                               <div class="form-group">
                                     <label for="password">Password</label>
-                                    <input type="password" id="password" class="form-control" placeholder="Password">
+                                    <input type="password" name  = "password" id="password" class="form-control" placeholder="Password">
                               </div>
                               <div class="checkbox">
                                     <label>
@@ -59,9 +59,11 @@
       </div>
       <?php
         if(isset($_POST["submit"])){
-          if(strcmp($_POST['email'],"akshaykumarsharma1998aks@gmail.com")==0){
-            header("Location: Layoutaddpatient.php");
+          if(strcmp($_POST['email'],"rareMBDpgi@gmail.com")==0){
+            if(strcmp($_POST['password'],"pgi@123")==0){
 
+              header("Location: Layoutaddpatient.php");
+            }
           }
           echo "hello";
         }
