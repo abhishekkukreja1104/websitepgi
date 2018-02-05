@@ -312,6 +312,14 @@ if(isset($name)&&!empty($name)){
                          <td><input type="text" name="imp_B"></td>
                          <td><input type="text" name="imp_1"></td>
                        </tr>
+                       <?php
+                          if(isset($_GET['status'])){
+                                 echo "<tr>";
+                                 echo "<th>status:</th>";
+                                 echo "<td><input type='text' name='status' value ='edit' readonly> </td>";
+                                 echo "</tr>";
+                          }
+                      ?>
                     </table>
         <div class="row">
            <div class="col-md-12" align="center" id="heading">
@@ -337,43 +345,43 @@ if(isset($name)&&!empty($name)){
                </tr>
                <tr>
                   <th>Hip(Neck)</th>
-                  <td><input type="text" name="hipnB_T" value = <?php echo ((isset($_GET['status'])) ? $rowHN['impression'] : ""); ?>></td>
-                  <td><input type="text" name="hipnB_Z" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="hipnB_BMD" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="hipnB_BMC" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="hipnB_TBS" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
+                  <td><input type="text" name="hipnB_T" value = <?php echo ((isset($_GET['status'])) ? $rowHN['hipnB_T'] : ""); ?>></td>
+                  <td><input type="text" name="hipnB_Z" value = <?php echo ((isset($_GET['status'])) ? $rowHN['hipnB_Z'] : ""); ?>></td>
+                  <td><input type="text" name="hipnB_BMD" value = <?php echo ((isset($_GET['status'])) ? $rowHN['hipnB_BMD'] : ""); ?>></td>
+                  <td><input type="text" name="hipnB_BMC" value = <?php echo ((isset($_GET['status'])) ? $rowHN['hipnB_BMC'] : ""); ?>></td>
+                  <td><input type="text" name="hipnB_TBS" value = <?php echo ((isset($_GET['status'])) ? $rowHN['hipnB_TBS'] : ""); ?>></td>
                </tr>
                <tr>
                   <th>Hip(Total)</th>
-                  <td><input type="text" name="hiptB_T" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="hiptB_Z" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="hiptB_BMD" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="hiptB_BMC" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="hiptB_TBS" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
+                  <td><input type="text" name="hiptB_T" value = <?php echo ((isset($_GET['status'])) ? $rowHT['hiptB_T'] : ""); ?>></td>
+                  <td><input type="text" name="hiptB_Z" value = <?php echo ((isset($_GET['status'])) ? $rowHT['hiptB_Z'] : ""); ?>></td>
+                  <td><input type="text" name="hiptB_BMD" value = <?php echo ((isset($_GET['status'])) ? $rowHT['hiptB_BMD'] : ""); ?>></td>
+                  <td><input type="text" name="hiptB_BMC" value = <?php echo ((isset($_GET['status'])) ? $rowHT['hiptB_BMC'] : ""); ?>></td>
+                  <td><input type="text" name="hiptB_TBS" value = <?php echo ((isset($_GET['status'])) ? $rowHT['hiptB_TBS'] : ""); ?>></td>
                </tr>
                <tr>
                   <th>Spine</th>
-                  <td><input type="text" name="spineB_T" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="spineB_Z" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="spineB_BMD" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="spineB_BMC" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="spineB_TBS" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
+                  <td><input type="text" name="spineB_T" value = <?php echo ((isset($_GET['status'])) ? $rowS['spineB_T'] : ""); ?>></td>
+                  <td><input type="text" name="spineB_Z" value = <?php echo ((isset($_GET['status'])) ? $rowS['spineB_Z'] : ""); ?>></td>
+                  <td><input type="text" name="spineB_BMD" value = <?php echo ((isset($_GET['status'])) ? $rowS['spineB_BMD'] : ""); ?>></td>
+                  <td><input type="text" name="spineB_BMC" value = <?php echo ((isset($_GET['status'])) ? $rowS['spineB_BMC'] : ""); ?>></td>
+                  <td><input type="text" name="spineB_TBS" value = <?php echo ((isset($_GET['status'])) ? $rowS['spineB_TBS'] : ""); ?>></td>
                </tr>
                <tr>
                   <th>Radius</th>
-                  <td><input type="text" name="radiusB_T" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="radiusB_Z" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="radiusB_BMD" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="radiusB_BMC" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="radiusB_TBS" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
+                  <td><input type="text" name="radiusB_T" value = <?php echo ((isset($_GET['status'])) ? $rowR['radiusB_T'] : ""); ?>></td>
+                  <td><input type="text" name="radiusB_Z" value = <?php echo ((isset($_GET['status'])) ? $rowR['radiusB_Z'] : ""); ?>></td>
+                  <td><input type="text" name="radiusB_BMD" value = <?php echo ((isset($_GET['status'])) ? $rowR['radiusB_BMD'] : ""); ?>></td>
+                  <td><input type="text" name="radiusB_BMC" value = <?php echo ((isset($_GET['status'])) ? $rowR['radiusB_BMC'] : ""); ?>></td>
+                  <td><input type="text" name="radiusB_TBS" value = <?php echo ((isset($_GET['status'])) ? $rowR['radiusB_TBS'] : ""); ?>></td>
                </tr>
                <tr>
                   <th>Whole body</th>
-                  <td><input type="text" name="wholeB_T" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="wholeB_Z" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="wholeB_BMD" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="wholeB_BMC" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="wholeB_TBS" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
+                  <td><input type="text" name="wholeB_T" value = <?php echo ((isset($_GET['status'])) ? $rowW['wholeB_T'] : ""); ?>></td>
+                  <td><input type="text" name="wholeB_Z" value = <?php echo ((isset($_GET['status'])) ? $rowW['wholeB_Z'] : ""); ?>></td>
+                  <td><input type="text" name="wholeB_BMD" value = <?php echo ((isset($_GET['status'])) ? $rowW['wholeB_BMD'] : ""); ?>></td>
+                  <td><input type="text" name="wholeB_BMC" value = <?php echo ((isset($_GET['status'])) ? $rowW['wholeB_BMC'] : ""); ?>></td>
+                  <td><input type="text" name="wholeB_TBS" value = <?php echo ((isset($_GET['status'])) ? $rowW['wholeB_TBS'] : ""); ?>></td>
                </tr>
                <tr>
                   <th style="font-size:20px"><font face="verdana">DXA</font></th>
@@ -393,43 +401,43 @@ if(isset($name)&&!empty($name)){
                </tr>
                <tr>
                   <th>Hip(Neck)</th>
-                  <td><input type="text" name="hipn1_T" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="hipn1_Z" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="hipn1_BMD" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="hipn1_BMC" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="hipn1_TBS" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
+                  <td><input type="text" name="hipn1_T" value = <?php echo ((isset($_GET['status'])) ? $rowHN1['hipn1_T'] : ""); ?>></td>
+                  <td><input type="text" name="hipn1_Z" value = <?php echo ((isset($_GET['status'])) ? $rowHN1['hipn1_Z'] : ""); ?>></td>
+                  <td><input type="text" name="hipn1_BMD" value = <?php echo ((isset($_GET['status'])) ? $rowHN1['hipn1_BMD'] : ""); ?>></td>
+                  <td><input type="text" name="hipn1_BMC" value = <?php echo ((isset($_GET['status'])) ? $rowHN1['hipn1_BMC'] : ""); ?>></td>
+                  <td><input type="text" name="hipn1_TBS" value = <?php echo ((isset($_GET['status'])) ? $rowHN1['hipn1_TBS'] : ""); ?>></td>
                </tr>
                <tr>
                   <th>Hip(Total)</th>
-                  <td><input type="text" name="hipt1_T" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="hipt1_Z" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="hipt1_BMD" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="hipt1_BMC" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="hipt1_TBS" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
+                  <td><input type="text" name="hipt1_T" value = <?php echo ((isset($_GET['status'])) ? $rowHT1['hipt1_T'] : ""); ?>></td>
+                  <td><input type="text" name="hipt1_Z" value = <?php echo ((isset($_GET['status'])) ? $rowHT1['hipt1_Z'] : ""); ?>></td>
+                  <td><input type="text" name="hipt1_BMD" value = <?php echo ((isset($_GET['status'])) ? $rowHT1['hipt1_BMD'] : ""); ?>></td>
+                  <td><input type="text" name="hipt1_BMC" value = <?php echo ((isset($_GET['status'])) ? $rowHT1['hipt1_BMC'] : ""); ?>></td>
+                  <td><input type="text" name="hipt1_TBS" value = <?php echo ((isset($_GET['status'])) ? $rowHT1['hipt1_TBS'] : ""); ?>></td>
                </tr>
                <tr>
                   <th>Spine</th>
-                  <td><input type="text" name="spine1_T" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="spine1_Z" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="spine1_BMD" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="spine1_BMC" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="spine1_TBS" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
+                  <td><input type="text" name="spine1_T" value = <?php echo ((isset($_GET['status'])) ? $rowS1['spine1_T'] : ""); ?>></td>
+                  <td><input type="text" name="spine1_Z" value = <?php echo ((isset($_GET['status'])) ? $rowS1['spine1_Z'] : ""); ?>></td>
+                  <td><input type="text" name="spine1_BMD" value = <?php echo ((isset($_GET['status'])) ? $rowS1['spine1_BMD'] : ""); ?>></td>
+                  <td><input type="text" name="spine1_BMC" value = <?php echo ((isset($_GET['status'])) ? $rowS1['spine1_BMC'] : ""); ?>></td>
+                  <td><input type="text" name="spine1_TBS" value = <?php echo ((isset($_GET['status'])) ? $rowS1['spine1_TBS'] : ""); ?>></td>
                </tr>
                <tr>
                   <th>Radius</th>
-                  <td><input type="text" name="radius1_T" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="radius1_Z" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="radius1_BMD" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="radius1_BMC" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="radius1_TBS" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
+                  <td><input type="text" name="radius1_T" value = <?php echo ((isset($_GET['status'])) ? $rowR1['radius1_T'] : ""); ?>></td>
+                  <td><input type="text" name="radius1_Z" value = <?php echo ((isset($_GET['status'])) ? $rowR1['radius1_Z'] : ""); ?>></td>
+                  <td><input type="text" name="radius1_BMD" value = <?php echo ((isset($_GET['status'])) ? $rowR1['radius1_BMD'] : ""); ?>></td>
+                  <td><input type="text" name="radius1_BMC" value = <?php echo ((isset($_GET['status'])) ? $rowR1['radius1_BMC'] : ""); ?>></td>
+                  <td><input type="text" name="radius1_TBS" value = <?php echo ((isset($_GET['status'])) ? $rowR1['radius1_TBS'] : ""); ?>></td>
                </tr>
                <tr>
                   <th>Whole body</th>
-                  <td><input type="text" name="whole1_T" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="whole1_Z" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="whole1_BMD" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="whole1_BMC" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
-                  <td><input type="text" name="whole1_TBS" value = <?php echo ((isset($_GET['status'])) ? $rowB['impression'] : ""); ?>></td>
+                  <td><input type="text" name="whole1_T" value = <?php echo ((isset($_GET['status'])) ? $rowW1['whole1_T'] : ""); ?>></td>
+                  <td><input type="text" name="whole1_Z" value = <?php echo ((isset($_GET['status'])) ? $rowW1['whole1_Z'] : ""); ?>></td>
+                  <td><input type="text" name="whole1_BMD" value = <?php echo ((isset($_GET['status'])) ? $rowW1['whole1_BMD'] : ""); ?>></td>
+                  <td><input type="text" name="whole1_BMC" value = <?php echo ((isset($_GET['status'])) ? $rowW1['whole1_BMC'] : ""); ?>></td>
+                  <td><input type="text" name="whole1_TBS" value = <?php echo ((isset($_GET['status'])) ? $rowW1['whole1_TBS'] : ""); ?>></td>
                </tr>
             </table>
             <div class="row">

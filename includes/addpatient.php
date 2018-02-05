@@ -60,7 +60,7 @@
 		$index_no = $_POST['index_no'];
 		$sql = "UPDATE MBD set
 						name='$Name',
-						 age='$DOB',
+						 DOB='$DOB',
 						 sex='$Sex',
 						 admission_no=$Admission_No,
 						 CR_no=$CR_No,
@@ -131,7 +131,7 @@
 			$result = mysqli_query($conn, $sql);
 			$row = mysqli_fetch_array($result);
 
-			header("Location: ../Layoutothersymptoms.php?addpatient=".$row['max(index_no)']);
+			//header("Location: ../Layoutothersymptoms.php?addpatient=".$row['max(index_no)']);
 	}
 	/*
 	$sql = "insert into MBD (name, age, sex, admission_no) values ('$Name',$Age,'$Sex',$Admission_No);";
