@@ -281,18 +281,78 @@ if(isset($name)&&!empty($name)){
                        <tr>
                           <th>Scan Type:</th>
                           <td><select name="scan_type_B">
-                              <option value="unknown">-Select-</option>
-                              <option value="bone_scan">Bone Scan</option>
-                              <option value="pet_scan">Pet Scan</option>
-                              <option value="dota_noc">DOTA NOC</option>
-                              <option value="dotatate">DOTATATE</option>
+                              <option value="unknown"<?php if(isset($_GET['status'])){
+                                  if($rowB['scan_type_B'] == 'unknown'){
+                                    echo "selected";
+                                  }
+                                }
+                              ?>
+                              }>-Select-</option>
+                              <option value="bone_scan"<?php if(isset($_GET['status'])){
+                                  if($rowB['scan_type_B'] == 'bone_scan'){
+                                    echo "selected";
+                                  }
+                                }
+                              ?>
+                              }>Bone Scan</option>
+                              <option value="pet_scan"<?php if(isset($_GET['status'])){
+                                  if($rowB['scan_type_B'] == 'pet_scan'){
+                                    echo "selected";
+                                  }
+                                }
+                              ?>
+                              }>Pet Scan</option>
+                              <option value="dota_noc"<?php if(isset($_GET['status'])){
+                                  if($rowB['scan_type_B'] == 'dota_noc'){
+                                    echo "selected";
+                                  }
+                                }
+                              ?>
+                              }>DOTA NOC</option>
+                              <option value="dotatate"<?php if(isset($_GET['status'])){
+                                  if($rowB['scan_type_B'] == 'dotatate'){
+                                    echo "selected";
+                                  }
+                                }
+                              ?>
+                              }>DOTATATE</option>
                           </select></td>
                           <td><select name="scan_type_1">
-                              <option value="unknown">-Select-</option>
-                              <option value="bone_scan">Bone Scan</option>
-                              <option value="pet_scan">Pet Scan</option>
-                              <option value="dota_noc">DOTA NOC</option>
-                              <option value="dotatate">DOTATATE</option>
+                              <option value="unknown"<?php if(isset($_GET['status'])){
+                                  if($row1['scan_type_1'] == 'unknown'){
+                                    echo "selected";
+                                  }
+                                }
+                              ?>
+                              }>-Select-</option>
+                              <option value="bone_scan"<?php if(isset($_GET['status'])){
+                                  if($row1['scan_type_1'] == 'bone_scan'){
+                                    echo "selected";
+                                  }
+                                }
+                              ?>
+                              }>Bone Scan</option>
+                              <option value="pet_scan"<?php if(isset($_GET['status'])){
+                                  if($row1['scan_type_1'] == 'pet_scan'){
+                                    echo "selected";
+                                  }
+                                }
+                              ?>
+                              }>Pet Scan</option>
+                              <option value="dota_noc"<?php if(isset($_GET['status'])){
+                                  if($row1['scan_type_1'] == 'dota_noc'){
+                                    echo "selected";
+                                  }
+                                }
+                              ?>
+                              }>DOTA NOC</option>
+                              <option value="dotatate"<?php if(isset($_GET['status'])){
+                                  if($row1['scan_type_1'] == 'dotatate'){
+                                    echo "selected";
+                                  }
+                                }
+                              ?>
+                              }>DOTATATE</option>
                           </select></td>
                           <td></td>
                        </tr>

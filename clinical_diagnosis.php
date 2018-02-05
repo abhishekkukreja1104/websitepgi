@@ -176,8 +176,7 @@ if(isset($_GET['status'])){
                     </div>
                     </div>
                 </form>
-
-            </div>
+      </div>
 </body>
 
 </html>
