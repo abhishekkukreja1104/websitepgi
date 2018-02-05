@@ -297,9 +297,9 @@ whole1_TBS) values(
  mysqli_query($conn, $sql);
 
       if(isset($_POST['status'])){
-        //header("Location: ../mutationanalysis.php?status=edit&addpatient=".$index_no);
+        header("Location: ../mutationanalysis.php?status=edit&addpatient=".$index_no);
 
       }else{
-        //header("Location: ../mutationanalysis.php?addpatient=".$index_no);
+        header("Location: ../mutationanalysis.php?addpatient=".$index_no);
           }
 ?>

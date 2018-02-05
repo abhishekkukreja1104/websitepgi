@@ -35,13 +35,13 @@
             <div class="row">
                   <div class="col-md-3"></div>
                   <div class="col-md-6 form-container">
-                        <form>
+                        <form method="post">
                               <p style="text-align:center;"><img src="person.png" height="25%" width="40%"></p>
                               <h1 align="center">Login Form</h1>
                               <div class="form-group">
                                     <label for="email">Email</label>
                                     <i class="fa fa-user"></i>
-                                    <input type="email" id="email" class="form-control" placeholder="Email">
+                                    <input type="email" name  = "email" id="email" class="form-control" placeholder="Email">
                               </div>
                               <div class="form-group">
                                     <label for="password">Password</label>
@@ -52,12 +52,20 @@
                                           <input type="checkbox" onclick="show()">Show Password
                                     </label>
                               </div>
-                              <button id="submit" method = 'POST' style="margin-top: 5%;" type="submit" class="btn btn-submit btn-block">Submit</button>
+                              <button id="submit" name = "submit" method = 'POST' style="margin-top: 5%;" type="submit" class="btn btn-submit btn-block">Submit</button>
                         </form>
                   </div>
             </div>
       </div>
+      <?php
+        if(isset($_POST["submit"])){
+          if(strcmp($_POST['email'],"akshaykumarsharma1998aks@gmail.com")==0){
+            header("Location: Layoutaddpatient.php");
 
+          }
+          echo "hello";
+        }
+      ?>
 </body>
 
 </html>
@@ -72,10 +80,4 @@ function show() {
     }
 }
 
-document.getElementById("submit").onclick = function () {
-    var x = document.getElementById("email");
-    var y = document.getElementById("password");
-    if(x.value == "testemail@gmail.com"&& y.value=="password")
-      location.href = "www.yoursite.com";
-};
 </script>
