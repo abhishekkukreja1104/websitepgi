@@ -103,7 +103,6 @@
             <h1>Mutation Analysis</h1>
          </div>
       </div>
-
               <div id="form" align="center">
                 <?php if(isset($_POST['submit1'])){
                       if(isset($_GET['status'])){
@@ -137,17 +136,53 @@
                         <tr>
                             <th>Known/Novel:</th>
                             <td><select name="known_novel">
-                            	<option value="unknown">-Select-</option>
-                            	<option value="known">Known</option>
-                            	<option value="novel">Novel</option>
+                            	<option value="unknown" <?php if(isset($_GET['status'])){
+                                  if($row1['known_novel'] == 'unknown'){
+                                    echo "selected";
+                                  }
+                                }
+                              ?>
+                              }>-Select-</option>
+                            	<option value="known"<?php if(isset($_GET['status'])){
+                                  if($row1['known_novel'] == 'known'){
+                                    echo "selected";
+                                  }
+                                }
+                              ?>
+                              }>Known</option>
+                            	<option value="novel"<?php if(isset($_GET['status'])){
+                                  if($row1['known_novel'] == 'novel'){
+                                    echo "selected";
+                                  }
+                                }
+                              ?>
+                              }>Novel</option>
                             </select></td>
                         </tr>
                         <tr>
                             <th>Autosomal Dominant/Autosomal Recessive:</th>
                             <td><select name="adorar">
-                            	<option value="unknown">-Select-</option>
-                            	<option value="dominant">Autosomal Dominant</option>
-                            	<option value="recessive">Autosomal Recessive</option>
+                            	<option value="unknown"<?php if(isset($_GET['status'])){
+                                  if($row2['adorar'] == 'unknown'){
+                                    echo "selected";
+                                  }
+                                }
+                              ?>
+                              }>-Select-</option>
+                            	<option value="dominant"<?php if(isset($_GET['status'])){
+                                  if($row2['adorar'] == 'dominant'){
+                                    echo "selected";
+                                  }
+                                }
+                              ?>
+                              }>Autosomal Dominant</option>
+                            	<option value="recessive"<?php if(isset($_GET['status'])){
+                                  if($row2['adorar'] == 'recessive'){
+                                    echo "selected";
+                                  }
+                                }
+                              ?>
+                              }>Autosomal Recessive</option>
                             </select></td>
                         </tr>
 

@@ -52,7 +52,7 @@
                                           <input type="checkbox" onclick="show()">Show Password
                                     </label>
                               </div>
-                              <button id="submit" name = "submit" method = 'POST' style="margin-top: 5%;" type="submit" class="btn btn-submit btn-block">Submit</button>
+                              <button id="submit" name = "submit" method = 'POST' style="margin-top: 6%;" type="submit" class="btn btn-submit btn-block">Submit</button>
                         </form>
                   </div>
             </div>
