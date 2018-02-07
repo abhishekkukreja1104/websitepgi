@@ -1,3 +1,26 @@
+<?php
+include_once 'includes/dbh.php';
+
+
+if(isset($_GET['status'])){
+    if($_GET['status']=="edit"){
+        $sqlB = "select * from MUTA where index_no =".$_GET['addpatient'];
+
+
+        $resultB = mysqli_query($conn, $sqlB);
+
+
+        $row1=false;
+   if($resultB!=false)
+     $row1 = mysqli_fetch_array($resultB);
+
+
+
+
+  }
+ }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -163,21 +186,21 @@
                             <th>Autosomal Dominant/Autosomal Recessive:</th>
                             <td><select name="adorar">
                             	<option value="unknown"<?php if(isset($_GET['status'])){
-                                  if($row2['adorar'] == 'unknown'){
+                                  if($row1['adorar'] == 'unknown'){
                                     echo "selected";
                                   }
                                 }
                               ?>
                               }>-Select-</option>
                             	<option value="dominant"<?php if(isset($_GET['status'])){
-                                  if($row2['adorar'] == 'dominant'){
+                                  if($row1['adorar'] == 'dominant'){
                                     echo "selected";
                                   }
                                 }
                               ?>
                               }>Autosomal Dominant</option>
                             	<option value="recessive"<?php if(isset($_GET['status'])){
-                                  if($row2['adorar'] == 'recessive'){
+                                  if($row1['adorar'] == 'recessive'){
                                     echo "selected";
                                   }
                                 }

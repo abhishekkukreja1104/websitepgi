@@ -1,3 +1,19 @@
+<?php
+include_once 'includes/dbh.php';
+
+
+if(isset($_GET['status'])){
+    if($_GET['status']=="edit"){
+        $sql = "select * from CD where index_no=".$_GET['addpatient'];
+        $result = mysqli_query($conn, $sql);
+        $row1=false;
+   if($result!=false){
+         $row1 = mysqli_fetch_array($result);
+   }
+ }
+}
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -117,23 +133,71 @@
                       <td>
                         <input type="text" name="addpatient" value=<?php echo $_GET[ 'addpatient']?> readonly>
                       </td>
-                    </tr>  
+                    </tr>
                         <tr>
                           <th>Osteomalacia Dropdown:</th>
                             <td>
                               <select name="Osteomalacia1">
-                                  <option value="unknown">-Select-</option>
-                                  <option value="Vit_D3">Vit D3 deficiency</option>
-                                  <option value="Hypophosphatemic">Hypophosphatemic</option>
+                                  <option value="unknown" <?php if(isset($_GET['status'])){
+                                      if($row1['subDF'] == 'unknown'){
+                                        echo "selected";
+                                      }
+                                    }
+                                  ?>
+                                  }>-Select-</option>
+                                  <option value="Vit_D3" <?php if(isset($_GET['status'])){
+                                      if($row1['subDF'] == 'Vit_D3'){
+                                        echo "selected";
+                                      }
+                                    }
+                                  ?>
+                                  }>Vit D3 deficiency</option>
+                                  <option value="Hypophosphatemic" <?php if(isset($_GET['status'])){
+                                      if($row1['subDF'] == 'Hypophosphatemic'){
+                                        echo "selected";
+                                      }
+                                    }
+                                  ?>
+                                  }>Hypophosphatemic</option>
                               </select>
                             </td>
                             <td>
                               <select name="Osteomalacia2">
-                                  <option value="unknown">-Select-</option>
-                                  <option value="Malabsorption">Malabsorption</option>
-                                  <option value="Nutritional">Nutritional</option>
-                                  <option value="Tumor_Induced">Tumor Induced</option>
-                                  <option value="Tenofovir_Induced">Tenofovir Induced</option>
+                                  <option value="unknown" <?php if(isset($_GET['status'])){
+                                      if($row1['subSF'] == 'Hypophosphatemic'){
+                                        echo "selected";
+                                      }
+                                    }
+                                  ?>
+                                  }>-Select-</option>
+                                  <option value="Malabsorption" <?php if(isset($_GET['status'])){
+                                      if($row1['subSF'] == 'Malabsorption'){
+                                        echo "selected";
+                                      }
+                                    }
+                                  ?>
+                                  }>Malabsorption</option>
+                                  <option value="Nutritional" <?php if(isset($_GET['status'])){
+                                      if($row1['subSF'] == 'Nutritional'){
+                                        echo "selected";
+                                      }
+                                    }
+                                  ?>
+                                  }>Nutritional</option>
+                                  <option value="Tumor_Induced" <?php if(isset($_GET['status'])){
+                                      if($row1['subSF'] == 'Tumor_Induced'){
+                                        echo "selected";
+                                      }
+                                    }
+                                  ?>
+                                  }>Tumor Induced</option>
+                                  <option value="Tenofovir_Induced" <?php if(isset($_GET['status'])){
+                                      if($row1['subSF'] == 'Tenofovir_Induced'){
+                                        echo "selected";
+                                      }
+                                    }
+                                  ?>
+                                  }>Tenofovir Induced</option>
                               </select>
                             </td>
                         </tr>
@@ -144,8 +208,8 @@
                     <div class="col-md-12" align="center" id="submit">
                       <input type="submit" name="Next" align="center">
                     </div>
-                  </div>  
-                </form>    
+                  </div>
+                </form>
         </div>
 </body>
 

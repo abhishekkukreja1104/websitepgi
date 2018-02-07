@@ -10,7 +10,7 @@ if(isset($_POST['status'])){
 $known_novel = $_POST['known_novel'];
 $adorar = $_POST['adorar'];
 
-$sql = "insert into MUTA values($index_no,'$known_novel','adorar');";
+$sql = "insert into MUTA values($index_no,'$known_novel','$adorar');";
 mysqli_query($conn, $sql);
 echo $sql;
 

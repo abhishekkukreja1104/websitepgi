@@ -4,7 +4,7 @@ include_once 'includes/dbh.php';
 
 if(isset($_GET['status'])){
     if($_GET['status']=="edit"){
-        $sqlB = "select * from PULM where index_no =".$_GET['addpatient'];
+        $sqlB = "select * from echo where index_no =".$_GET['addpatient'];
         $resultB = mysqli_query($conn, $sqlB);
         $row=false;
    if($resultB!=false){
@@ -129,7 +129,7 @@ if(isset($name)&&!empty($name)){
         <div class="col-md-3" id="logout">
           <a href="login.php">LOGOUT</a>
         </div>
-      </div> 
+      </div>
       <div class="row">
          <a href="Layoutaddpatient.php">
             <div class="col-md-3" align="center" id="nav">
@@ -170,7 +170,7 @@ if(isset($name)&&!empty($name)){
                   }
               ?>
                 <form method="post" >
-                      <table class="table table-hover" align="center"> 
+                      <table class="table table-hover" align="center">
                         <tr>
                             <th>2D-Echo Test:</th>
                             <td>
@@ -181,8 +181,8 @@ if(isset($name)&&!empty($name)){
                 </form>
                 <form action = "includes/add2Decho.php" method="POST">
 
-                      <table class="table table-hover" align="center"> 
-                       <thead> 
+                      <table class="table table-hover" align="center">
+                       <thead>
                        <tr>
                           <th style="font-size:23px"><font face="verdana"></font></th>
                           <th id = "up" style="font-size:23px"><font face="verdana">Base line</font></th>
@@ -224,7 +224,7 @@ if(isset($name)&&!empty($name)){
                       <div class="row">
                         <div class="col-md-4"></div>
                         <div class="col-md-4">
-                          <table class="table table-hover" align="center"> 
+                          <table class="table table-hover" align="center">
                             <tr>
                                 <th><strong>Title:</strong></th>
                                 <th>

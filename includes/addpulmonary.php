@@ -14,6 +14,11 @@ mysqli_query($conn, $sql);
 echo $sql;
 
 
-header("Location: ../clinical_diagnosis.php?addpatient=".$index_no);
+			if(isset($_POST['status'])){
+				header("Location: ../clinical_diagnosis.php?status=edit&addpatient=".$index_no);
+
+			}else{
+				header("Location: ../clinical_diagnosis.php?addpatient=".$index_no);
+			}
 
 ?>

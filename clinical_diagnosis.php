@@ -4,13 +4,13 @@ include_once 'includes/dbh.php';
 
 if(isset($_GET['status'])){
     if($_GET['status']=="edit"){
-        $sql = "select * from NUCB where index_no =".$_GET['addpatient'];
+        $sql = "select * from CD where index_no =".$_GET['addpatient'];
         $result = mysqli_query($conn, $sql);
-        $row=false;
+        $row1=false;
    if($result!=false){
-         $row = mysqli_fetch_array($result);
-
+         $row1 = mysqli_fetch_array($result);
    }
+
  }
 }
  ?>
@@ -135,38 +135,203 @@ if(isset($_GET['status'])){
                         <tr>
                             <th>Clinical diagnosis dropdown:</th>
 
-                                  
+
                                   <td>
                                   <select name="disease">
-                                    <option value="unknown">-Select-</option>
-                                    <option value="rickets">Rickets</option>
-                                    <option value="rickets_osteomalacia">Rickets and Osteomalacia</option>
-                                    <option value="Osteomalacia">Osteomalacia</option>
-                                    <option value="Osteogenesis">Osteogenesis imperfecta</option>
-                                    <option value="Fibrous">Fibrous Dysplasia</option>
-                                    <option value="Paget">Paget's disease</option>
-                                    <option value="Osteopetrosis">Osteopetrosis</option>
-                                    <option value="Spondyloepiphyseal">Spondyloepiphyseal dysplasia</option>
-                                    <option value="Fibrogenesis">Fibrogenesis imperfecta ossium</option>
-                                    <option value="Osteoporosis" <?php if(isset($_POST['disease'])){ if($_POST['disease'] == 'Osteoporosis') echo 'selected';}?>>Osteoporosis</option>
-                                    <option value="Hypo_Osteomalacia">Hypophosphatemic & Vitamin D Deficiency Osteomalacia</option>
-                                    <option value="Pyknodysostosis">Pyknodysostosis</option>
-                                    <option value="Camurati">Camurati-Engelmann Disease</option>
-                                    <option value="Melorheostosis">Melorheostosis</option>
-                                    <option value="Osteomyelosclerosis">Osteomyelosclerosis</option>
-                                    <option value="Achondroplasis">Achondroplasis</option>
-                                    <option value="Enchondromatosis">Enchondromatosis</option>
-                                    <option value="Multiple_Exostoses">Multiple Exostoses</option>
-                                    <option value="Sclerosteosis">Sclerosteosis</option>
-                                    <option value="Tumoral">Tumoral Calcinosis</option>
-                                    <option value="Mucopolysaccharidosis">Mucopolysaccharidosis</option>
-                                    <option value="Pseudohypoparathyroidism">Pseudohypoparathyroidism</option>
-                                    <option value="Bartter">Bartter-like syndrome</option>
-                                    <option value="Celiac">Celiac disease</option>
-                                    <option value="Any_other">Any other</option>
+                                    <option value="unknown" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'unknown'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>-Select-</option>
+                                    <option value="rickets" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'rickets'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Rickets</option>
+                                    <option value="rickets_osteomalacia" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'rickets_osteomalacia'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Rickets and Osteomalacia</option>
+                                    <option value="Osteomalacia" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'Osteomalacia'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Osteomalacia</option>
+                                    <option value="Osteogenesis" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'Osteogenesis'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Osteogenesis imperfecta</option>
+                                    <option value="Fibrous" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'Fibrous'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Fibrous Dysplasia</option>
+                                    <option value="Paget"<?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'Paget'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Paget's disease</option>
+                                    <option value="Osteopetrosis" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'Osteopetrosis'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Osteopetrosis</option>
+                                    <option value="Spondyloepiphyseal" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'Spondyloepiphyseal'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Spondyloepiphyseal dysplasia</option>
+                                    <option value="Fibrogenesis" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'Fibrogenesis'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Fibrogenesis imperfecta ossium</option>
+                                    <option value="Osteoporosis" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'Osteoporosis'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Osteoporosis</option>
+                                    <option value="Hypo_Osteomalacia" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'Hypo_Osteomalacia'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Hypophosphatemic & Vitamin D Deficiency Osteomalacia</option>
+                                    <option value="Pyknodysostosis" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'Pyknodysostosis'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Pyknodysostosis</option>
+                                    <option value="Camurati" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'Camurati'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Camurati-Engelmann Disease</option>
+                                    <option value="Melorheostosis" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'Melorheostosis'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Melorheostosis</option>
+                                    <option value="Osteomyelosclerosis" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'Osteomyelosclerosis'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Osteomyelosclerosis</option>
+                                    <option value="Achondroplasis" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'Achondroplasis'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Achondroplasis</option>
+                                    <option value="Enchondromatosis" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'Enchondromatosis'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Enchondromatosis</option>
+                                    <option value="Multiple_Exostoses" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'Multiple_Exostoses'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Multiple Exostoses</option>
+                                    <option value="Sclerosteosis" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'Sclerosteosis'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Sclerosteosis</option>
+                                    <option value="Tumoral" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'Tumoral'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Tumoral Calcinosis</option>
+                                    <option value="Mucopolysaccharidosis" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'Mucopolysaccharidosis'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Mucopolysaccharidosis</option>
+                                    <option value="Pseudohypoparathyroidism" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'Pseudohypoparathyroidism'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Pseudohypoparathyroidism</option>
+                                    <option value="Bartter" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'Bartter'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Bartter-like syndrome</option>
+                                    <option value="Celiac" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'Celiac'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Celiac disease</option>
+                                    <option value="Any_other" <?php if(isset($_GET['status'])){
+                                        if($row1['disease'] == 'Any_other'){
+                                          echo "selected";
+                                        }
+                                      }
+                                    ?>
+                                    }>Any other</option>
                                 </select>
                             </td>
+
                         </tr>
+                        <?php
+                           if(isset($_GET['status'])){
+                                  echo "<tr>";
+                                  echo "<th>status:</th>";
+                                  echo "<td><input type='text' name='status' value ='edit' readonly> </td>";
+                                  echo "</tr>";
+                           }
+                       ?>
                     </table>
                   </div>
                 </div>

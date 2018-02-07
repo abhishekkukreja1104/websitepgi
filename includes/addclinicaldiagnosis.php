@@ -13,12 +13,29 @@
 
       mysqli_query($conn, $sql);
       if(strcmp($disease,'Osteomalacia')==0)
-        header("Location: ../Osteomalacia.php?addpatient=".$index_no);
+
+          if(isset($_POST['status'])){
+            header("Location: ../Osteomalacia.php?status=edit&addpatient=".$index_no);
+          }else{
+            header("Location: ../Osteomalacia.php.php?addpatient=".$index_no);
+          }
       else {
         if(strcmp($disease,'Osteoporosis')==0)
-          header("Location: ../Osteoporosis.php?addpatient=".$index_no);
-        else
-              header("Location: ../treatment.php?addpatient=".$index_no);
+
+            if(isset($_POST['status'])){
+              header("Location: ../Osteoporosis.php?status=edit&addpatient=".$index_no);
+            }else{
+              header("Location: ../Osteoporosis.php?addpatient=".$index_no);
+            }
+        else{
+          
+              if(isset($_POST['status'])){
+                header("Location: ../treatment.php?status=edit&addpatient=".$index_no);
+              }else{
+                header("Location: ../treatment.php?addpatient=".$index_no);
+              }
+        }
+
       }
 
     }
