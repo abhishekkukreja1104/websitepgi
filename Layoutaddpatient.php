@@ -228,31 +228,31 @@
                   </tr>
                   <tr>
                      <th>Referring physicians:<font color="red">*</font></th>
-                     <td><input type="text" name="Referring_physicians" required value = <?php echo $row['r_physicians']; ?>></td>
+                     <td><input type="text" name="Referring_physicians" required value = "<?php echo $row['r_physicians']; ?>"></td>
                   </tr>
                   <tr>
                      <th>Presenting C/O:<font color="red">*</font></th>
-                     <td><input type="text" name="Presenting_C" required value = <?php echo $row['presenting']; ?>></td>
+                     <td><input type="text" name="Presenting_C" required value = "<?php echo $row['presenting']; ?>"></td>
                   </tr>
                   <tr>
                      <th>Deformity:<font color="red">*</font></th>
-                     <td><input type="text" name="Deformity" required value = <?php echo $row['deformity']; ?>></td>
+                     <td><input type="text" name="Deformity" required value = "<?php echo $row['deformity']; ?>"></td>
                   </tr>
                   <tr>
                      <th>No of Fracture:<font color="red">*</font></th>
-                     <td><input type="text" name="No_of_Fracture" required value = <?php echo $row['n_o_fracture']; ?>></td>
+                     <td><input type="text" name="No_of_Fracture" required value = "<?php echo $row['n_o_fracture']; ?>"></td>
                   </tr>
                   <tr>
                      <th>Bone Pain:<font color="red">*</font></th>
-                     <td><input type="text" name="Bone_Pain" required value = <?php echo $row['bone_pain']; ?>></td>
+                     <td><input type="text" name="Bone_Pain" required value = "<?php echo $row['bone_pain']; ?>"></td>
                   </tr>
                   <tr>
                      <th>Short Stature:<font color="red">*</font></th>
-                     <td><input type="text" name="Short_Stature" required value = <?php echo $row['short_stature']; ?>></td>
+                     <td><input type="text" name="Short_Stature" required value = "<?php echo $row['short_stature']; ?>"></td>
                   </tr>
                   <tr>
                      <th>Teeth abnormality:<font color="red">*</font></th>
-                     <td><input type="text" name="Teeth_abnormality" required value = <?php echo $row['teeth_abnormality']; ?>></td>
+                     <td><input type="text" name="Teeth_abnormality" required value = "<?php echo $row['teeth_abnormality']; ?>"></td>
                   </tr>
                   <tr>
                      <th>Duration of symptoms:</th>
