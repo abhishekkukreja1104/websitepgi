@@ -192,8 +192,8 @@ if(isset($_POST['submit'])){
                        </tr>
                        <tr>
                           <th>Impression:</th>
-                          <td><input name=impression_B rows="5" cols="20" value=<?php echo ((isset($_GET[ 'status'])) ? $row[ 'impressionB'] : ""); ?>></input></td>
-                          <td><input name=impression_1 rows="5" cols="20" value=<?php echo ((isset($_GET[ 'status'])) ? $row[ 'impression1'] : ""); ?>></input></td>
+                          <td><textarea name=impression_B rows="5" cols="20"><?php echo ((isset($_GET[ 'status'])) ? $row[ 'impressionB'] : ""); ?></textarea></td>
+                          <td><textarea name=impression_1 rows="5" cols="20"><?php echo ((isset($_GET[ 'status'])) ? $row[ 'impression1'] : ""); ?></textarea></td>
                        </tr>
 
                        <?php

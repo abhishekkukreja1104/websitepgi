@@ -181,7 +181,7 @@
             <table class="table table-hover" align="center">
                <tr>
                   <td><strong>Radiology:</strong></td>
-                  <td><input type="submit" name="submit1" value="Not Avaliable"></td>
+                  <td><input type="submit" name="submit1" value="Not Available"></td>
                </tr>
             </table>
          </form>
@@ -205,97 +205,97 @@
                <tr>
                   <th>Skull lateral view</th>
                   <td>
-                     <input type="text" name="skull_B" value = <?php echo ((isset($_GET['status'])) ? $rowB['skull'] : ""); ?>>
+                     <input type="text" name="skull_B" value = "<?php echo ((isset($_GET['status'])) ? $rowB['skull'] : ""); ?>">
                   </td>
                   <td>
-                     <input type="text" name="skull_1" value = <?php echo ((isset($_GET['status'])) ? $row1['skull'] : ""); ?>>
+                     <input type="text" name="skull_1" value = "<?php echo ((isset($_GET['status'])) ? $row1['skull'] : ""); ?>">
                   </td>
                   <td>
-                     <input type="text" name="skull_5" value = <?php echo ((isset($_GET['status'])) ? $row5['skull'] : ""); ?>>
+                     <input type="text" name="skull_5" value = "<?php echo ((isset($_GET['status'])) ? $row5['skull'] : ""); ?>">
                   </td>
                </tr>
                <tr>
                   <th>Wrist AP view (Bone age)</th>
                   <td>
-                     <input type="text" name="wrist_B" value = <?php echo ((isset($_GET['status'])) ? $rowB['wrist'] : ""); ?>>
+                     <input type="text" name="wrist_B" value = "<?php echo ((isset($_GET['status'])) ? $rowB['wrist'] : ""); ?>">
                   </td>
                   <td>
-                     <input type="text" name="wrist_1" value = <?php echo ((isset($_GET['status'])) ? $row1['wrist'] : ""); ?>>
+                     <input type="text" name="wrist_1" value = "<?php echo ((isset($_GET['status'])) ? $row1['wrist'] : ""); ?>">
                   </td>
                   <td>
-                     <input type="text" name="wrist_5" value = <?php echo ((isset($_GET['status'])) ? $row5['wrist'] : ""); ?>>
+                     <input type="text" name="wrist_5" value = "<?php echo ((isset($_GET['status'])) ? $row5['wrist'] : ""); ?>">
                   </td>
                </tr>
                <tr>
                   <th>Left Forearm (AP view)</th>
                   <td>
-                     <input type="text" name="left_r_B" value = <?php echo ((isset($_GET['status'])) ? $rowB['left_l'] : ""); ?>>
+                     <input type="text" name="left_r_B" value = "<?php echo ((isset($_GET['status'])) ? $rowB['left_l'] : ""); ?>">
                   </td>
                   <td>
-                     <input type="text" name="left_r_1" value = <?php echo ((isset($_GET['status'])) ? $row1['left_l'] : ""); ?>>
+                     <input type="text" name="left_r_1" value = "<?php echo ((isset($_GET['status'])) ? $row1['left_l'] : ""); ?>">
                   </td>
                   <td>
-                     <input type="text" name="left_r_5" value = <?php echo ((isset($_GET['status'])) ? $row5['left_l'] : ""); ?>>
+                     <input type="text" name="left_r_5" value = "<?php echo ((isset($_GET['status'])) ? $row5['left_l'] : ""); ?>">
                   </td>
                </tr>
                <tr>
                   <th>Thoraic lumbar spine (AP view)</th>
                   <td>
-                     <input type="text" name="thoraicAV_B" value = <?php echo ((isset($_GET['status'])) ? $rowB['thoraicAV'] : ""); ?>>
+                     <input type="text" name="thoraicAV_B" value = "<?php echo ((isset($_GET['status'])) ? $rowB['thoraicAV'] : ""); ?>">
                   </td>
                   <td>
-                     <input type="text" name="thoraicAV_1" value = <?php echo ((isset($_GET['status'])) ? $row1['thoraicAV'] : ""); ?>>
+                     <input type="text" name="thoraicAV_1" value = "<?php echo ((isset($_GET['status'])) ? $row1['thoraicAV'] : ""); ?>">
                   </td>
                   <td>
-                     <input type="text" name="thoraicAV_5" value = <?php echo ((isset($_GET['status'])) ? $row5['thoraicAV'] : ""); ?>>
+                     <input type="text" name="thoraicAV_5" value = "<?php echo ((isset($_GET['status'])) ? $row5['thoraicAV'] : ""); ?>">
                   </td>
                </tr>
                <tr>
                   <th>Thoraic lumbar spine (Lateral view)</th>
                   <td>
-                     <input type="text" name="thoraicLV_B" value = <?php echo ((isset($_GET['status'])) ? $rowB['thoraicLV'] : ""); ?>>
+                     <input type="text" name="thoraicLV_B" value = "<?php echo ((isset($_GET['status'])) ? $rowB['thoraicLV'] : ""); ?>">
                   </td>
                   <td>
-                     <input type="text" name="thoraicLV_1" value = <?php echo ((isset($_GET['status'])) ? $row1['thoraicLV'] : ""); ?>>
+                     <input type="text" name="thoraicLV_1" value = "<?php echo ((isset($_GET['status'])) ? $row1['thoraicLV'] : ""); ?>">
                   </td>
                   <td>
-                     <input type="text" name="thoraicLV_5" value = <?php echo ((isset($_GET['status'])) ? $row5['thoraicLV'] : ""); ?>>
+                     <input type="text" name="thoraicLV_5" value = "<?php echo ((isset($_GET['status'])) ? $row5['thoraicLV'] : ""); ?>">
                   </td>
                </tr>
                <tr>
                   <th>X-ray Pelvis (AP view)</th>
                   <td>
-                     <input type="text" name="XP_B" value = <?php echo ((isset($_GET['status'])) ? $rowB['XP'] : ""); ?>>
+                     <input type="text" name="XP_B" value = "<?php echo ((isset($_GET['status'])) ? $rowB['XP'] : ""); ?>">
                   </td>
                   <td>
-                     <input type="text" name="XP_1" value = <?php echo ((isset($_GET['status'])) ? $row1['XP'] : ""); ?>>
+                     <input type="text" name="XP_1" value = "<?php echo ((isset($_GET['status'])) ? $row1['XP'] : ""); ?>">
                   </td>
                   <td>
-                     <input type="text" name="XP_5" value = <?php echo ((isset($_GET['status'])) ? $row5['XP'] : ""); ?>>
+                     <input type="text" name="XP_5" value = "<?php echo ((isset($_GET['status'])) ? $row5['XP'] : ""); ?>">
                   </td>
                </tr>
                <tr>
                   <th>X-ray Leg (AP view)</th>
                   <td>
-                     <input type="text" name="XL_B" value = <?php echo ((isset($_GET['status'])) ? $rowB['XL'] : ""); ?>>
+                     <input type="text" name="XL_B" value = "<?php echo ((isset($_GET['status'])) ? $rowB['XL'] : ""); ?>">
                   </td>
                   <td>
-                     <input type="text" name="XL_1" value = <?php echo ((isset($_GET['status'])) ? $row1['XL'] : ""); ?>>
+                     <input type="text" name="XL_1" value = "<?php echo ((isset($_GET['status'])) ? $row1['XL'] : ""); ?>">
                   </td>
                   <td>
-                     <input type="text" name="XL_5" value = <?php echo ((isset($_GET['status'])) ? $row5['XL'] : ""); ?>>
+                     <input type="text" name="XL_5" value = "<?php echo ((isset($_GET['status'])) ? $row5['XL'] : ""); ?>">
                   </td>
                </tr>
                <tr>
                   <th>Any other</th>
                   <td>
-                     <input type="text" name="any_B" value = <?php echo ((isset($_GET['status'])) ? $rowB['any'] : ""); ?>>
+                     <input type="text" name="any_B" value = "<?php echo ((isset($_GET['status'])) ? $rowB['any'] : ""); ?>">
                   </td>
                   <td>
-                     <input type="text" name="any_1" value = <?php echo ((isset($_GET['status'])) ? $row1['any'] : ""); ?>>
+                     <input type="text" name="any_1" value = "<?php echo ((isset($_GET['status'])) ? $row1['any'] : ""); ?>">
                   </td>
                   <td>
-                     <input type="text" name="any_5" value = <?php echo ((isset($_GET['status'])) ? $row5['any'] : ""); ?>>
+                     <input type="text" name="any_5" value = "<?php echo ((isset($_GET['status'])) ? $row5['any'] : ""); ?>">
                   </td>
                </tr>
                <?php

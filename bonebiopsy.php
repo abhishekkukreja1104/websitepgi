@@ -169,7 +169,7 @@
                   <tr>
                      <td><strong>Bone Biospy:</strong></td>
                      <td>
-                        <input type="submit" name="submit1" value="Not Avaliable">
+                        <input type="submit" name="submit1" value="Not Available">
                      </td>
                   </tr>
                </table>
@@ -198,10 +198,10 @@
                      </td>
                      <th>Histopathology no</th>
                      <td>
-                        <input type="text" name="histo_B" value=<?php echo ((isset($_GET['status'])) ? $rowB[ 'histo_B'] : ""); ?>>
+                        <input type="text" name="histo_B" value="<?php echo ((isset($_GET['status'])) ? $rowB[ 'histo_B'] : ""); ?>">
                      </td>
                      <td>
-                        <input type="text" name="histo_1" value=<?php echo ((isset($_GET['status'])) ? $row1[ 'histo_B'] : ""); ?>>
+                        <input type="text" name="histo_1" value="<?php echo ((isset($_GET['status'])) ? $row1[ 'histo_B'] : ""); ?>">
                      </td>
                      <td></td>
                   </tr>
@@ -209,10 +209,10 @@
                      <td></td>
                      <th>Site of bone biopsy</th>
                      <td>
-                        <input type="text" name="site_B" value= <?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'site_B'] : ""); ?>>
+                        <input type="text" name="site_B" value= "<?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'site_B'] : ""); ?>">
                      </td>
                      <td>
-                        <input type="text" name="site_1" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'site_B'] : ""); ?>>
+                        <input type="text" name="site_1" value="<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'site_B'] : ""); ?>">
                      </td>
                      <td></td>
                   </tr>
@@ -220,10 +220,10 @@
                      <td></td>
                      <th>Impression</th>
                      <td>
-                        <input type="text" name="ih_B" value=<?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'ih_B'] : ""); ?>>
+                        <input type="text" name="ih_B" value="<?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'ih_B'] : ""); ?>">
                      </td>
                      <td>
-                        <input type="text" name="ih_1" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'ih_B'] : ""); ?>>
+                        <input type="text" name="ih_1" value="<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'ih_B'] : ""); ?>">
                      </td>
                      <td></td>
                   </tr>
@@ -231,10 +231,10 @@
                      <td></td>
                      <th>BHMP</th>
                      <td>
-                        <input type="text" name="bhmp_B" value=<?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'bhmp_B'] : ""); ?>>
+                        <input type="text" name="bhmp_B" value="<?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'bhmp_B'] : ""); ?>">
                      </td>
                      <td>
-                        <input type="text" name="bhmp_1" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'bhmp_B'] : ""); ?>>
+                        <input type="text" name="bhmp_1" value="<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'bhmp_B'] : ""); ?>">
                      </td>
                      <td></td>
                   </tr>
@@ -243,10 +243,10 @@
 
                      <th>Site of BHMP</th>
                      <td>
-                        <input type="text" name="BHMPsite_B" value= <?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'site_B'] : ""); ?>>
+                        <input type="text" name="BHMPsite_B" value= "<?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'site_B'] : ""); ?>">
                      </td>
                      <td>
-                        <input type="text" name="BHMPsite_1" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'site_B'] : ""); ?>>
+                        <input type="text" name="BHMPsite_1" value="<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'site_B'] : ""); ?>">
                      </td>
                      <td></td>
                   </tr>
@@ -254,10 +254,10 @@
                      <td></td>
                      <th>Impression</th>
                      <td>
-                        <input type="text" name="ib_B" value=<?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'ib_B'] : ""); ?>>
+                        <input type="text" name="ib_B" value="<?php echo ((isset($_GET[ 'status'])) ? $rowB[ 'ib_B'] : ""); ?>">
                      </td>
                      <td>
-                        <input type="text" name="ib_1" value=<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'ib_B'] : ""); ?>>
+                        <input type="text" name="ib_1" value="<?php echo ((isset($_GET[ 'status'])) ? $row1[ 'ib_B'] : ""); ?>">
                      </td>
                      <td></td>
                   </tr>

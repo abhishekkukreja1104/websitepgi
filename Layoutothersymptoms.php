@@ -1981,43 +1981,43 @@
     <tr>
       <th>Deformity LL(Genuvarum/Genuvalgum/Wind swift/None)</th>
       <td>
-          <input type="text" name="LL_B" value = <?php echo $rowB['LL']; ?>>
+          <input type="text" name="LL_B" value = "<?php echo $rowB['LL']; ?>">
       </td>
       <td>
-          <input type="text" name="LL_3" value = <?php echo $row3['LL']; ?>>
+          <input type="text" name="LL_3" value = "<?php echo $row3['LL']; ?>">
       </td>
       <td>
-          <input type="text" name="LL_6" value = <?php echo $row6['LL']; ?>>
+          <input type="text" name="LL_6" value = "<?php echo $row6['LL']; ?>">
       </td>
       <td>
-          <input type="text" name="LL_1" value = <?php echo $row1['LL']; ?>>
+          <input type="text" name="LL_1" value = "<?php echo $row1['LL']; ?>">
       </td>
       <td>
-          <input type="text" name="LL_2" value = <?php echo $row2['LL']; ?>>
+          <input type="text" name="LL_2" value = "<?php echo $row2['LL']; ?>">
       </td>
       <td>
-          <input type="text" name="LL_5" value = <?php echo $row5['LL']; ?>>
+          <input type="text" name="LL_5" value = "<?php echo $row5['LL']; ?>">
       </td>
     </tr>
     <tr>
       <th>Deformity Spine(kyphosis/Scoliosis)</th>
       <td>
-        <input type="text" name="spine_B" value = <?php echo $rowB['spine']; ?>>
+        <input type="text" name="spine_B" value = "<?php echo $rowB['spine']; ?>">
       </td>
       <td>
-        <input type="text" name="spine_3" value = <?php echo $row3['spine']; ?>>
+        <input type="text" name="spine_3" value = "<?php echo $row3['spine']; ?>">
       </td>
       <td>
-        <input type="text" name="spine_6" value = <?php echo $row6['spine']; ?>>
+        <input type="text" name="spine_6" value = "<?php echo $row6['spine']; ?>">
       </td>
       <td>
-        <input type="text" name="spine_1" value = <?php echo $row1['spine']; ?>>
+        <input type="text" name="spine_1" value = "<?php echo $row1['spine']; ?>">
       </td>
       <td>
-        <input type="text" name="spine_2" value = <?php echo $row2['spine']; ?>>
+        <input type="text" name="spine_2" value = "<?php echo $row2['spine']; ?>">
       </td>
       <td>
-        <input type="text" name="spine_5" value = <?php echo $row5['spine']; ?>>
+        <input type="text" name="spine_5" value = "<?php echo $row5['spine']; ?>">
       </td>
     </tr>
     <tr>
@@ -2517,17 +2517,17 @@
     </tr>
     <tr>
       <th>Upper Segment/Lower Segment (Cm)</th>
-      <td><input type="text" name="Upper_Segment_B" value=<?php echo ((isset($_GET['status'])) ? $rowB[ 'Upper_Segment'] : ""); ?>>
+      <td><input type="text" name="Upper_Segment_B" value="<?php echo ((isset($_GET['status'])) ? $rowB[ 'Upper_Segment'] : ""); ?>">
       </td>
-      <td><input type="text" name="Upper_Segment_3" value=<?php echo ((isset($_GET['status'])) ? $row3[ 'Upper_Segment'] : ""); ?>>
+      <td><input type="text" name="Upper_Segment_3" value="<?php echo ((isset($_GET['status'])) ? $row3[ 'Upper_Segment'] : ""); ?>">
       </td>
-      <td><input type="text" name="Upper_Segment_6" value=<?php echo ((isset($_GET['status'])) ? $row6[ 'Upper_Segment'] : ""); ?>>
+      <td><input type="text" name="Upper_Segment_6" value="<?php echo ((isset($_GET['status'])) ? $row6[ 'Upper_Segment'] : ""); ?>">
       </td>
-      <td><input type="text" name="Upper_Segment_1" value=<?php echo ((isset($_GET['status'])) ? $row1[ 'Upper_Segment'] : ""); ?>>
+      <td><input type="text" name="Upper_Segment_1" value="<?php echo ((isset($_GET['status'])) ? $row1[ 'Upper_Segment'] : ""); ?>">
       </td>
-      <td><input type="text" name="Upper_Segment_2" value=<?php echo ((isset($_GET['status'])) ? $row2[ 'Upper_Segment'] : ""); ?>>
+      <td><input type="text" name="Upper_Segment_2" value="<?php echo ((isset($_GET['status'])) ? $row2[ 'Upper_Segment'] : ""); ?>">
       </td>
-      <td><input type="text" name="Upper_Segment_5" value=<?php echo ((isset($_GET['status'])) ? $row5[ 'Upper_Segment'] : ""); ?>>
+      <td><input type="text" name="Upper_Segment_5" value="<?php echo ((isset($_GET['status'])) ? $row5[ 'Upper_Segment'] : ""); ?>">
       </td>
     </tr>
     <tr>
