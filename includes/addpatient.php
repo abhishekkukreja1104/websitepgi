@@ -3,6 +3,9 @@
 
 
 
+	session_start();
+	$_SESSION['preventback'] = $_POST['index_no'];
+
 	$Name = $_POST['First_Name'];
 	$DOB = $_POST['DOB'];
 	$Sex = $_POST['gender'];
@@ -91,7 +94,7 @@
 
 						 	mysqli_query($conn,$sql);
 							echo $sql;
-							//header("Location: ../Layoutothersymptoms.php?status=edit&addpatient=".$index_no);
+							header("Location: ../Layoutothersymptoms.php?status=edit&addpatient=".$index_no);
 
 	}else{
 		$sql = "insert into MBD
@@ -132,7 +135,7 @@
 			$result = mysqli_query($conn, $sql);
 			$row = mysqli_fetch_array($result);
 
-			//header("Location: ../Layoutothersymptoms.php?addpatient=".$row['max(index_no)']);
+			header("Location: ../Layoutothersymptoms.php?addpatient=".$row['max(index_no)']);
 	}
 	/*
 	$sql = "insert into MBD (name, age, sex, admission_no) values ('$Name',$Age,'$Sex',$Admission_No);";

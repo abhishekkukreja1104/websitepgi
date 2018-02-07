@@ -22,9 +22,13 @@
 	}
 	$ipaddress = get_client_ip_env();
 
-	echo $localIP;
-	echo $ipaddress;
-
+	session_start();
+	if(isset($_SESSION['preventback'])){
+				if($_GET['status']!="edit"){
+		        header("Location: Layoutaddpatient.php?status=edit&index_no=".$_SESSION['preventback']);
+						session_destroy();
+				}
+	}
 	$row= false;
 	if(isset($_GET['index_no']) ){
 		if($_GET['status']=="edit"){
@@ -32,6 +36,7 @@
       	$result = mysqli_query($conn, $sql);
       	$row = mysqli_fetch_array($result);
       	$index_no = $row['index_no'];
+
 		}
 	}
 ?>
@@ -155,7 +160,7 @@
              		}?>
                   <tr>
                      <th>Name:<font color="red">*</font></form></th>
-                     <td><input type="text" name="First_Name" required value = <?php echo $row['name']; ?>></td>
+                     <td><input type="text" name="First_Name" required value = "<?php echo $row['name']; ?>"></td>
                   </tr>
                   <tr>
                      <th>DOB:<font color="red">*</font></th>
@@ -170,7 +175,7 @@
                   </tr>
                   <tr>
                      <th>CR No.:<font color="red">*</font></form></th>
-                     <td><input type="text" name="CR_No" pattern="[0-9]{12}" title="Only number are allowed and max length is 12 digits" required value = <?php echo $row['CR_no']; ?>></td>
+                     <td><input type="text" name="CR_No" pattern="[0-9]{1,12}" title="Only number are allowed and max length is 12 digits" required value = <?php echo $row['CR_no']; ?>></td>
 
                   </tr>
                   <tr>
@@ -195,7 +200,7 @@
                   </tr>
                   <tr>
                      <th>Address:</th>
-                     <td><textarea name="message" rows="5" cols="48" value = <?php echo $row['address']; ?>></textarea></td>
+                     <td><textarea name="message" rows="5" cols="48"> <?php echo $row['address']; ?></textarea></td>
                   </tr>
                   <tr>
                      <th>Telephone:</th>
@@ -255,19 +260,19 @@
                   </tr>
                   <tr>
                      <th>Ht(cm):</th>
-                     <td><input type="number" name="Ht" value = <?php echo $row['ht']; ?>></td>
+                     <td><input type="double" name="Ht" value = <?php echo $row['ht']; ?>></td>
                   </tr>
                   <tr>
                      <th>Wt(Kg):</th>
-                     <td><input type="number" name="Wt" value = <?php echo $row['wt']; ?>></td>
+                     <td><input type="double" name="Wt" value = <?php echo $row['wt']; ?>></td>
                   </tr>
                   <tr>
                      <th>BMI :</th>
-                     <td><input type="number" name="BMI" value = <?php echo $row['BMI']; ?>></td>
+                     <td><input type="double" name="BMI" value = <?php echo $row['BMI']; ?>></td>
                   </tr>
                   <tr>
                      <th>Family History:</th>
-                     <td><textarea name="family_history" rows="5" cols="48" value = <?php echo $row['family_history']; ?>></textarea></td>
+                     <td><textarea name="family_history" rows="5" cols="48"> <?php echo $row['family_history']; ?></textarea></td>
                   </tr>
                </table>
               </div>

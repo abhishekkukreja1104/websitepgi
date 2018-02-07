@@ -20,7 +20,6 @@
 	}
 
 	$S_Ca = $_POST['S_Ca_D'];
-	$S_Phosphorus = $_POST['S_Phosphorus_D'];
 	$S_albumin = $_POST['S_albumin_D'];
 	$S_alkaline = $_POST['S_alkaline_D'];
 	$OHD = $_POST['OHD_D'];
@@ -173,7 +172,6 @@
 
 	$index_no = $_POST['addpatient'];
 	$S_Ca = $_POST['S_Ca_3'];
-	$S_Phosphorus = $_POST['S_Phosphorus_3'];
 	$S_albumin = $_POST['S_albumin_3'];
 	$S_alkaline = $_POST['S_alkaline_3'];
 	$OHD = $_POST['OHD_3'];
@@ -325,7 +323,6 @@
 
 	$index_no = $_POST['addpatient'];
 	$S_Ca = $_POST['S_Ca_6'];
-	$S_Phosphorus = $_POST['S_Phosphorus_6'];
 	$S_albumin = $_POST['S_albumin_6'];
 	$S_alkaline = $_POST['S_alkaline_6'];
 	$OHD = $_POST['OHD_6'];
@@ -478,7 +475,6 @@
 
 	$index_no = $_POST['addpatient'];
 	$S_Ca = $_POST['S_Ca_1'];
-	$S_Phosphorus = $_POST['S_Phosphorus_1'];
 	$S_albumin = $_POST['S_albumin_1'];
 	$S_alkaline = $_POST['S_alkaline_1'];
 	$OHD = $_POST['OHD_1'];
@@ -631,7 +627,6 @@
 
 	$index_no = $_POST['addpatient'];
 	$S_Ca = $_POST['S_Ca_2'];
-	$S_Phosphorus = $_POST['S_Phosphorus_2'];
 	$S_albumin = $_POST['S_albumin_2'];
 	$S_alkaline = $_POST['S_alkaline_2'];
 	$OHD = $_POST['OHD_2'];
@@ -783,7 +778,6 @@
 
 	$index_no = $_POST['addpatient'];
 	$S_Ca = $_POST['S_Ca_5'];
-	$S_Phosphorus = $_POST['S_Phosphorus_5'];
 	$S_albumin = $_POST['S_albumin_5'];
 	$S_alkaline = $_POST['S_alkaline_5'];
 	$OHD = $_POST['OHD_5'];

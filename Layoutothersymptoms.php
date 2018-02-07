@@ -1,24 +1,25 @@
 <?php
   include_once 'includes/dbh.php';
-
+  session_start();
+  $_SESSION['preventback'] = $_GET['addpatient'];
   if(isset($_GET['status'])){
     if($_GET['status']=="edit"){
-      $sqlB = "select * from OSB where index_no =".$_GET['addpatient'];
 
+      $sqlB = "select * from OSB where index_no =".$_GET['addpatient'];
       $sql3 = "select * from OS3 where index_no =".$_GET['addpatient'];
       $sql6 = "select * from OS6 where index_no =".$_GET['addpatient'];
       $sql1 = "select * from OS1 where index_no =".$_GET['addpatient'];
       $sql2 = "select * from OS2 where index_no =".$_GET['addpatient'];
       $sql5 = "select * from OS5 where index_no =".$_GET['addpatient'];
-      $resultB = mysqli_query($conn, $sqlB);
 
+      $resultB = mysqli_query($conn, $sqlB);
       $result3 = mysqli_query($conn, $sql3);
       $result6 = mysqli_query($conn, $sql6);
       $result1 = mysqli_query($conn, $sql1);
       $result2 = mysqli_query($conn, $sql2);
       $result5 = mysqli_query($conn, $sql5);
-      $rowB=false;
 
+      $rowB=false;
       $row3=false;
       $row6=false;
       $row1=false;
@@ -26,9 +27,10 @@
       $row5=false;
 
 
-            if($resultB!=false){
-              $rowB = mysqli_fetch_array($result3);
-            }
+
+      if($resultB!=false){
+        $rowB = mysqli_fetch_array($resultB);
+      }
       if($result3!=false){
         $row3 = mysqli_fetch_array($result3);
       }
@@ -169,8 +171,8 @@
                    <th></th>
                    <th></th>
                    <th id= "up" style="font-size:18px">Follow-up</th>
-                   <th ></th>
-                   <th ></th>
+                   <th></th>
+                   <th></th>
                 </tr>
               <tr>
                   <th></th>
@@ -1978,200 +1980,44 @@
     </tr>
     <tr>
       <th>Deformity LL(Genuvarum/Genuvalgum/Wind swift/None)</th>
-      <td><select name="LL_B">
-        <option value="unknown">--Select--</option>
-          <option value="yes" <?php if(isset($_GET['status'])){
-              if($rowB['LL'] == 'yes'){
-                echo "selected";
-              }
-            }
-          ?>>Yes</option>
-          <option value="no" <?php if(isset($_GET['status'])){
-              if($rowB['LL'] == 'no'){
-                echo "selected";
-              }
-            }
-          ?>>No</option>
-        </select>
+      <td>
+          <input type="text" name="LL_B" value = <?php echo $rowB['LL']; ?>>
       </td>
-      <td><select name="LL_3">
-        <option value="unknown">--Select--</option>
-          <option value="yes" <?php if(isset($_GET['status'])){
-              if($row3['LL'] == 'yes'){
-                echo "selected";
-              }
-            }
-          ?>>Yes</option>
-          <option value="no" <?php if(isset($_GET['status'])){
-              if($row3['LL'] == 'no'){
-                echo "selected";
-              }
-            }
-          ?>>No</option>
-        </select>
+      <td>
+          <input type="text" name="LL_3" value = <?php echo $row3['LL']; ?>>
       </td>
-      <td><select name="LL_6">
-        <option value="unknown">--Select--</option>
-          <option value="yes" <?php if(isset($_GET['status'])){
-              if($row6['LL'] == 'yes'){
-                echo "selected";
-              }
-            }
-          ?>>Yes</option>
-          <option value="no" <?php if(isset($_GET['status'])){
-              if($row6['LL'] == 'no'){
-                echo "selected";
-              }
-            }
-          ?>>No</option>
-        </select>
+      <td>
+          <input type="text" name="LL_6" value = <?php echo $row6['LL']; ?>>
       </td>
-      <td><select name="LL_1">
-        <option value="unknown">--Select--</option>
-          <option value="yes" <?php if(isset($_GET['status'])){
-              if($row1['LL'] == 'yes'){
-                echo "selected";
-              }
-            }
-          ?>>Yes</option>
-          <option value="no" <?php if(isset($_GET['status'])){
-              if($row1['LL'] == 'no'){
-                echo "selected";
-              }
-            }
-          ?>>No</option>
-        </select>
+      <td>
+          <input type="text" name="LL_1" value = <?php echo $row1['LL']; ?>>
       </td>
-      <td><select name="LL_2">
-        <option value="unknown">--Select--</option>
-          <option value="yes" <?php if(isset($_GET['status'])){
-              if($row2['LL'] == 'yes'){
-                echo "selected";
-              }
-            }
-          ?>>Yes</option>
-          <option value="no" <?php if(isset($_GET['status'])){
-              if($row2['LL'] == 'no'){
-                echo "selected";
-              }
-            }
-          ?>>No</option>
-        </select>
+      <td>
+          <input type="text" name="LL_2" value = <?php echo $row2['LL']; ?>>
       </td>
-      <td><select name="LL_5">
-        <option value="unknown">--Select--</option>
-          <option value="yes" <?php if(isset($_GET['status'])){
-              if($row5['LL'] == 'yes'){
-                echo "selected";
-              }
-            }
-          ?>>Yes</option>
-          <option value="no" <?php if(isset($_GET['status'])){
-              if($row5['LL'] == 'no'){
-                echo "selected";
-              }
-            }
-          ?>>No</option>
-        </select>
+      <td>
+          <input type="text" name="LL_5" value = <?php echo $row5['LL']; ?>>
       </td>
     </tr>
     <tr>
       <th>Deformity Spine(kyphosis/Scoliosis)</th>
-      <td><select name="spine_B">
-        <option value="unknown">--Select--</option>
-          <option value="yes" <?php if(isset($_GET['status'])){
-              if($rowB['spine'] == 'yes'){
-                echo "selected";
-              }
-            }
-          ?>>Yes</option>
-          <option value="no" <?php if(isset($_GET['status'])){
-              if($rowB['spine'] == 'no'){
-                echo "selected";
-              }
-            }
-          ?>>No</option>
-        </select>
+      <td>
+        <input type="text" name="spine_B" value = <?php echo $rowB['spine']; ?>>
       </td>
-      <td><select name="spine_3">
-        <option value="unknown">--Select--</option>
-          <option value="yes" <?php if(isset($_GET['status'])){
-              if($row3['spine'] == 'yes'){
-                echo "selected";
-              }
-            }
-          ?>>Yes</option>
-          <option value="no" <?php if(isset($_GET['status'])){
-              if($row3['spine'] == 'no'){
-                echo "selected";
-              }
-            }
-          ?>>No</option>
-        </select>
+      <td>
+        <input type="text" name="spine_3" value = <?php echo $row3['spine']; ?>>
       </td>
-      <td><select name="spine_6">
-        <option value="unknown">--Select--</option>
-          <option value="yes" <?php if(isset($_GET['status'])){
-              if($row6['spine'] == 'yes'){
-                echo "selected";
-              }
-            }
-          ?>>Yes</option>
-          <option value="no" <?php if(isset($_GET['status'])){
-              if($row6['spine'] == 'no'){
-                echo "selected";
-              }
-            }
-          ?>>No</option>
-        </select>
+      <td>
+        <input type="text" name="spine_6" value = <?php echo $row6['spine']; ?>>
       </td>
-      <td><select name="spine_1">
-        <option value="unknown">--Select--</option>
-          <option value="yes" <?php if(isset($_GET['status'])){
-              if($row1['spine'] == 'yes'){
-                echo "selected";
-              }
-            }
-          ?>>Yes</option>
-          <option value="no" <?php if(isset($_GET['status'])){
-              if($row1['spine'] == 'no'){
-                echo "selected";
-              }
-            }
-          ?>>No</option>
-        </select>
+      <td>
+        <input type="text" name="spine_1" value = <?php echo $row1['spine']; ?>>
       </td>
-      <td><select name="spine_2">
-        <option value="unknown">--Select--</option>
-          <option value="yes" <?php if(isset($_GET['status'])){
-              if($row2['spine'] == 'yes'){
-                echo "selected";
-              }
-            }
-          ?>>Yes</option>
-          <option value="no" <?php if(isset($_GET['status'])){
-              if($row2['spine'] == 'no'){
-                echo "selected";
-              }
-            }
-          ?>>No</option>
-        </select>
+      <td>
+        <input type="text" name="spine_2" value = <?php echo $row2['spine']; ?>>
       </td>
-      <td><select name="spine_5">
-        <option value="unknown">--Select--</option>
-          <option value="yes" <?php if(isset($_GET['status'])){
-              if($row5['spine'] == 'yes'){
-                echo "selected";
-              }
-            }
-          ?>>Yes</option>
-          <option value="no" <?php if(isset($_GET['status'])){
-              if($row5['spine'] == 'no'){
-                echo "selected";
-              }
-            }
-          ?>>No</option>
-        </select>
+      <td>
+        <input type="text" name="spine_5" value = <?php echo $row5['spine']; ?>>
       </td>
     </tr>
     <tr>
@@ -2865,7 +2711,7 @@
           ?>>No</option>
         </select>
       </td>
-      <td><select name="Waddling_gait_5"5>
+      <td><select name="Waddling_gait_5">
         <option value="unknown">--Select--</option>
           <option value="yes" <?php if(isset($_GET['status'])){
               if($row5['Waddling_gait'] == 'yes'){
@@ -3359,7 +3205,7 @@
           ?>>No</option>
         </select>
       </td>
-      <td><select name="Hyperprolactinaemia_5"
+      <td><select name="Hyperprolactinaemia_5">
         <option value="unknown">--Select--</option>
           <option value="yes" <?php if(isset($_GET['status'])){
               if($row5['Hyperprolactinaemia'] == 'yes'){
